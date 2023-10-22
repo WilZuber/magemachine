@@ -176,7 +176,8 @@ PrefabInstance:
       value: DefaultRoom Variant (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7171732807165928650, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
@@ -233,7 +234,8 @@ PrefabInstance:
       value: DefaultRoom Variant (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3883285357485624894, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
@@ -476,7 +478,9 @@ PrefabInstance:
       value: DefaultRoom Variant (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7171732807165928650, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
+    - {fileID: 3883285357485624894, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
