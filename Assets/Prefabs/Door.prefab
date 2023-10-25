@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 2636637545604401712}
   - component: {fileID: 3935552893598457149}
   - component: {fileID: 4901967931830370214}
+  - component: {fileID: 7544976287168329695}
   m_Layer: 0
   m_Name: DoorFace
   m_TagString: Untagged
@@ -160,6 +161,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30, y: 1, z: 1}
   m_Center: {x: -1.25, y: 0, z: 0}
+--- !u!95 &7544976287168329695
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6705757852581573381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d658f5f6669ee404c9d2dd26178ac1c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7276336403140202367
 GameObject:
   m_ObjectHideFlags: 0
