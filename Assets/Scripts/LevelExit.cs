@@ -22,7 +22,7 @@ public class LevelExit: MonoBehaviour
             // Displays text on-screen.
             endLevelText.SetActive(true);
             
-            // Add code here for a prompt to start the next level.
+            // Add a prompt here to start the next level.
             if (Input.GetKeyCode(KeyCode.R)) {
                 if (currentLevel < 3) {
                     currentLevel += 1;
@@ -30,7 +30,6 @@ public class LevelExit: MonoBehaviour
                 } else {
                     print("ERROR: There are only four levels currently.");
                 }
-                
             }
         }
     }
