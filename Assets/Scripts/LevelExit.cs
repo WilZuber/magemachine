@@ -17,7 +17,7 @@ public class LevelExit: MonoBehaviour
     //}
 
     // Attach this script to the hitbox of the level exit.
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerStay(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             // Displays text on-screen.
             //endLevelText.SetActive(true);
