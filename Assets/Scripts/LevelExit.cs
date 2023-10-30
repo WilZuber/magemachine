@@ -24,7 +24,11 @@ public class LevelExit: MonoBehaviour
             
             // Add a prompt here to start the next level.
             if (Input.GetKey(KeyCode.R)) {
-                if (currentLevel < 3) {
+                if (currentLevel == 1)
+                {
+                    SceneManager.LoadScene("MainMenu");
+                }
+                else if ((currentLevel > 1) && (currentLevel < 3)) {
                     currentLevel += 1;
                     SceneManager.LoadScene(levelList[currentLevel]);
                 } else {
