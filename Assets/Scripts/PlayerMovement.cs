@@ -7,13 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody playerBody;
     public float moveSpeed = 5f;
-    public float lookSpeed = 5f;
-    private Vector2 rotation = new Vector2(0, 0);
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         playerBody = gameObject.GetComponent<Rigidbody>();
     }
     
@@ -30,10 +26,6 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.AddForce(transform.up * 5, ForceMode.VelocityChange);
         }
-
-        // Looking around
-        rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
-        transform.eulerAngles = rotation;
 
         // Running
         if(Input.GetKey(KeyCode.LeftShift))
