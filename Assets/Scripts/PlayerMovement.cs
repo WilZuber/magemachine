@@ -5,37 +5,30 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody playerBody;
-    public float moveSpeed = 5f;
+    private Rigidbody rb;
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
 
     void Start()
     {
-        playerBody = gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
+        // Running
+        float moveSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+
         // Horizontal Movement
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        transform.Translate(movement * Time.deltaTime * moveSpeed);
+        float moveX = moveSpeed * Input.GetAxis("Horizontal");
+        float moveZ = moveSpeed * Input.GetAxis("Vertical");
+        float moveY = rb.velocity.y;
+        rb.velocity = (moveX * transform.right) + (moveZ * transform.forward) + (moveY * Vector3.up);
 
         // Jumping (The 0.0005 thing allows jumping on top of spherical surfaces)
-        if(Input.GetKeyDown(KeyCode.Space) && (Math.Abs(playerBody.velocity.y) <= 0.0005)) 
+        if(Input.GetKeyDown(KeyCode.Space) && (Math.Abs(rb.velocity.y) <= 0.0005)) 
         {
-            playerBody.AddForce(transform.up * 5, ForceMode.VelocityChange);
-        }
-
-        // Running
-        if(Input.GetKey(KeyCode.LeftShift))
-        {
-            moveSpeed = 8f;
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            moveSpeed = 5f;
+            rb.AddForce(transform.up * 5, ForceMode.VelocityChange);
         }
     }
 }
