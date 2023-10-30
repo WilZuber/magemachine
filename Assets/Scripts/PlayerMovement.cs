@@ -5,45 +5,74 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody playerBody;
-    public float moveSpeed = 5f;
-    public float lookSpeed = 5f;
-    private Vector2 rotation = new Vector2(0, 0);
+    private Rigidbody rb;
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
+    public float jumpSpeed = 7.5f;
+    private bool jumpPressed;
+    private bool jumping;
+    private float jumpTime;
+    public float jumpTimeout = 0.5f;
+    public float extraGravity = 0.25f;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        playerBody = gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
-        // Horizontal Movement
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        transform.Translate(movement * Time.deltaTime * moveSpeed);
-
-        // Jumping (The 0.0005 thing allows jumping on top of spherical surfaces)
-        if(Input.GetKeyDown(KeyCode.Space) && (Math.Abs(playerBody.velocity.y) <= 0.0005)) 
-        {
-            playerBody.AddForce(transform.up * 5, ForceMode.VelocityChange);
-        }
-
-        // Looking around
-        rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
-        transform.eulerAngles = rotation;
-
         // Running
-        if(Input.GetKey(KeyCode.LeftShift))
+        float moveSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+
+        // Horizontal Movement
+        float moveX = moveSpeed * Input.GetAxis("Horizontal");
+        float moveZ = moveSpeed * Input.GetAxis("Vertical");
+
+        // Jumping
+        float moveY = rb.velocity.y + Jump();
+
+        // Set velocity
+        rb.velocity = (moveX * transform.right) + (moveZ * transform.forward) + (moveY * Vector3.up);
+    }
+
+    // Added to vertical velocity if the player is jumping
+    private float Jump()
+    {
+        
+        if (Input.GetButton("Jump"))
         {
-            moveSpeed = 8f;
+            if (jumping) // Player is already jumping
+            {
+                jumpTime += Time.fixedDeltaTime;
+                // Limit jump height
+                if (jumpTime >= jumpTimeout)
+                {
+                    jumping = false;
+                }
+                return 0; // maintain vertical velocity
+            }
+            else if (!jumpPressed) // Don't jump again until button is released
+            {
+                jumpPressed = true;
+                Vector3 origin = transform.position + 0.005f * Vector3.up; // start above ground
+                // Whether the player can actually jump
+                bool isGrounded = Physics.Raycast(origin, Vector3.down, 0.01f);
+                if (isGrounded)
+                {
+                    // Start jump
+                    jumping = true;
+                    jumpTime = 0;
+                    return jumpSpeed;
+                }
+            }
+        }
+        else
+        {
+            jumping = false;
+            jumpPressed = false;
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            moveSpeed = 5f;
-        }
+        return -extraGravity; // fall
     }
 }
