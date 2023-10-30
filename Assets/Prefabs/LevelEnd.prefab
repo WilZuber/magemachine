@@ -993,6 +993,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1694461166274752843}
+  - component: {fileID: 2531570675867359226}
+  - component: {fileID: 7945050395039916575}
   m_Layer: 0
   m_Name: LevelEnd
   m_TagString: Untagged
@@ -1018,6 +1020,40 @@ Transform:
   - {fileID: 3167906977314238672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2531570675867359226
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458894472802157843}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 1, z: 0.5}
+--- !u!114 &7945050395039916575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458894472802157843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70af9292d5ab51046a9bc3a6eef2c425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endLevelText: {fileID: 0}
 --- !u!1 &8578217941588550198
 GameObject:
   m_ObjectHideFlags: 0

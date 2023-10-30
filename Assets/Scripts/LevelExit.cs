@@ -6,21 +6,21 @@ using System;
 
 public class LevelExit: MonoBehaviour
 {
-    public static string[] levelList = {"Main Menu", "Tutorial", "Level1", "Level2"};
+    public static string[] levelList = {"MainMenu", "Tutorial", "Level1", "Level2"};
 
     // This assumes the script is being used on the Tutorial level first.
     public static int currentLevel = 1;
-    public GameObject endLevelText;
+    //public GameObject endLevelText;
 
-    void Start() {
-        endLevelText.SetActive(false);
-    }
+    //void Start() {
+    //    endLevelText.SetActive(false);
+    //}
 
     // Attach this script to the hitbox of the level exit.
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             // Displays text on-screen.
-            endLevelText.SetActive(true);
+            //endLevelText.SetActive(true);
             
             // Add a prompt here to start the next level.
             if (Input.GetKey(KeyCode.R)) {
