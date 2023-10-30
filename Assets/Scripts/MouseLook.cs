@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float lookSpeed = 5f;
+    public float lookSpeedX = 5f;
+    public float lookSpeedY = 3f;
     public GameObject player;
 
     // Start is called before the first frame update
@@ -17,8 +18,8 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float lookX = lookSpeed * Input.GetAxis("Mouse X");
-        float lookY = lookSpeed * Input.GetAxis("Mouse Y");
+        float lookX = lookSpeedX * Input.GetAxis("Mouse X");
+        float lookY = lookSpeedY * Input.GetAxis("Mouse Y");
         player.transform.Rotate(0, lookX, 0);
         transform.Rotate(-lookY, 0, 0);
     }
