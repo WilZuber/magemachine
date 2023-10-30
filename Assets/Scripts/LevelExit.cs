@@ -10,7 +10,7 @@ public class LevelExit: MonoBehaviour
 
     // This assumes the script is being used on the Tutorial level first.
     public static int currentLevel = 1;
-    public gameObject endLevelText;
+    public GameObject endLevelText;
 
     void Start() {
         endLevelText.SetActive(false);
@@ -23,7 +23,7 @@ public class LevelExit: MonoBehaviour
             endLevelText.SetActive(true);
             
             // Add a prompt here to start the next level.
-            if (Input.GetKeyCode(KeyCode.R)) {
+            if (Input.GetKey(KeyCode.R)) {
                 if (currentLevel < 3) {
                     currentLevel += 1;
                     SceneManager.LoadScene(levelList[currentLevel]);
