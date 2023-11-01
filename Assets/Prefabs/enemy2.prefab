@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be8f95aa75785a74d84e35cecaf681f3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66,6 +70,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9222885513038651701}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7465387978585961554}
   m_SourcePrefab: {fileID: 100100000, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
 --- !u!1 &3047207106112131221 stripped
 GameObject:
@@ -122,3 +129,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7465387978585961554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047207106112131221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779f518c0c0fa4d42ae75f0654434977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
