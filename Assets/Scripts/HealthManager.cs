@@ -15,9 +15,10 @@ public class HealthManager : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
+        health -= damage;
         if (health <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
