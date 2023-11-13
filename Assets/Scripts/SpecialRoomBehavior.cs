@@ -23,9 +23,9 @@ public class SpecialRoomBehavior : MonoBehaviour
         enemiesKilled = 0;
         mysteryBox = this.gameObject.transform.GetChild(0).gameObject;
         doorLock1 = this.gameObject.transform.GetChild(1).gameObject;
-        doorLock1 = this.gameObject.transform.GetChild(2).gameObject;
-        doorLock1 = this.gameObject.transform.GetChild(3).gameObject;
-        doorLock1 = this.gameObject.transform.GetChild(4).gameObject;
+        doorLock2 = this.gameObject.transform.GetChild(2).gameObject;
+        doorLock3 = this.gameObject.transform.GetChild(3).gameObject;
+        doorLock4 = this.gameObject.transform.GetChild(4).gameObject;
 
         doorLock1Animator = doorLock1.transform.GetChild(0).gameObject.GetComponent<Animator>();
         doorLock2Animator = doorLock2.transform.GetChild(0).gameObject.GetComponent<Animator>();
@@ -54,18 +54,18 @@ public class SpecialRoomBehavior : MonoBehaviour
 
     private void OpenDoors()
     {
-        doorLock1Animator.SetBool("DoorLocked", false);
-        doorLock2Animator.SetBool("DoorLocked", false);
-        doorLock3Animator.SetBool("DoorLocked", false);
-        doorLock4Animator.SetBool("DoorLocked", false);
+        doorLock1Animator.SetBool("DoorsLocked", false);
+        doorLock2Animator.SetBool("DoorsLocked", false);
+        doorLock3Animator.SetBool("DoorsLocked", false);
+        doorLock4Animator.SetBool("DoorsLocked", false);
     }
 
     private void LockDoors()
     {
-        doorLock1Animator.SetBool("DoorLocked", true);
-        doorLock2Animator.SetBool("DoorLocked", true);
-        doorLock3Animator.SetBool("DoorLocked", true);
-        doorLock4Animator.SetBool("DoorLocked", true);
+        doorLock1Animator.SetBool("DoorsLocked", true);
+        doorLock2Animator.SetBool("DoorsLocked", true);
+        doorLock3Animator.SetBool("DoorsLocked", true);
+        doorLock4Animator.SetBool("DoorsLocked", true);
     }
 
     private void SpawnEnemies(int numberOfEnemies)
