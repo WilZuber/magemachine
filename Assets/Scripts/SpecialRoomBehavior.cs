@@ -28,6 +28,9 @@ public class SpecialRoomBehavior : MonoBehaviour
         doorLock1 = this.gameObject.transform.GetChild(4).gameObject;
 
         doorLock1Animator = doorLock1.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        doorLock2Animator = doorLock2.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        doorLock3Animator = doorLock3.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        doorLock4Animator = doorLock4.transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,13 +54,18 @@ public class SpecialRoomBehavior : MonoBehaviour
 
     private void OpenDoors()
     {
-        // Open the doors
+        doorLock1Animator.SetBool("DoorLocked", false);
+        doorLock2Animator.SetBool("DoorLocked", false);
+        doorLock3Animator.SetBool("DoorLocked", false);
+        doorLock4Animator.SetBool("DoorLocked", false);
     }
 
     private void LockDoors()
     {
-        // Lock the doors
-        // Player should not be allowed to open them
+        doorLock1Animator.SetBool("DoorLocked", true);
+        doorLock2Animator.SetBool("DoorLocked", true);
+        doorLock3Animator.SetBool("DoorLocked", true);
+        doorLock4Animator.SetBool("DoorLocked", true);
     }
 
     private void SpawnEnemies(int numberOfEnemies)
