@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6441980f406a7f540a0307af3b5c8a42
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weapon: {fileID: 4149930575817239391, guid: c921612681a46574bbd284ab04a442ec, type: 3}
+  - soulPotion: {fileID: 636052109238612503, guid: 3b1a98ef4e7eb8743957d4a36c49dd4c, type: 3}
+  - techPart: {fileID: 85654708664957080, guid: 64f9a379d0c21c248abac60066df54d8, type: 3}
+  - skillPoint: {fileID: 3151148365839529456, guid: d3e9e8693019327489e43ebbadd92b34, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
