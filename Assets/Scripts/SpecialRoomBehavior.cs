@@ -12,6 +12,10 @@ public class SpecialRoomBehavior : MonoBehaviour
     private GameObject doorLock2;
     private GameObject doorLock3;
     private GameObject doorLock4;
+    private Animator doorLock1Animator;
+    private Animator doorLock2Animator;
+    private Animator doorLock3Animator;
+    private Animator doorLock4Animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,8 @@ public class SpecialRoomBehavior : MonoBehaviour
         doorLock1 = this.gameObject.transform.GetChild(2).gameObject;
         doorLock1 = this.gameObject.transform.GetChild(3).gameObject;
         doorLock1 = this.gameObject.transform.GetChild(4).gameObject;
+
+        doorLock1Animator = doorLock1.transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
