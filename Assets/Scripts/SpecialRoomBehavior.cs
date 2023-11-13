@@ -16,6 +16,9 @@ public class SpecialRoomBehavior : MonoBehaviour
     private Animator doorLock2Animator;
     private Animator doorLock3Animator;
     private Animator doorLock4Animator;
+    public GameObject enemy;
+
+    private bool playerEntered;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,8 @@ public class SpecialRoomBehavior : MonoBehaviour
         doorLock2Animator = doorLock2.transform.GetChild(0).gameObject.GetComponent<Animator>();
         doorLock3Animator = doorLock3.transform.GetChild(0).gameObject.GetComponent<Animator>();
         doorLock4Animator = doorLock4.transform.GetChild(0).gameObject.GetComponent<Animator>();
+
+        playerEntered = false;
     }
 
     // Update is called once per frame
@@ -45,8 +50,9 @@ public class SpecialRoomBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !playerEntered)
         {
+            playerEntered = true;
             LockDoors();
             SpawnEnemies(5); // five for now
         }
@@ -71,7 +77,10 @@ public class SpecialRoomBehavior : MonoBehaviour
     private void SpawnEnemies(int numberOfEnemies)
     {
         totalEnemies = numberOfEnemies;
-        // Spawn enemies
+        for (int i = 0; i < numberOfEnemies; i++)
+        {
+             Instantiate(enemy, transform.position, Quaternion.identity);
+        }
     }
 
     private void GivePrize()
