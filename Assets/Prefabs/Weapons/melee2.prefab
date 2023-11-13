@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: melee2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b09a6980a8d4fc942b71c9a0c48339a9, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
