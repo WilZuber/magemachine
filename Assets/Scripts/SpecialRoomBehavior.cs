@@ -7,10 +7,21 @@ public class SpecialRoomBehavior : MonoBehaviour
 
     private int enemiesKilled;
     private int totalEnemies;
+    private GameObject mysteryBox;
+    private GameObject doorLock1;
+    private GameObject doorLock2;
+    private GameObject doorLock3;
+    private GameObject doorLock4;
+
     // Start is called before the first frame update
     void Start()
     {
         enemiesKilled = 0;
+        mysteryBox = this.gameObject.transform.GetChild(0).gameObject;
+        doorLock1 = this.gameObject.transform.GetChild(1).gameObject;
+        doorLock1 = this.gameObject.transform.GetChild(2).gameObject;
+        doorLock1 = this.gameObject.transform.GetChild(3).gameObject;
+        doorLock1 = this.gameObject.transform.GetChild(4).gameObject;
     }
 
     // Update is called once per frame
