@@ -6,6 +6,7 @@ public class HealthManager : MonoBehaviour
 {
     private float health;
     public float maxHealth; // initialize in prefabs
+    public IDeathListener deathListener = null;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class HealthManager : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Die();
         }
     }
 
@@ -29,5 +30,14 @@ public class HealthManager : MonoBehaviour
         {
             health = maxHealth;
         }
+    }
+
+    public void Die()
+    {
+        if (deathListener != null)
+        {
+            deathListener.DeathTrigger();
+        }
+        Destroy(this.gameObject);
     }
 }

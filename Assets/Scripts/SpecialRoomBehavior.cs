@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialRoomBehavior : MonoBehaviour
+public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
 {
-
-    private int enemiesKilled;
-    private int totalEnemies;
+    private int enemiesRemaining;
     private GameObject mysteryBox;
     private GameObject doorLock1;
     private GameObject doorLock2;
@@ -23,7 +21,6 @@ public class SpecialRoomBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemiesKilled = 0;
         mysteryBox = this.gameObject.transform.GetChild(0).gameObject;
         doorLock1 = this.gameObject.transform.GetChild(1).gameObject;
         doorLock2 = this.gameObject.transform.GetChild(2).gameObject;
@@ -41,11 +38,7 @@ public class SpecialRoomBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemiesKilled >= totalEnemies)
-        {
-            OpenDoors();
-            GivePrize();
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -76,10 +69,11 @@ public class SpecialRoomBehavior : MonoBehaviour
 
     private void SpawnEnemies(int numberOfEnemies)
     {
-        totalEnemies = numberOfEnemies;
+        enemiesRemaining = numberOfEnemies;
         for (int i = 0; i < numberOfEnemies; i++)
         {
-             Instantiate(enemy, transform.position, Quaternion.identity);
+             GameObject instance = Instantiate(enemy, transform.position, Quaternion.identity);
+             instance.GetComponent<HealthManager>().deathListener = this;
         }
     }
 
@@ -87,4 +81,14 @@ public class SpecialRoomBehavior : MonoBehaviour
     {
         // Animate mystery box upward.
     }
+
+    public void DeathTrigger()
+    {
+        if (--enemiesRemaining == 0)
+        {
+            OpenDoors();
+            GivePrize();
+        }
+    }
+
 }

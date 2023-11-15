@@ -32,12 +32,10 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //Projectile.CreateProjectile(bulletPrefab, 2, projectileSpawn.position, transform.forward*5);
-            bullet.Fire(projectileSpawn.position, transform.forward, 3);
+            bullet.Fire(projectileSpawn.position, transform.forward, 5);
         }
         else if (Input.GetMouseButtonDown(1))
         {
-            //Projectile.CreateProjectile(1, projectileSpawn.position, transform.forward);
             beam.Fire(projectileSpawn.position, transform.forward);
         }
     }

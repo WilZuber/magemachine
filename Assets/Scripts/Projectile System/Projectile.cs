@@ -23,11 +23,11 @@ public abstract class Projectile : ScriptableObject
             hp.TakeDamage(damage);
         }
 
-        self.transform.position += 5*Time.deltaTime * bounceDirection;
-        Expire(self, bounceDirection);
+        //self.transform.position += 5*Time.deltaTime * bounceDirection;
+        Expire(self, bounceDirection, other);
     }
 
-    public void Expire(GameObject self, Vector3 nextDirection)
+    public void Expire(GameObject self, Vector3 nextDirection, GameObject ignoreCollision)
     {
         Destroy(self);
         if (HasNext()) //ignore if there aren't any projectiles to spawn
@@ -35,29 +35,21 @@ public abstract class Projectile : ScriptableObject
             Vector3 position = self.transform.position;
             foreach (Projectile nextProjectile in next)
             {
-                nextProjectile.Fire(position, nextDirection);
+                ProjectileInstance newProjectile = nextProjectile.Fire(position, nextDirection);
+                newProjectile.ignoreCollision = ignoreCollision;
             }
         }
     }
 
-    /*public static void CreateProjectile(GameObject bulletPrefab, float damage, Vector3 location, Vector3 velocity)
-    {
-        GameObject instance = Instantiate(bulletPrefab, location, Quaternion.identity);
-        Bullet bullet = instance.GetComponent<Bullet>();
-        bullet.damage = damage;
-        Rigidbody rb = instance.GetComponent<Rigidbody>();
-        rb.velocity = velocity;
-    }*/
-
     //Fire with the projectile's own speed
-    public void Fire(Vector3 position, Vector3 direction)
+    public ProjectileInstance Fire(Vector3 position, Vector3 direction)
     {
-        Fire(position, direction, speed);
+        return Fire(position, direction, speed);
     }
 
     //Fire at the given speed - overridden when there isn't an instance
-    public void Fire(Vector3 position, Vector3 direction, float speed)
+    public ProjectileInstance Fire(Vector3 position, Vector3 direction, float speed)
     {
-        ProjectileInstance.CreateProjectile(this, position, speed * direction);
+        return ProjectileInstance.CreateProjectile(this, position, speed * direction);
     }
 }
