@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public abstract class Projectile : ScriptableObject
 {
+    public static GameObject sharedBulletPrefab;
+    public static GameObject sharedBombPrefab;
+    public static  GameObject sharedExplosionPrefab;
     public float damage;
     public float speed; //used when firing from another projectile
     public float lifetime = 5.0f;
-    public GameObject bulletPrefab;
+    public GameObject prefab;
     //public static GameObject bombPrefab = Resources.Load("Assets/");
     public List<Projectile> next = new();
 

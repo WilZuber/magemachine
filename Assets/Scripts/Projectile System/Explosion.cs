@@ -6,6 +6,7 @@ public class Explosion : Projectile
 {
     void Awake()
     {
+        prefab = sharedExplosionPrefab;
         damage = 10.0f;
         lifetime = 0.375f;
     }

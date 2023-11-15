@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public GameObject bombPrefab;
-    public GameObject explosionPrefab;
     public Transform projectileSpawn;
     public Bullet bullet;
     public Beam beam;
@@ -40,11 +37,8 @@ public class Gun : MonoBehaviour
     private void TestProjectile1()
     {
         bullet = Bullet.New();
-        bullet.bulletPrefab = bulletPrefab;
-        
 
         Bullet child = Bullet.New();
-        child.bulletPrefab = bulletPrefab;
         child.damage = 5;
 
         bullet.next.Add(child);
@@ -54,12 +48,9 @@ public class Gun : MonoBehaviour
     {
         blink = LinearBlink.New();
         Bullet bullet2 = Bullet.New();
-        bullet2.bulletPrefab = bulletPrefab;
         Bullet child = Bullet.New();
-        child.bulletPrefab = bulletPrefab;
         child.damage = 5;
         Explosion explosion = Explosion.New();
-        explosion.bulletPrefab = explosionPrefab;
 
         child.next.Add(explosion);
         bullet2.next.Add(child);
@@ -69,7 +60,5 @@ public class Gun : MonoBehaviour
     private void TestProjectile3()
     {
         bomb = Bomb.New();
-        bomb.bulletPrefab = bombPrefab;
-        bomb.next[0].bulletPrefab = explosionPrefab;
     }
 }

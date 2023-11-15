@@ -13,7 +13,7 @@ public class ProjectileInstance : MonoBehaviour
 
     public static void CreateProjectile(Projectile projectileType, Vector3 position, Vector3 velocity, GameObject ignoreCollision)
     {
-        GameObject instance = Instantiate(projectileType.bulletPrefab, position, Quaternion.identity);
+        GameObject instance = Instantiate(projectileType.prefab, position, Quaternion.identity);
         ProjectileInstance newProjectile = instance.GetComponent<ProjectileInstance>();
         newProjectile.projectile = projectileType;
         newProjectile.rb = instance.GetComponent<Rigidbody>();

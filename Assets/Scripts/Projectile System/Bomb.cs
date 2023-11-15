@@ -7,6 +7,7 @@ public class Bomb : Projectile
 {
     void Awake()
     {
+        prefab = sharedBombPrefab;
         speed = 2.0f;
         next.Add(Explosion.New());
     }
