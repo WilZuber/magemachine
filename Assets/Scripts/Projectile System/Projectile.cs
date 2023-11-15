@@ -6,8 +6,9 @@ public abstract class Projectile : ScriptableObject
 {
     public float damage;
     public float speed; //used when firing from another projectile
-    public float lifetime = 30.0f;
+    public float lifetime = 5.0f;
     public GameObject bulletPrefab;
+    //public static GameObject bombPrefab = Resources.Load("Assets/");
     public List<Projectile> next = new();
 
     public bool HasNext()
@@ -15,15 +16,13 @@ public abstract class Projectile : ScriptableObject
         return next.Count != 0;
     }
     
-    public void Hit(GameObject self, GameObject other, Vector3 bounceDirection)
+    public virtual void Hit(GameObject self, GameObject other, Vector3 bounceDirection)
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
-            //print("hit");
             hp.TakeDamage(damage);
         }
 
-        //self.transform.position += 5*Time.deltaTime * bounceDirection;
         Expire(self, bounceDirection, other);
     }
 
@@ -33,23 +32,43 @@ public abstract class Projectile : ScriptableObject
         if (HasNext()) //ignore if there aren't any projectiles to spawn
         {
             Vector3 position = self.transform.position;
-            foreach (Projectile nextProjectile in next)
-            {
-                ProjectileInstance newProjectile = nextProjectile.Fire(position, nextDirection);
-                newProjectile.ignoreCollision = ignoreCollision;
-            }
+            Expire(position, nextDirection, ignoreCollision);
         }
     }
 
-    //Fire with the projectile's own speed
-    public ProjectileInstance Fire(Vector3 position, Vector3 direction)
+    public void Expire(Vector3 position, Vector3 nextDirection, GameObject ignoreCollision)
     {
-        return Fire(position, direction, speed);
+        foreach (Projectile nextProjectile in next)
+        {
+            nextProjectile.Fire(position, nextDirection, ignoreCollision);
+        }
     }
 
-    //Fire at the given speed - overridden when there isn't an instance
-    public ProjectileInstance Fire(Vector3 position, Vector3 direction, float speed)
+    public virtual void UpdateProjectile(ProjectileInstance instance)
     {
-        return ProjectileInstance.CreateProjectile(this, position, speed * direction);
+        //do nothing by default, but can override
+    }
+
+    //Fire with the projectile's own speed
+    public void Fire(Vector3 position, Vector3 direction)
+    {
+        Fire(position, direction, speed, null);
+    }
+
+    //Fire at the given speed
+    public void Fire(Vector3 position, Vector3 direction, float speed)
+    {
+        Fire(position, direction, speed, null);
+    }
+
+    public void Fire(Vector3 position, Vector3 direction, GameObject ignoreCollision)
+    {
+        Fire(position, direction, speed, ignoreCollision);
+    }
+
+    //override when there isn't an instance
+    public virtual void Fire(Vector3 position, Vector3 direction, float speed, GameObject ignoreCollision)
+    {
+        ProjectileInstance.CreateProjectile(this, position, speed * direction, ignoreCollision);
     }
 }

@@ -5,13 +5,13 @@ using UnityEngine;
 public class ProjectileInstance : MonoBehaviour
 {
 
-public Projectile projectile;
-Rigidbody rb;
-public GameObject ignoreCollision; //ignore a wall after bouncing from it
-private Vector3 initialVelocity;
-float lifetime;
+    public Projectile projectile;
+    Rigidbody rb;
+    public GameObject ignoreCollision; //ignore a wall after bouncing from it
+    private Vector3 initialVelocity;
+    float lifetime;
 
-    public static ProjectileInstance CreateProjectile(Projectile projectileType, Vector3 position, Vector3 velocity)
+    public static void CreateProjectile(Projectile projectileType, Vector3 position, Vector3 velocity, GameObject ignoreCollision)
     {
         GameObject instance = Instantiate(projectileType.bulletPrefab, position, Quaternion.identity);
         ProjectileInstance newProjectile = instance.GetComponent<ProjectileInstance>();
@@ -20,7 +20,7 @@ float lifetime;
         newProjectile.rb.velocity = velocity;
         newProjectile.initialVelocity = velocity;
         newProjectile.lifetime = projectileType.lifetime;
-        return newProjectile;
+        newProjectile.ignoreCollision = ignoreCollision;
     }
     void FixedUpdate()
     {
@@ -28,6 +28,10 @@ float lifetime;
         if (lifetime <= 0)
         {
             projectile.Expire(gameObject, rb.velocity, null);
+        }
+        else
+        {
+            projectile.UpdateProjectile(this);
         }
     }
 
@@ -47,6 +51,11 @@ float lifetime;
             Vector3 bounceDirection = Bounce(other);
             projectile.Hit(this.gameObject, other.gameObject, bounceDirection);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        projectile.Hit(this.gameObject, other.gameObject, Vector3.zero);
     }
 
     private Vector3 Bounce(Collision other)
