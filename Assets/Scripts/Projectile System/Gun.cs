@@ -2,63 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public abstract class Gun : MonoBehaviour
 {
     public Transform projectileSpawn;
-    public Bullet bullet;
-    public Beam beam;
-    public LinearBlink blink;
-    public Bomb bomb;
+    private Projectile projectileType;
+    private float projectileSpeed;
     
-    void Start()
+    public void SetProjectileType(Projectile projectileType)
     {
-        TestProjectile1();
-        TestProjectile2();
-        TestProjectile3();
+        this.projectileType = projectileType;
+    }
+    
+    public void SetProjectileType(Projectile projectileType, float speed)
+    {
+        this.projectileType = projectileType;
+        projectileSpeed = speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Fire()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            bullet.Fire(projectileSpawn.position, transform.forward);
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            blink.Fire(projectileSpawn.position, transform.forward);
-        }
-        else if (Input.GetMouseButtonDown(2))
-        {
-            bomb.Fire(projectileSpawn.position, transform.forward);
-        }
+        Fire(projectileType);
     }
 
-    private void TestProjectile1()
+    public void Fire(Projectile projectile)
     {
-        bullet = Bullet.New();
-
-        Bullet child = Bullet.New();
-        child.damage = 5;
-
-        bullet.next.Add(child);
-    }
-
-    private void TestProjectile2()
-    {
-        blink = LinearBlink.New();
-        Bullet bullet2 = Bullet.New();
-        Bullet child = Bullet.New();
-        child.damage = 5;
-        Explosion explosion = Explosion.New();
-
-        child.next.Add(explosion);
-        bullet2.next.Add(child);
-        blink.next.Add(bullet2);
-    }
-
-    private void TestProjectile3()
-    {
-        bomb = Bomb.New();
+        projectile.Fire(projectileSpawn.position, transform.forward);
     }
 }

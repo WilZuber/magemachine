@@ -11,7 +11,6 @@ public abstract class Projectile : ScriptableObject
     public float speed; //used when firing from another projectile
     public float lifetime = 5.0f;
     public GameObject prefab;
-    //public static GameObject bombPrefab = Resources.Load("Assets/");
     public List<Projectile> next = new();
 
     public bool HasNext()
