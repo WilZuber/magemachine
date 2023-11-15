@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Beam : Projectile
 {
-    // Start is called before the first frame update
-    void Start()
+    public new void Fire(Vector3 position, Vector3 direction, float speed)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //nyi
     }
 }
