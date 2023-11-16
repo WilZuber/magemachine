@@ -38,12 +38,6 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         playerEntered = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && !playerEntered)
@@ -75,15 +69,15 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         enemiesRemaining = numberOfEnemies;
         for (int i = 0; i < numberOfEnemies; i++)
         {
-             GameObject instance = Instantiate(enemy, transform.position, Quaternion.identity);
-             instance.GetComponent<HealthManager>().deathListener = this;
+
+            GameObject instance = Instantiate(enemy, transform.position + new Vector3(i, 0, 0), Quaternion.identity);
+            instance.GetComponent<HealthManager>().deathListener = this;
         }
     }
 
     private void GivePrize()
     {
-        mysteryBoxAnimator.SetBool("PrizeGiven", true);
-        // Animate mystery box upward.
+        mysteryBoxAnimator.SetBool("PrizeGiven", true); // animates mysterybox upward
     }
 
     public void DeathTrigger()
