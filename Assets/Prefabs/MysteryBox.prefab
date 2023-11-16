@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 4153138669541690117}
   - component: {fileID: 3199174356987087079}
   - component: {fileID: 1454718003140844652}
+  - component: {fileID: 7042616071766452178}
   m_Layer: 0
   m_Name: MysteryBox
   m_TagString: Untagged
@@ -221,6 +222,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7042616071766452178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405144583259893613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6441980f406a7f540a0307af3b5c8a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 4149930575817239391, guid: c921612681a46574bbd284ab04a442ec, type: 3}
+  soulPotion: {fileID: 636052109238612503, guid: 3b1a98ef4e7eb8743957d4a36c49dd4c, type: 3}
+  techPart: {fileID: 85654708664957080, guid: 64f9a379d0c21c248abac60066df54d8, type: 3}
+  skillPoint: {fileID: 3151148365839529456, guid: d3e9e8693019327489e43ebbadd92b34, type: 3}
 --- !u!1 &3461505023466553169
 GameObject:
   m_ObjectHideFlags: 0
