@@ -676,9 +676,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4596faca6cf694981e59e168996ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6159884440785395745, guid: 2c344168494ad784b92d7d5556cbf72c, type: 3}
-  bombPrefab: {fileID: 6159884440785395745, guid: 48dbb73288e349e4c8c7de5cd3406fbb, type: 3}
-  explosionPrefab: {fileID: 6159884440785395745, guid: cee5ef6df3b0fcf40bbf00fca59c85f0, type: 3}
+  projectiles:
+  - {fileID: 0}
+  prefabs:
+  - {fileID: 6159884440785395745, guid: 2c344168494ad784b92d7d5556cbf72c, type: 3}
+  - {fileID: 6159884440785395745, guid: 48dbb73288e349e4c8c7de5cd3406fbb, type: 3}
+  - {fileID: 6159884440785395745, guid: cee5ef6df3b0fcf40bbf00fca59c85f0, type: 3}
 --- !u!4 &820945493
 Transform:
   m_ObjectHideFlags: 0
