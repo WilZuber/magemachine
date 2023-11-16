@@ -66,11 +66,13 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
 
     private void SpawnEnemies(int numberOfEnemies)
     {
+
+        int enemySpawnX = 2;
         enemiesRemaining = numberOfEnemies;
         for (int i = 0; i < numberOfEnemies; i++)
         {
 
-            GameObject instance = Instantiate(enemy, transform.position + new Vector3(i/2, 0, 0), Quaternion.identity);
+            GameObject instance = Instantiate(enemy, transform.position + new Vector3(enemySpawnX - i, 0, 0), Quaternion.identity);
             instance.GetComponent<HealthManager>().deathListener = this;
         }
     }
