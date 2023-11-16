@@ -65,7 +65,7 @@ public class MysteryBoxScript : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     { 
-        if (other.CompareTag("Player") && Input.GetKey(interactKey)) //player uses interact key in range of mystery box
+        if (other.CompareTag("Player") && Input.GetKey(interactKey) && !isOpen && !isOpened) //player uses interact key in range of mystery box
         {
             isOpen = true;       
         }
