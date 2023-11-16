@@ -14,6 +14,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
     private Animator doorLock2Animator;
     private Animator doorLock3Animator;
     private Animator doorLock4Animator;
+    private Animator mysteryBoxAnimator;
     public GameObject enemy;
 
     private bool playerEntered;
@@ -31,6 +32,8 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         doorLock2Animator = doorLock2.transform.GetChild(0).gameObject.GetComponent<Animator>();
         doorLock3Animator = doorLock3.transform.GetChild(0).gameObject.GetComponent<Animator>();
         doorLock4Animator = doorLock4.transform.GetChild(0).gameObject.GetComponent<Animator>();
+
+        mysteryBoxAnimator = mysteryBox.GetComponent<Animator>();
 
         playerEntered = false;
     }
@@ -79,6 +82,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
 
     private void GivePrize()
     {
+        mysteryBoxAnimator.SetBool("PrizeGiven", true);
         // Animate mystery box upward.
     }
 
