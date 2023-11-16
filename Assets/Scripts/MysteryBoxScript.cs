@@ -55,7 +55,7 @@ public class MysteryBoxScript : MonoBehaviour
                     break;
             }  
 
-            Destroy(GetComponent<Collider>());
+            Destroy(transform.parent.gameObject.GetComponent<Collider>());
                
         }
 
