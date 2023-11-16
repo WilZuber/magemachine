@@ -33,7 +33,7 @@ public class MysteryBoxScript : MonoBehaviour
             mysteryRoll = UnityEngine.Random.Range(0, 3); //roll for rewards
             Vector3 pos = transform.position;
             Quaternion rot = Quaternion.identity;
-            Transform parent = GetComponent<Transform>();
+            Transform parent = GetComponent<Transform>().parent;
             switch (mysteryRoll)
             {
                 case 0: //weapon
