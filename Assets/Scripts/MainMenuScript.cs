@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public GameObject InfoScreen;
+    void Awake() {
+        InfoScreen.SetActive(false);
+    }
     // Update is called once per frame
     void Update() {
         Cursor.lockState = CursorLockMode.None;
@@ -13,8 +17,11 @@ public class MainMenuScript : MonoBehaviour
     }
 
     public void ShowInfoScreen() {
-        // show info screen with keyboard, mouse, and overlayed controls
-        print("Show info screen with controls");
+        InfoScreen.SetActive(true);
+    }
+
+    public void InfoScreenBackButton() {
+        InfoScreen.SetActive(false);
     }
 
     public void StartGame() {
