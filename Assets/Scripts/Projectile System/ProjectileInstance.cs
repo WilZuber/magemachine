@@ -55,7 +55,10 @@ public class ProjectileInstance : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        projectile.Hit(this.gameObject, other.gameObject, Vector3.zero);
+        if (!other.isTrigger)
+        {
+            projectile.Hit(this.gameObject, other.gameObject, Vector3.zero);
+        }
     }
 
     private Vector3 Bounce(Collision other)
