@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +6,11 @@ public abstract class Projectile : ScriptableObject
     public float damage;
     public float speed; //used when firing from another projectile
     public float lifetime = 5.0f;
-    public GameObject prefab;
     public List<Projectile> next = new();
 
     //override and give the prefab to the projectile initializer object if the projectile needs a prefab
-    public virtual void SetPrefab(GameObject prefab)
-    {
-
-    }
+    public virtual void SetPrefab(GameObject prefab) {}
+    public virtual GameObject GetPrefab() => null;
 
     public bool HasNext()
     {

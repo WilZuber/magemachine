@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +13,8 @@ public class ProjectileInitializer : MonoBehaviour
         {
             //get name of prefab, get projectile script with same name, instantiate, and set prefab for subclass
             string projectileName = prefab.name;
-            Projectile projectileInstance = (Projectile)ScriptableObject.CreateInstance(projectileName);
+            ScriptableObject instance = ScriptableObject.CreateInstance(projectileName);
+            Projectile projectileInstance = (Projectile)instance;
             projectileInstance.SetPrefab(prefab);
         }
     }
