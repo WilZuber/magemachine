@@ -9,8 +9,11 @@ public class PauseScript : MonoBehaviour
     bool isPaused = false;
     float pausedTimeScale;
     public GameObject PausePanel;
+
+    public GameObject InfoScreen;
     void Awake() {
         PausePanel.SetActive(false);
+        InfoScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class PauseScript : MonoBehaviour
     public void Unpause() {
             isPaused = false;
             PausePanel.SetActive(false);
+            InfoScreen.SetActive(false);
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -45,7 +49,11 @@ public class PauseScript : MonoBehaviour
     }
 
     public void ShowInfoScreen() {
-        // show info screen with keyboard, mouse, and overlayed controls
+        InfoScreen.SetActive(true);
+    }
+
+    public void InfoScreenBackButton() {
+        InfoScreen.SetActive(false);
     }
 
     public void LoadMainMenu() {
