@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Explosion : Projectile
 {
-    public static GameObject sharedPrefab;
-    public override void SetPrefab(GameObject prefab)
-    {
-        sharedPrefab = prefab;
-    }
+    private static GameObject sharedPrefab;
+    public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;
+    public override GameObject GetPrefab() => sharedPrefab;
 
     void Awake()
     {
-        prefab = sharedPrefab;
         damage = 10.0f;
         lifetime = 0.375f;
     }

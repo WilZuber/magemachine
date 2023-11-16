@@ -5,15 +5,12 @@ using UnityEngine;
 //creates an explosion after a fixed timer
 public class Bomb : Projectile
 {
-    public static GameObject sharedPrefab;
-    public override void SetPrefab(GameObject prefab)
-    {
-        sharedPrefab = prefab;
-    }
+    private static GameObject sharedPrefab;
+    public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;
+    public override GameObject GetPrefab() => sharedPrefab;
 
     void Awake()
     {
-        prefab = sharedPrefab;
         speed = 2.0f;
         next.Add(Explosion.New());
     }
