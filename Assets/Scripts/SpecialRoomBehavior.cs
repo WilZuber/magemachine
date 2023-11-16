@@ -70,7 +70,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         for (int i = 0; i < numberOfEnemies; i++)
         {
 
-            GameObject instance = Instantiate(enemy, transform.position + new Vector3(i, 0, 0), Quaternion.identity);
+            GameObject instance = Instantiate(enemy, transform.position + new Vector3(i/2, 0, 0), Quaternion.identity);
             instance.GetComponent<HealthManager>().deathListener = this;
         }
     }
@@ -82,6 +82,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
 
     public void DeathTrigger()
     {
+        print("enemy killed");
         if (--enemiesRemaining == 0)
         {
             OpenDoors();
