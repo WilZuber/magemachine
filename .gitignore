@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 .vs
 .vsconfig
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json

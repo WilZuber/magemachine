@@ -35,7 +35,6 @@ public class PauseScript : MonoBehaviour
     }
 
     public void Unpause() {
-        if (isPaused) {
             isPaused = false;
             PausePanel.SetActive(false);
 
@@ -43,11 +42,10 @@ public class PauseScript : MonoBehaviour
             Cursor.visible = false;
 
             Time.timeScale = pausedTimeScale;
-        }
     }
 
     public void ShowInfoScreen() {
-        // show info screen
+        // show info screen with keyboard, mouse, and overlayed controls
     }
 
     public void LoadMainMenu() {
