@@ -14,16 +14,22 @@ public class TestGun : Gun
         TestProjectile1();
         TestProjectile2();
         TestProjectile3();
+        reloadDuration = 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (reloadTimer > 0)
+        {
+            reloadTimer -= Time.deltaTime;
+        }
+        //should be able to remove the rest of this and only have the base class update
+        if (Input.GetMouseButton(0))
         {
             Fire(bullet);
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButton(1))
         {
             Fire(blink);
         }

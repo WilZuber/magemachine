@@ -7,7 +7,17 @@ public abstract class Gun : MonoBehaviour
     public Transform projectileSpawn;
     private Projectile projectileType;
     private float projectileSpeed;
+    public float reloadDuration;
+    public float reloadTimer = 0;
     
+    void Update()
+    {
+        if (reloadTimer > 0)
+        {
+            reloadTimer -= Time.deltaTime;
+        }
+    }
+
     public void SetProjectileType(Projectile projectileType)
     {
         this.projectileType = projectileType;
@@ -26,6 +36,10 @@ public abstract class Gun : MonoBehaviour
 
     public void Fire(Projectile projectile)
     {
-        projectile.Fire(projectileSpawn.position, transform.forward);
+        if (reloadTimer <= 0) //able to fire
+        {
+            reloadTimer = reloadDuration;
+            projectile.Fire(projectileSpawn.position, transform.forward);
+        }
     }
 }
