@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //basic projectile
-public class Bullet : Projectile
+public class Bullet : ProjectileType
 {
     private static GameObject sharedPrefab;
     public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;

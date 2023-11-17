@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //teleports a projectile a fixed distance, including through obstacles
-public class FixedBlink : Projectile
+public class FixedBlink : ProjectileType
 {
     float distance = 10.0f;
     public override void Fire(Vector3 position, Vector3 direction, float speed, GameObject ignoreCollision)

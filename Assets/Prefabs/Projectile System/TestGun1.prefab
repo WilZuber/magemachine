@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4409609898291685277}
   - component: {fileID: 1276055993937859183}
   - component: {fileID: 3169249047546146800}
-  - component: {fileID: 2244551277511203812}
+  - component: {fileID: 3761950001090867184}
   m_Layer: 0
   m_Name: TestGun1
   m_TagString: Untagged
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!114 &2244551277511203812
+--- !u!114 &3761950001090867184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,10 +139,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9161986229013132710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffe1bc540dff6b49b7ff298a47c9299, type: 3}
+  m_Script: {fileID: 11500000, guid: 9040b7551b75e4147bc706f40e3dc9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpawn: {fileID: 0}
-  projectileType: {fileID: 0}
-  reloadDuration: 0
-  reloadTimer: 0
+  gunType: {fileID: 0}
+  spawnPoint: {fileID: 2273734123378628760}

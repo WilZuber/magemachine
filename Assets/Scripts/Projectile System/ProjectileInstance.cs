@@ -5,13 +5,13 @@ using UnityEngine;
 public class ProjectileInstance : MonoBehaviour
 {
 
-    public Projectile projectile;
+    public ProjectileType projectile;
     Rigidbody rb;
     public GameObject ignoreCollision; //ignore a wall after bouncing from it
     private Vector3 initialVelocity;
     float lifetime;
 
-    public static void CreateProjectile(Projectile projectileType, Vector3 position, Vector3 velocity, GameObject ignoreCollision)
+    public static void CreateProjectile(ProjectileType projectileType, Vector3 position, Vector3 velocity, GameObject ignoreCollision)
     {
         GameObject instance = Instantiate(projectileType.GetPrefab(), position, Quaternion.identity);
         ProjectileInstance newProjectile = instance.GetComponent<ProjectileInstance>();

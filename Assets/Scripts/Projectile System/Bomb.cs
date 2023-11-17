@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //creates an explosion after a fixed timer
-public class Bomb : Projectile
+public class Bomb : ProjectileType
 {
     private static GameObject sharedPrefab;
     public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;

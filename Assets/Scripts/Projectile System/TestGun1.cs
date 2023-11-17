@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestGun1 : Gun
+public class TestGun1 : GunType
 {
     
-    void Start()
+    void Awake()
     {
         SetProjectileType(TestProjectile1());
+        prefab = prefabs[4];
         reloadDuration = 0.25f;
     }
 
-    private Projectile TestProjectile1()
+    private ProjectileType TestProjectile1()
     {
         Bullet bullet = Bullet.New();
 

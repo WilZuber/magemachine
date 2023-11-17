@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public abstract class Projectile : ScriptableObject
+public abstract class ProjectileType : ScriptableObject
 {
     public float damage;
     public float speed; //used when firing from another projectile
     public float lifetime = 5.0f;
-    public List<Projectile> next = new();
+    public List<ProjectileType> next = new();
 
     //override and give the prefab to the projectile initializer object if the projectile needs a prefab
     public virtual void SetPrefab(GameObject prefab) {}
@@ -39,7 +39,7 @@ public abstract class Projectile : ScriptableObject
 
     public void Expire(Vector3 position, Vector3 nextDirection, GameObject ignoreCollision)
     {
-        foreach (Projectile nextProjectile in next)
+        foreach (ProjectileType nextProjectile in next)
         {
             nextProjectile.Fire(position, nextDirection, ignoreCollision);
         }

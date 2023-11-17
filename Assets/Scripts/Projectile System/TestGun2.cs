@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestGun2 : Gun
+public class TestGun2 : GunType
 {
-    void Start()
+    void Awake()
     {
         SetProjectileType(TestProjectile2());
+        prefab = prefabs[5];
         reloadDuration = 0.5f;
     }
 
-    private Projectile TestProjectile2()
+    private ProjectileType TestProjectile2()
     {
         LinearBlink blink = LinearBlink.New();
         Bullet bullet = Bullet.New();
