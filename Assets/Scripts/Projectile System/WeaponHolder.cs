@@ -5,21 +5,36 @@ using UnityEngine;
 public class WeaponHolder : MonoBehaviour
 {
     public Transform[] gunPositions;
-    private GameObject[] guns;
+    public GameObject[] gunModels;
+    public Gun[] guns;
+    public AimTarget target;
 
-    public void SpawnGun(GameObject gun, int index)
+    void Start()
+    {
+        int length = gunPositions.Length;
+        gunModels = new GameObject[length];
+        guns = new Gun[length];
+    }
+    public void SpawnGun(GameObject gunModel, Gun gunType, int index)
     {
         //clear slot if it is already used
-        if (guns[index] != null)
+        if (gunModels[index] != null)
         {
-            Destroy(guns[index]);
+            Destroy(gunModels[index]);
         }
 
-        guns[index] = Instantiate(gun, gunPositions[index]);
+        gunModels[index] = Instantiate(gunModel, gunPositions[index]);
+        gunModels[index].GetComponent<Aiming>().target = target;
+        //guns[index] = gunType;
+        guns[index] = gunModel.GetComponent<Gun>();
+        //the first child of the gun model should be the projectile spawn point
+        guns[index].projectileSpawn = gunModel.transform.GetChild(0);
     }
 
     public void Fire(int index)
     {
-
+        //print("holder: " + guns[index].projectileType);
+        //guns[index].Fire();
+        gunModels[index].GetComponent<Gun>().Fire();
     }
 }

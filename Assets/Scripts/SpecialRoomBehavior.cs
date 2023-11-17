@@ -84,7 +84,6 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
 
     public void DeathTrigger()
     {
-        print("enemy killed");
         if (--enemiesRemaining == 0)
         {
             OpenDoors();

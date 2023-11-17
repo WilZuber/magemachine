@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     WeaponHolder guns;
     MeleeWeaponController melee;
     //teleport script
+    public GameObject[] startingGuns;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,13 @@ public class PlayerAttack : MonoBehaviour
         guns = GetComponent<WeaponHolder>();
         melee = GetComponent<MeleeWeaponController>();
         //set teleport script
+        
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject model = startingGuns[i];
+            Gun gun = model.GetComponent<Gun>();
+            guns.SpawnGun(model, gun, i);
+        }
     }
 
     // Update is called once per frame

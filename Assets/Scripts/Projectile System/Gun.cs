@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Gun : MonoBehaviour
 {
     public Transform projectileSpawn;
-    private Projectile projectileType;
+    public Projectile projectileType;
     private float projectileSpeed;
     public float reloadDuration;
     public float reloadTimer = 0;
