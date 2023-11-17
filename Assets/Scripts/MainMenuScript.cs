@@ -26,9 +26,11 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartGame() {
         SceneManager.LoadScene("Level1");
+        LevelExit.currentLevel = 2;
     }
 
     public void LoadTutorial() {
         SceneManager.LoadScene("Tutorial");
+        LevelExit.currentLevel = 1;
     }
 }

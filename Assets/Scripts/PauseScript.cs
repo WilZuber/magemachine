@@ -8,12 +8,19 @@ public class PauseScript : MonoBehaviour
 {
     bool isPaused = false;
     float pausedTimeScale;
-    public GameObject PausePanel;
 
-    public GameObject InfoScreen;
+    public static GameObject player;
+
+    public static GameObject PausePanel;
+
+    public static GameObject InfoScreen;
     void Awake() {
-        PausePanel.SetActive(false);
+        InfoScreen = GameObject.Find("PauseScreen/Canvas/PausePanel/InfoScreen");
+        PausePanel = GameObject.Find("PauseScreen/Canvas/PausePanel");
+        player = GameObject.Find("/MainCharacter");
+
         InfoScreen.SetActive(false);
+        PausePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,8 +46,8 @@ public class PauseScript : MonoBehaviour
 
     public void Unpause() {
             isPaused = false;
-            PausePanel.SetActive(false);
             InfoScreen.SetActive(false);
+            PausePanel.SetActive(false);
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
