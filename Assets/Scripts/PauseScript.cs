@@ -8,10 +8,17 @@ public class PauseScript : MonoBehaviour
 {
     bool isPaused = false;
     float pausedTimeScale;
-    public GameObject PausePanel;
 
-    public GameObject InfoScreen;
+    public static GameObject player;
+
+    public static GameObject PausePanel;
+
+    public static GameObject InfoScreen;
     void Awake() {
+        InfoScreen = GameObject.Find("PauseScreen/Canvas/PausePanel/InfoScreen");
+        PausePanel = GameObject.Find("PauseScreen/Canvas/PausePanel");
+        player = GameObject.Find("/MainCharacter");
+
         InfoScreen.SetActive(false);
         PausePanel.SetActive(false);
     }
