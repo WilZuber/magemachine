@@ -33,7 +33,7 @@ public class MysteryBoxScript : MonoBehaviour
             mysteryRoll = UnityEngine.Random.Range(0, 3); //roll for rewards
             Vector3 pos = transform.position;
             Quaternion rot = Quaternion.identity;
-            Transform parent = GetComponent<Transform>();
+            Transform parent = GetComponent<Transform>().parent;
             switch (mysteryRoll)
             {
                 case 0: //weapon
@@ -54,6 +54,8 @@ public class MysteryBoxScript : MonoBehaviour
                     Instantiate(skillPoint, pos, rot, parent);
                     break;
             }  
+
+            Destroy(transform.parent.gameObject.GetComponent<Collider>());
                
         }
 
@@ -65,7 +67,7 @@ public class MysteryBoxScript : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     { 
-        if (other.CompareTag("Player") && Input.GetKey(interactKey)) //player uses interact key in range of mystery box
+        if (other.CompareTag("Player") && Input.GetKey(interactKey) && !isOpen) //player uses interact key in range of mystery box
         {
             isOpen = true;       
         }

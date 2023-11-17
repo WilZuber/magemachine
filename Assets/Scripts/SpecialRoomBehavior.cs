@@ -14,6 +14,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
     private Animator doorLock2Animator;
     private Animator doorLock3Animator;
     private Animator doorLock4Animator;
+    private Animator mysteryBoxAnimator;
     public GameObject enemy;
 
     private bool playerEntered;
@@ -32,13 +33,9 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         doorLock3Animator = doorLock3.transform.GetChild(0).gameObject.GetComponent<Animator>();
         doorLock4Animator = doorLock4.transform.GetChild(0).gameObject.GetComponent<Animator>();
 
-        playerEntered = false;
-    }
+        mysteryBoxAnimator = mysteryBox.GetComponent<Animator>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerEntered = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -69,21 +66,25 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
 
     private void SpawnEnemies(int numberOfEnemies)
     {
+
+        int enemySpawnX = 2;
         enemiesRemaining = numberOfEnemies;
         for (int i = 0; i < numberOfEnemies; i++)
         {
-             GameObject instance = Instantiate(enemy, transform.position, Quaternion.identity);
-             instance.GetComponent<HealthManager>().deathListener = this;
+
+            GameObject instance = Instantiate(enemy, transform.position + new Vector3(enemySpawnX - i, 0, 0), Quaternion.identity);
+            instance.GetComponent<HealthManager>().deathListener = this;
         }
     }
 
     private void GivePrize()
     {
-        // Animate mystery box upward.
+        mysteryBoxAnimator.SetBool("PrizeGiven", true); // animates mysterybox upward
     }
 
     public void DeathTrigger()
     {
+        print("enemy killed");
         if (--enemiesRemaining == 0)
         {
             OpenDoors();
