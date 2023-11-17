@@ -8,7 +8,7 @@ public class MysteryBoxScript : MonoBehaviour
 {
     private KeyCode interactKey = KeyCode.R;
     private Animator mysteryBoxAnim;
-    private bool isOpen = false;
+    private bool isInteracted = false;
     private bool isOpened = false;
     private int mysteryRoll;
 
@@ -25,7 +25,7 @@ public class MysteryBoxScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isOpen && !isOpened)
+        if (isInteracted && !isOpened)
         {
             isOpened = true; //prevents looping
             
@@ -37,7 +37,7 @@ public class MysteryBoxScript : MonoBehaviour
             switch (mysteryRoll)
             {
                 case 0: //weapon
-                    Instantiate(weapon, pos, rot, parent);
+                    Instantiate(weapon, pos + new Vector3(0, 1, 0), rot, parent);
                     break;
 
                 case 1: //soul refill potion
@@ -54,22 +54,22 @@ public class MysteryBoxScript : MonoBehaviour
                     Instantiate(skillPoint, pos, rot, parent);
                     break;
             }  
-
-            Destroy(transform.parent.gameObject.GetComponent<Collider>());
                
         }
 
     
-        if (mysteryBoxAnim.GetCurrentAnimatorStateInfo(0).IsName("MysteryBoxOpened"))
+        if (mysteryBoxAnim.GetCurrentAnimatorStateInfo(0).IsName("MysteryBoxOpened")) {
             transform.Find("Bottom").gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
 
     }
 
     void OnTriggerStay(Collider other)
     { 
-        if (other.CompareTag("Player") && Input.GetKey(interactKey) && !isOpen) //player uses interact key in range of mystery box
+        if (other.CompareTag("Player") && Input.GetKey(interactKey) && !isInteracted) //player uses interact key in range of mystery box
         {
-            isOpen = true;       
+            isInteracted = true;       
         }
     }
 }
