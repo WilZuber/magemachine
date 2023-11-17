@@ -12,8 +12,8 @@ public class PauseScript : MonoBehaviour
 
     public GameObject InfoScreen;
     void Awake() {
-        PausePanel.SetActive(false);
         InfoScreen.SetActive(false);
+        PausePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,8 +39,8 @@ public class PauseScript : MonoBehaviour
 
     public void Unpause() {
             isPaused = false;
-            PausePanel.SetActive(false);
             InfoScreen.SetActive(false);
+            PausePanel.SetActive(false);
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

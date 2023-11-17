@@ -9,7 +9,7 @@ public class LevelExit: MonoBehaviour
     public static string[] levelList = {"MainMenu", "Tutorial", "Level1", "Level2"};
 
     // This assumes the script is being used on the Tutorial level first.
-    public static int currentLevel = 1;
+    public static int currentLevel;
     //public GameObject endLevelText;
 
     //void Start() {
