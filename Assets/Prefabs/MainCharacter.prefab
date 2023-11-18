@@ -1457,6 +1457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54249ae6f7118f146a4a5f751bf43ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3797387615971151879}
   weapon: {fileID: 1337627919597355709}
 --- !u!1 &7616213564599355113
 GameObject:
