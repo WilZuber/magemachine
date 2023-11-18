@@ -14,7 +14,7 @@ public class Explosion : ProjectileType
         lifetime = 0.375f;
     }
 
-    public override void Hit(GameObject self, GameObject other, Vector3 bounceDirection)
+    public override void Hit(ProjectileInstance self, GameObject other, Vector3 bounceDirection)
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {

@@ -10,6 +10,7 @@ public class ProjectileInstance : MonoBehaviour
     public GameObject ignoreCollision; //ignore a wall after bouncing from it
     private Vector3 initialVelocity;
     float lifetime;
+    public bool expired;
 
     public static void CreateProjectile(ProjectileType projectileType, Vector3 position, Vector3 velocity, GameObject ignoreCollision)
     {
@@ -21,13 +22,14 @@ public class ProjectileInstance : MonoBehaviour
         newProjectile.initialVelocity = velocity;
         newProjectile.lifetime = projectileType.lifetime;
         newProjectile.ignoreCollision = ignoreCollision;
+        newProjectile.expired = false;
     }
     void FixedUpdate()
     {
         lifetime -= Time.fixedDeltaTime;
         if (lifetime <= 0)
         {
-            projectile.Expire(gameObject, rb.velocity, null);
+            projectile.Expire(this, rb.velocity, null);
         }
         else
         {
@@ -46,18 +48,18 @@ public class ProjectileInstance : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject != ignoreCollision)
+        if (other.gameObject != ignoreCollision && !expired)
         {
             Vector3 bounceDirection = Bounce(other);
-            projectile.Hit(this.gameObject, other.gameObject, bounceDirection);
+            projectile.Hit(this, other.gameObject, bounceDirection);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.isTrigger)
+        if (!other.isTrigger && !expired)
         {
-            projectile.Hit(this.gameObject, other.gameObject, Vector3.zero);
+            projectile.Hit(this, other.gameObject, Vector3.zero);
         }
     }
 

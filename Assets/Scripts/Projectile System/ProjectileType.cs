@@ -17,7 +17,7 @@ public abstract class ProjectileType : ScriptableObject
         return next.Count != 0;
     }
     
-    public virtual void Hit(GameObject self, GameObject other, Vector3 bounceDirection)
+    public virtual void Hit(ProjectileInstance self, GameObject other, Vector3 bounceDirection)
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
@@ -27,9 +27,10 @@ public abstract class ProjectileType : ScriptableObject
         Expire(self, bounceDirection, other);
     }
 
-    public void Expire(GameObject self, Vector3 nextDirection, GameObject ignoreCollision)
+    public void Expire(ProjectileInstance self, Vector3 nextDirection, GameObject ignoreCollision)
     {
-        Destroy(self);
+        self.expired = true;
+        Destroy(self.gameObject);
         if (HasNext()) //ignore if there aren't any projectiles to spawn
         {
             Vector3 position = self.transform.position;

@@ -15,7 +15,7 @@ public class Bomb : ProjectileType
         next.Add(Explosion.New());
     }
 
-    public override void Hit(GameObject self, GameObject other, Vector3 bounceDirection)
+    public override void Hit(ProjectileInstance self, GameObject other, Vector3 bounceDirection)
     {
         //do nothing
     }
