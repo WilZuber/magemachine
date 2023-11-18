@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MeleeWeaponController : MonoBehaviour
 {
-    private Animator anim;
+    public Animator anim;
     public GameObject weapon;
     private bool canAttack;
 
     // Start is called before the first frame update
     void Start()
     {
-        //set anim
+        anim = GetComponent<Animator>();
         canAttack = true;
     }
 
@@ -21,7 +21,7 @@ public class MeleeWeaponController : MonoBehaviour
         if (canAttack)
         {
             canAttack = false;
-            //start animation
+            anim.SetBool("MeleeAtk", true); //this parm must be consistentently n
             Invoke(nameof(Activate), 0.25f);
         }
     }
@@ -31,6 +31,7 @@ public class MeleeWeaponController : MonoBehaviour
     {
         weapon.SetActive(true);
         Invoke(nameof(Deactivate), 0.5f);
+        anim.SetBool("MeleeAtk", false);
     }
 
     //Deactivate weapon at end of swing
