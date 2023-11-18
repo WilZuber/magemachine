@@ -9,7 +9,8 @@ public class Aiming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quaternion look = Quaternion.LookRotation(FindDirection(), Vector3.up);
+        Vector3 up = transform.parent.up;
+        Quaternion look = Quaternion.LookRotation(FindDirection(), up);
         transform.rotation = look;
     }
 

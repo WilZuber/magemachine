@@ -7,7 +7,6 @@ public class PlayerAttack : MonoBehaviour
     WeaponHolder guns;
     MeleeWeaponController melee;
     //teleport script
-    public GameObject[] startingGuns;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
         {
             guns.Fire(1);
         }
-        else if (Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKey(KeyCode.F))
         {
             melee.Attack();
         }

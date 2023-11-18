@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeWeaponController : MonoBehaviour
 {
-    public Animator anim;
+    private Animator anim;
     public GameObject weapon;
     private bool canAttack;
 
