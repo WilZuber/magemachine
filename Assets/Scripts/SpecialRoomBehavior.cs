@@ -16,6 +16,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
     private Animator doorLock4Animator;
     private Animator mysteryBoxAnimator;
     public GameObject enemy;
+    public int quantity;
 
     private bool playerEntered;
 
@@ -44,7 +45,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         {
             playerEntered = true;
             LockDoors();
-            SpawnEnemies(5); // five for now
+            SpawnEnemies(quantity);
         }
     }
 

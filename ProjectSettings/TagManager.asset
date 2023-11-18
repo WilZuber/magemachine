@@ -5,17 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
- MainMenu
+  - Weapon
   - PauseMenu
- main
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Navigation
   - Water
   - UI
-  - Projectiles
+  - 
   - 
   - 
   - 

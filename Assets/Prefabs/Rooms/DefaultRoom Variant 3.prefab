@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8498421411847709766}
   - component: {fileID: 7688145436606062496}
   - component: {fileID: 8421198435808207381}
-  m_Layer: 0
+  - component: {fileID: 1866803701550022607}
+  m_Layer: 3
   m_Name: WallT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +106,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &1866803701550022607
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158147083245766400}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2178556224624932601
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +134,8 @@ GameObject:
   - component: {fileID: 1154765041785846696}
   - component: {fileID: 1005054307765961833}
   - component: {fileID: 5051454908799344233}
-  m_Layer: 0
+  - component: {fileID: 5090002449058329291}
+  m_Layer: 3
   m_Name: WallL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,6 +228,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &5090002449058329291
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178556224624932601}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6185072210636911160
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +256,8 @@ GameObject:
   - component: {fileID: 7054950253664829207}
   - component: {fileID: 6830849154880141963}
   - component: {fileID: 5665272700091473794}
-  m_Layer: 0
+  - component: {fileID: 808231015474115030}
+  m_Layer: 3
   m_Name: WallR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,6 +350,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &808231015474115030
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185072210636911160}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7950535807111538240
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772102366296155380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,6 +411,14 @@ PrefabInstance:
     - target: {fileID: 3169624852697902, guid: f3388cf5afff3664281920c06f244a68, type: 3}
       propertyPath: m_Name
       value: DefaultRoom Variant 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 408039965530662582, guid: f3388cf5afff3664281920c06f244a68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178548679222947736, guid: f3388cf5afff3664281920c06f244a68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6164182091527092182, guid: f3388cf5afff3664281920c06f244a68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -400,6 +459,14 @@ PrefabInstance:
     - target: {fileID: 6164182091527092182, guid: f3388cf5afff3664281920c06f244a68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846081250295313630, guid: f3388cf5afff3664281920c06f244a68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070981675243049750, guid: f3388cf5afff3664281920c06f244a68, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

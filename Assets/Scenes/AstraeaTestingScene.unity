@@ -1027,6 +1027,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 931486428122890631, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 3047207106112131221, guid: d08443739733e4c4ea155fa4a6002dd7, type: 3}
+    - target: {fileID: 931486428122890631, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
+      propertyPath: quantity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1530991703142852349, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
       propertyPath: m_Name
       value: DefaultSpecialRoom2door2 Variant (1)
@@ -1198,6 +1206,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 931486428122890631, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 3047207106112131221, guid: d08443739733e4c4ea155fa4a6002dd7, type: 3}
+    - target: {fileID: 931486428122890631, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
+      propertyPath: quantity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1530991703142852349, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
       propertyPath: m_Name
       value: DefaultSpecialRoom2door2 Variant
