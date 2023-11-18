@@ -26,7 +26,7 @@ public abstract class GunType : ScriptableObject
         GameObject instance = Instantiate(prefab, parent);
         instance.GetComponent<Aiming>().target = target;
         GunInstance gun = instance.GetComponent<GunInstance>();
-        gun.gunType = this;
+        gun.Initialize(this, target);
         return (instance, gun);
     }
 }

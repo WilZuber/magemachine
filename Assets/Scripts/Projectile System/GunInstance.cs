@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunInstance : MonoBehaviour
+public class GunInstance : Aiming
 {
-    public GunType gunType;
     public Transform spawnPoint;
+    GunType gunType;
     float reloadTimer = 0;
     
+    public void Initialize(GunType gunType, AimTarget target)
+    {
+        this.gunType = gunType;
+        this.target = target;
+    }
     void Update()
     {
         if (reloadTimer > 0)

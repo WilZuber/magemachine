@@ -7,7 +7,7 @@ public class TestGun2 : GunType
     void Awake()
     {
         SetProjectileType(TestProjectile2());
-        prefab = prefabs[5];
+        prefab = prefabs[1];
         reloadDuration = 0.5f;
     }
 

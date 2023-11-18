@@ -12,7 +12,7 @@ public class Bullet : ProjectileType
     void Awake()
     {
         damage = 2.0f;
-        speed = 5.0f;
+        speed = 10.0f;
     }
 
     public static Bullet New()
