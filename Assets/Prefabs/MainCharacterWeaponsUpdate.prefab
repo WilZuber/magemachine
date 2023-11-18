@@ -747,6 +747,7 @@ MonoBehaviour:
   - {fileID: 8624488249694137598}
   - {fileID: 3696146093727934593}
   gunModels: []
+  spawnPoints: []
   guns: []
   target: {fileID: 3284899349768695009}
 --- !u!114 &8974206314880953760
@@ -1216,7 +1217,6 @@ GameObject:
   - component: {fileID: 1646637515217414409}
   - component: {fileID: 8568960276570686896}
   - component: {fileID: 7327782162726480723}
-  - component: {fileID: 3385335265663262806}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1290,26 +1290,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3385335265663262806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6662045978225252242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dbf9542d312b744baa9f0d6de79f94b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpawn: {fileID: 8550435326727800243}
-  projectileType: {fileID: 0}
-  reloadDuration: 0
-  reloadTimer: 0
-  bullet: {fileID: 0}
-  beam: {fileID: 0}
-  blink: {fileID: 0}
-  bomb: {fileID: 0}
 --- !u!1 &6902737918975487394
 GameObject:
   m_ObjectHideFlags: 0

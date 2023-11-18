@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestGun : Gun
+public class TestGun : GunType
 {
     public Bullet bullet;
     public Beam beam;
@@ -18,7 +18,7 @@ public class TestGun : Gun
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (reloadTimer > 0)
         {
@@ -37,7 +37,7 @@ public class TestGun : Gun
         {
             Fire(bomb);
         }
-    }
+    }*/
 
     private void TestProjectile1()
     {

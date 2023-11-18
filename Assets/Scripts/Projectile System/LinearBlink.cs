@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //teleports a projectile into the first obstacle
-public class LinearBlink : Projectile
+public class LinearBlink : ProjectileType
 {
     public override void Fire(Vector3 position, Vector3 direction, float speed, GameObject ignoreCollision)
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosion : Projectile
+public class Explosion : ProjectileType
 {
     private static GameObject sharedPrefab;
     public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;
@@ -14,7 +14,7 @@ public class Explosion : Projectile
         lifetime = 0.375f;
     }
 
-    public override void Hit(GameObject self, GameObject other, Vector3 bounceDirection)
+    public override void Hit(ProjectileInstance self, GameObject other, Vector3 bounceDirection)
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {

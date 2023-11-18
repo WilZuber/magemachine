@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public abstract class Projectile : ScriptableObject
+public abstract class ProjectileType : ScriptableObject
 {
     public float damage;
     public float speed; //used when firing from another projectile
     public float lifetime = 5.0f;
-    public List<Projectile> next = new();
+    public List<ProjectileType> next = new();
 
     //override and give the prefab to the projectile initializer object if the projectile needs a prefab
     public virtual void SetPrefab(GameObject prefab) {}
@@ -17,7 +17,7 @@ public abstract class Projectile : ScriptableObject
         return next.Count != 0;
     }
     
-    public virtual void Hit(GameObject self, GameObject other, Vector3 bounceDirection)
+    public virtual void Hit(ProjectileInstance self, GameObject other, Vector3 bounceDirection)
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
@@ -27,9 +27,10 @@ public abstract class Projectile : ScriptableObject
         Expire(self, bounceDirection, other);
     }
 
-    public void Expire(GameObject self, Vector3 nextDirection, GameObject ignoreCollision)
+    public void Expire(ProjectileInstance self, Vector3 nextDirection, GameObject ignoreCollision)
     {
-        Destroy(self);
+        self.expired = true;
+        Destroy(self.gameObject);
         if (HasNext()) //ignore if there aren't any projectiles to spawn
         {
             Vector3 position = self.transform.position;
@@ -39,7 +40,7 @@ public abstract class Projectile : ScriptableObject
 
     public void Expire(Vector3 position, Vector3 nextDirection, GameObject ignoreCollision)
     {
-        foreach (Projectile nextProjectile in next)
+        foreach (ProjectileType nextProjectile in next)
         {
             nextProjectile.Fire(position, nextDirection, ignoreCollision);
         }
