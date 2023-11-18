@@ -825,6 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7966077126704684979, guid: 01be6247ea787da4497068651fcea4d6, type: 3}
+  quantity: 2
 --- !u!4 &7678044389176743522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8115877475011244587, guid: 61e5c2872fc762c4bbeb33ca21aa246f, type: 3}

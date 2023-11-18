@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 6239283616416771390}
   - component: {fileID: 3089751380850432738}
   - component: {fileID: 6824083452008485643}
-  m_Layer: 0
+  - component: {fileID: 4601804222486153762}
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7756055946043198287
 Transform:
@@ -105,6 +106,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &4601804222486153762
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678729328460030650}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2387681634558334898
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,12 +134,12 @@ GameObject:
   - component: {fileID: 1351777083082870965}
   - component: {fileID: 6054205037212928475}
   - component: {fileID: 2406810576488773462}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6132397088038340081
 Transform:
@@ -219,12 +236,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774109770138782435}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &774109770138782435
 Transform:
@@ -251,12 +268,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8502266612811899473}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8502266612811899473
 Transform:
@@ -283,12 +300,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973101771874832339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &973101771874832339
 Transform:
@@ -318,12 +335,12 @@ GameObject:
   - component: {fileID: 5142893966702441374}
   - component: {fileID: 1980258185787634845}
   - component: {fileID: 4744920551647646524}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2978602373537510653
 Transform:
@@ -420,12 +437,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5537779322158399293}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5537779322158399293
 Transform:
@@ -455,12 +472,13 @@ GameObject:
   - component: {fileID: 2880528570644314032}
   - component: {fileID: 596901448069946209}
   - component: {fileID: 3474556962199341349}
-  m_Layer: 0
+  - component: {fileID: 745987815756887596}
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &284887925752704610
 Transform:
@@ -548,6 +566,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &745987815756887596
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697013510082136142}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5174230053004179911
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,12 +591,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6276036810150532738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6276036810150532738
 Transform:
@@ -592,12 +626,13 @@ GameObject:
   - component: {fileID: 6963783430271198744}
   - component: {fileID: 236743791784992637}
   - component: {fileID: 3375680572636119165}
-  m_Layer: 0
+  - component: {fileID: 5486090985847769400}
+  m_Layer: 3
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8585062751626675102
 Transform:
@@ -686,6 +721,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &5486090985847769400
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493585755905637506}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5568476603303269359
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,12 +749,13 @@ GameObject:
   - component: {fileID: 2101751216643898297}
   - component: {fileID: 934830028800987707}
   - component: {fileID: 1923394972319282517}
-  m_Layer: 0
+  - component: {fileID: 6207628804260230264}
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3694550283033425348
 Transform:
@@ -791,6 +843,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &6207628804260230264
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568476603303269359}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6191838904848625458
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,12 +868,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3084011194623516588}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3084011194623516588
 Transform:
@@ -833,12 +901,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5932259243843653414}
   - component: {fileID: 5325577050694551521}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ceiling Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5932259243843653414
 Transform:
@@ -926,12 +994,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8885664755010118510}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8885664755010118510
 Transform:
@@ -961,12 +1029,13 @@ GameObject:
   - component: {fileID: 7469950116822453242}
   - component: {fileID: 8689317216008738452}
   - component: {fileID: 7186203992903981347}
-  m_Layer: 0
+  - component: {fileID: 3633501671239307553}
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6110820568104242077
 Transform:
@@ -1054,6 +1123,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &3633501671239307553
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6841851754505414276}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6973469062137965853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,12 +1151,12 @@ GameObject:
   - component: {fileID: 2430798216552279862}
   - component: {fileID: 8146942965837831811}
   - component: {fileID: 8220303213244746387}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9163287892318040662
 Transform:
@@ -1168,12 +1253,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7373723735708214318}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7373723735708214318
 Transform:
@@ -1203,12 +1288,12 @@ GameObject:
   - component: {fileID: 2347024788536855869}
   - component: {fileID: 5678607498037585864}
   - component: {fileID: 7003719290931573736}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2492881194754487379
 Transform:
@@ -1309,12 +1394,12 @@ GameObject:
   - component: {fileID: 5219471001267577508}
   - component: {fileID: 1085199523257090903}
   - component: {fileID: 137460352285552358}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &708228635505507991
 Transform:
@@ -1420,10 +1505,10 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   m_UseGeometry: 0
   m_DefaultArea: 0
-  m_GenerateLinks: 0
+  m_GenerateLinks: 1
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
   m_OverrideTileSize: 0
@@ -1447,7 +1532,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3435157186970142659
 Transform:
