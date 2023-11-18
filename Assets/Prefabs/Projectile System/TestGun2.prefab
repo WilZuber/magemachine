@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4409609898291685277}
   - component: {fileID: 1276055993937859183}
   - component: {fileID: 2078211796086474122}
+  - component: {fileID: -7632413475984076514}
   m_Layer: 0
   m_Name: TestGun2
   m_TagString: Untagged
@@ -130,3 +131,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   spawnPoint: {fileID: 2273734123378628760}
+--- !u!114 &-7632413475984076514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9161986229013132710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084790e52c3e3ce4fb4caf9328dac7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}

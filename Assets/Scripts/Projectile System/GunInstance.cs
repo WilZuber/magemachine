@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunInstance : Aiming
+public class GunInstance : MonoBehaviour
 {
     public Transform spawnPoint;
     GunType gunType;
@@ -11,7 +11,7 @@ public class GunInstance : Aiming
     public void Initialize(GunType gunType, AimTarget target)
     {
         this.gunType = gunType;
-        this.target = target;
+        GetComponent<Aiming>().target = target;
     }
     void Update()
     {

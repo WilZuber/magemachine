@@ -49,8 +49,8 @@ MonoBehaviour:
   - {fileID: 6159884440785395745, guid: 48dbb73288e349e4c8c7de5cd3406fbb, type: 3}
   - {fileID: 6159884440785395745, guid: cee5ef6df3b0fcf40bbf00fca59c85f0, type: 3}
   gunPrefabs:
-  - {fileID: 564496983590683820, guid: 36d634ffe0f5b6543a8cc6b3ef951d66, type: 3}
-  - {fileID: 595044518591954270, guid: 2bf403bf897a00144b19511be0fdada0, type: 3}
-  - {fileID: 4402049967482792293, guid: d7a94e60095ea0848abdd59bbcc051ad, type: 3}
-  - {fileID: 2464155200938568113, guid: c34f60d4efeac4341a1a8243cf6938dc, type: 3}
+  - {fileID: 6417374485855813208, guid: 8e7828dbc44f7154cb3265c46d95daca, type: 3}
+  - {fileID: 8307107818500922939, guid: e954ad4751d073a4b97d3a4b0b1cad12, type: 3}
+  - {fileID: 6396735625098323917, guid: 15c5f2a39efea9140b71f0690109ef00, type: 3}
+  - {fileID: 3030570479364708680, guid: fbd706ccfc190364ba516e825d87e235, type: 3}
   - {fileID: 9161986229013132710, guid: b40df13bdc13fc140ac67dcaa2119004, type: 3}
