@@ -17,6 +17,7 @@ public class WeaponHolder : MonoBehaviour
     }
     public void SpawnGun(GunType gunType, int index)
     {
+        print("catch");
         //clear slot if it is already used
         if (gunModels[index] != null)
         {

@@ -60,6 +60,7 @@ public class HealthManager : MonoBehaviour
             Destroy(ai);
             if (TryGetComponent(out MeleeWeaponController melee))
             {
+                Destroy(melee.weapon.GetComponent<Collider>());
                 Destroy(melee);
             }
             else

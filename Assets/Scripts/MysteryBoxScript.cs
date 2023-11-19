@@ -45,9 +45,12 @@ public class MysteryBoxScript : MonoBehaviour
                     break;
 
                 case 2: //3 tech weapon parts
-                    Instantiate(techPart, pos, rot, parent);
-                    Instantiate(techPart, pos, rot, parent);
-                    Instantiate(techPart, pos, rot, parent);
+                    float k = MathF.PI*2/3;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Vector3 newPos = pos + MathF.Cos(i*k)*Vector3.right + MathF.Sin(i*k)*Vector3.forward;
+                        Instantiate(techPart, newPos, rot, parent);
+                    }
                     break;
 
                 case 3: //skill point

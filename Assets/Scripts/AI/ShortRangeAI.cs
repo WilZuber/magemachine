@@ -7,12 +7,13 @@ public class ShortRangeAI : AI
     public static GunType gunType;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         float minDistance = 0;
         float startDistance = 15.0f;
         float MaxDistance = 20.0f;
         WeaponHolder guns = GetComponent<WeaponHolder>();
+        print("try");
         guns.SpawnGun(gunType, 0);
         wait = new AIWaitBehavior();
         chase = new AIChaseBehavior(startDistance);

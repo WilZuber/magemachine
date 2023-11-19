@@ -10,7 +10,12 @@ public class Aiming : MonoBehaviour
     void Update()
     {
         Vector3 up = transform.parent.up;
-        Quaternion look = Quaternion.LookRotation(FindDirection(), up);
+        Vector3 forward = FindDirection();
+        if (Vector3.Dot(forward, up) == 1)
+        {
+            up = transform.parent.right;
+        }
+        Quaternion look = Quaternion.LookRotation(forward, up);
         transform.rotation = look;
     }
 
