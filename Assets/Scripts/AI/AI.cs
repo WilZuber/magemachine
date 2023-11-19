@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.AI;
 
 public abstract class AI : MonoBehaviour
 {
+    public float distancetmp;
+
     public NavMeshAgent agent;
     public Animator anim;
     public GameObject player;
@@ -27,13 +30,20 @@ public abstract class AI : MonoBehaviour
     void FixedUpdate()
     {
         state.Act(this);
+        distancetmp = MathF.Sqrt(SquareDistanceToPlayer());
+    }
+
+    private (Vector3, Vector3) DirectionToPlayer()
+    {
+        Vector3 origin = transform.position + transform.up;
+        Vector3 direction = player.transform.position - origin;
+        return (origin, direction);
     }
 
     // Whether the AI has a direct line of sight to the player
     public bool CanSeePlayer()
     {
-        Vector3 origin = transform.position + transform.up;
-        Vector3 direction = player.transform.position - origin;
+        (Vector3 origin, Vector3 direction) = DirectionToPlayer();
         Ray ray = new(origin, direction);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
@@ -71,5 +81,12 @@ public abstract class AI : MonoBehaviour
         {
             GoHome();
         }
+    }
+
+    public void RotateToPlayer()
+    {
+        (_, Vector3 direction) = DirectionToPlayer();
+        Quaternion look = Quaternion.LookRotation(direction, transform.up);
+        transform.rotation = look;
     }
 }

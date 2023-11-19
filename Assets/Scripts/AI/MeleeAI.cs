@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeleeAI : AI
 {
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         MeleeWeaponController melee = GetComponent<MeleeWeaponController>();
         wait = new AIWaitBehavior();

@@ -7,7 +7,7 @@ public class LongRangeAI : AI
     public static GunType gunType;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         float minDistance = 20.0f;
         float startDistance = 100.0f;

@@ -9,14 +9,13 @@ public class Aiming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 up = transform.parent.up;
         Vector3 forward = FindDirection();
-        if (Vector3.Dot(forward, up) == 1)
+        if (!forward.Equals(Vector3.zero))
         {
-            up = transform.parent.right;
+            Vector3 up = transform.parent.up;
+            Quaternion look = Quaternion.LookRotation(forward, up);
+            transform.rotation = look;
         }
-        Quaternion look = Quaternion.LookRotation(forward, up);
-        transform.rotation = look;
     }
 
     private Vector3 FindDirection()

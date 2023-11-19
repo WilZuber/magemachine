@@ -24,11 +24,11 @@ public class AIWaitBehavior : IAIBehavior
 
 public class AIChaseBehavior : IAIBehavior
 {
-    float startAttackDistance;
+    float startAttackDistanceSq;
 
     public AIChaseBehavior(float startAttackDistance)
     {
-        this.startAttackDistance = startAttackDistance;
+        startAttackDistanceSq = startAttackDistance*startAttackDistance;
     }
 
     public void Act(AI ai)
@@ -36,13 +36,12 @@ public class AIChaseBehavior : IAIBehavior
         if (ai.CanSeePlayer())
         {
             ai.Chase();
-            if (ai.agent.remainingDistance < startAttackDistance)
+            if (ai.SquareDistanceToPlayer() < startAttackDistanceSq)
             {
                 ai.state = ai.attack;
             }
         }
-        //todo: maintain last destination
-        else
+        else if (ai.agent.remainingDistance < 0.5f)
         {
             ai.state = ai.wait;
         }
@@ -81,7 +80,9 @@ public class AIShootingBehavior : IAIAttackBehavior
             {
                 if (sqDistance < maxAttackDistanceSq)
                 {
-                    ai.agent.speed = 1;
+                    ai.agent.speed = 0;
+                    ai.anim.SetFloat("VVelocity", 0);
+                    ai.RotateToPlayer();
                     guns.Fire(0);
                 }
                 else
@@ -114,8 +115,8 @@ public class AIMeleeBehavior : IAIAttackBehavior
 
     public void Act(AI ai)
     {
-        melee.Attack();
         ai.Chase();
+        melee.Attack();
         if (ai.agent.remainingDistance > maxAttackDistance)
         {
             ai.state = ai.chase;
