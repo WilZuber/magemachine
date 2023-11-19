@@ -22,7 +22,7 @@ public class DIYCinmachine : MonoBehaviour
         ray = new Ray(pivot.position, direction);
         Debug.DrawRay(ray.origin, ray.direction*distance, Color.red);
 
-        if (Physics.Raycast(ray, out hit) && (hit.distance < distance))
+        if (Physics.Raycast(ray, out hit, distance, LayerMask.GetMask("Room")) && (hit.distance < distance))
         {
             transform.position = hit.point;
         }

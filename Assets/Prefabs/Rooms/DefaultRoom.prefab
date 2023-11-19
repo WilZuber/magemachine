@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3089751380850432738}
   - component: {fileID: 6824083452008485643}
   - component: {fileID: 4601804222486153762}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1351777083082870965}
   - component: {fileID: 6054205037212928475}
   - component: {fileID: 2406810576488773462}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774109770138782435}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8502266612811899473}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973101771874832339}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 5142893966702441374}
   - component: {fileID: 1980258185787634845}
   - component: {fileID: 4744920551647646524}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5537779322158399293}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 596901448069946209}
   - component: {fileID: 3474556962199341349}
   - component: {fileID: 745987815756887596}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6276036810150532738}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 236743791784992637}
   - component: {fileID: 3375680572636119165}
   - component: {fileID: 5486090985847769400}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 934830028800987707}
   - component: {fileID: 1923394972319282517}
   - component: {fileID: 6207628804260230264}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3084011194623516588}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5932259243843653414}
   - component: {fileID: 5325577050694551521}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Ceiling Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,7 +996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8885664755010118510}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 8689317216008738452}
   - component: {fileID: 7186203992903981347}
   - component: {fileID: 3633501671239307553}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 2430798216552279862}
   - component: {fileID: 8146942965837831811}
   - component: {fileID: 8220303213244746387}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7373723735708214318}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,7 +1290,7 @@ GameObject:
   - component: {fileID: 2347024788536855869}
   - component: {fileID: 5678607498037585864}
   - component: {fileID: 7003719290931573736}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 5219471001267577508}
   - component: {fileID: 1085199523257090903}
   - component: {fileID: 137460352285552358}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,7 +1529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3435157186970142659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DefaultRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1613,6 +1613,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLight
       objectReference: {fileID: 0}
+    - target: {fileID: 9020629236178445732, guid: fc458c981f82416449a54176a81dd0f7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1674,6 +1678,10 @@ PrefabInstance:
     - target: {fileID: 9020629236178445732, guid: fc458c981f82416449a54176a81dd0f7, type: 3}
       propertyPath: m_Name
       value: WallLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020629236178445732, guid: fc458c981f82416449a54176a81dd0f7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
