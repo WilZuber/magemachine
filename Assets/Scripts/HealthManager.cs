@@ -21,7 +21,7 @@ public class HealthManager : MonoBehaviour
         if ((health <= 0) && !isDead)
         {
             isDead = true;
-            Die();
+            DeathStart();
         }
     }
 
@@ -34,12 +34,42 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    public void Die()
+    private void DeathStart()
     {
         if (deathListener != null)
         {
             deathListener.DeathTrigger();
         }
-        Destroy(this.gameObject);
+        if (TryGetComponent(out Animator anim))
+        {
+            anim.SetTrigger("Die");
+            RemoveComponents();
+            Invoke(nameof(DeathFinish), 1.0f);
+        }
+        else
+        {
+            DeathFinish();
+        }
+    }
+
+    private void RemoveComponents()
+    {
+        if (TryGetComponent(out AI ai))
+        {
+            Destroy(ai);
+        }
+        else if (TryGetComponent(out PlayerMovement move))
+        {
+            PlayerAttack attack = GetComponent<PlayerAttack>();
+            Destroy(move);
+            Destroy(attack);
+        }
+        Destroy(GetComponent<Collider>());
+        Destroy(GetComponent<Rigidbody>());
+    }
+
+    private void DeathFinish()
+    {
+        Destroy(gameObject);
     }
 }
