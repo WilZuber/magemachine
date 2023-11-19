@@ -179,8 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07efc06bfbd67404eaeebae1e7b87872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distancetmp: 0
   agent: {fileID: 0}
   anim: {fileID: 0}
+  player: {fileID: 0}
   home: {x: 0, y: 0, z: 0}
 --- !u!195 &5033616359913750812
 NavMeshAgent:
@@ -199,7 +201,7 @@ NavMeshAgent:
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoRepath: 0
   m_Height: 1.75
   m_BaseOffset: 0
   m_WalkableMask: 4294967295

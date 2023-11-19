@@ -11,12 +11,16 @@ public class WeaponHolder : MonoBehaviour
 
     void Start()
     {
-        int length = gunPositions.Length;
-        gunModels = new GameObject[length];
-        guns = new GunInstance[length];
+        if (gunModels.Length == 0)
+        {
+            int length = gunPositions.Length;
+            gunModels = new GameObject[length];
+            guns = new GunInstance[length];
+        }
     }
     public void SpawnGun(GunType gunType, int index)
     {
+        //print("catch");
         //clear slot if it is already used
         if (gunModels[index] != null)
         {

@@ -13,6 +13,7 @@ public class ShortRangeAI : AI
         float startDistance = 15.0f;
         float MaxDistance = 20.0f;
         WeaponHolder guns = GetComponent<WeaponHolder>();
+        //print("try");
         guns.SpawnGun(gunType, 0);
         wait = new AIWaitBehavior();
         chase = new AIChaseBehavior(startDistance);
