@@ -9,7 +9,7 @@ public class LongRangeAI : AI
     // Start is called before the first frame update
     void Start()
     {
-        float minDistance = 20.0f;
+        float minDistance = 0;//20.0f;
         float startDistance = 100.0f;
         float MaxDistance = 100.0f;
         WeaponHolder guns = GetComponent<WeaponHolder>();
