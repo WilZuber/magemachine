@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1624394552651774278}
   - component: {fileID: 3956649833692010598}
   - component: {fileID: -1718372204042272755}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   ignoreCollision: {fileID: 0}
+  expired: 0
