@@ -44,7 +44,7 @@ public class HealthManager : MonoBehaviour
         {
             anim.SetTrigger("Die");
             RemoveComponents();
-            Invoke(nameof(DeathFinish), 1.0f);
+            //Invoke(nameof(DeathFinish), 5f);
         }
         else
         {
@@ -56,6 +56,7 @@ public class HealthManager : MonoBehaviour
     {
         if (TryGetComponent(out AI ai))
         {
+            ai.agent.isStopped = true;
             Destroy(ai);
             if (TryGetComponent(out MeleeWeaponController melee))
             {
@@ -74,7 +75,9 @@ public class HealthManager : MonoBehaviour
             Destroy(attack);
         }
         Destroy(GetComponent<Collider>());
-        Destroy(GetComponent<Rigidbody>());
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        Destroy(rb);
     }
 
     private void DeathFinish()
