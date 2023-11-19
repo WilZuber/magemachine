@@ -33,4 +33,8 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
         LevelExit.currentLevel = 1;
     }
+
+    public void ExitGame() {
+        Application.Quit();
+    }
 }
