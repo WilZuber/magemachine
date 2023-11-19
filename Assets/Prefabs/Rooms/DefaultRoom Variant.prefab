@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4782217719871593663}
   - component: {fileID: 2901086395931649583}
   - component: {fileID: 8633676410214605679}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1492861903008068687}
   - component: {fileID: 1929423924218392403}
   - component: {fileID: 6198144483832821572}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,12 +469,24 @@ PrefabInstance:
       value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 5642646479219648697, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642646479219648697, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6705757852581573381, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705757852581573381, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276336403140202367, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7276336403140202367, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
       propertyPath: m_StaticEditorFlags
