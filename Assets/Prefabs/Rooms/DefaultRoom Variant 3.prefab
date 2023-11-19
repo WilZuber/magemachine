@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7688145436606062496}
   - component: {fileID: 8421198435808207381}
   - component: {fileID: 1866803701550022607}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1005054307765961833}
   - component: {fileID: 5051454908799344233}
   - component: {fileID: 5090002449058329291}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 6830849154880141963}
   - component: {fileID: 5665272700091473794}
   - component: {fileID: 808231015474115030}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772102366296155380}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,6 +540,18 @@ PrefabInstance:
     - target: {fileID: 5642646479219648697, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
       propertyPath: m_Name
       value: Door4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642646479219648697, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705757852581573381, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276336403140202367, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

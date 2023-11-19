@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3024404501637059087}
   - component: {fileID: 4892283797265247381}
   - component: {fileID: 3432342652333484816}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2344617611600998792}
   - component: {fileID: 8773503007220337830}
   - component: {fileID: 1902530554524265868}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 5888795127132627020}
   - component: {fileID: 8589415728383965711}
   - component: {fileID: 3074225641128436544}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: WallT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7767623268790604043}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,12 +666,24 @@ PrefabInstance:
       value: Door2
       objectReference: {fileID: 0}
     - target: {fileID: 5642646479219648697, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642646479219648697, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6705757852581573381, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705757852581573381, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276336403140202367, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7276336403140202367, guid: 2942245b27074ee44b7c8b696151748f, type: 3}
       propertyPath: m_StaticEditorFlags
