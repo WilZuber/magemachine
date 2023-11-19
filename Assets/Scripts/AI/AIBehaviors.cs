@@ -24,11 +24,11 @@ public class AIWaitBehavior : IAIBehavior
 
 public class AIChaseBehavior : IAIBehavior
 {
-    float attackDistance;
+    float startAttackDistance;
 
-    public AIChaseBehavior(float attackDistance)
+    public AIChaseBehavior(float startAttackDistance)
     {
-        this.attackDistance = attackDistance;
+        this.startAttackDistance = startAttackDistance;
     }
 
     public void Act(AI ai)
@@ -36,7 +36,7 @@ public class AIChaseBehavior : IAIBehavior
         if (ai.CanSeePlayer())
         {
             ai.Chase();
-            if (ai.agent.remainingDistance < attackDistance)
+            if (ai.agent.remainingDistance < startAttackDistance)
             {
                 ai.state = ai.attack;
             }
@@ -57,34 +57,66 @@ public interface IAIAttackBehavior : IAIBehavior
 public class AIShootingBehavior : IAIAttackBehavior
 {
     WeaponHolder guns;
+    float defaultSpeed;
+    float escapeSpeed;
+    float minAttackDistanceSq;
+    float maxAttackDistanceSq;
 
-    public AIShootingBehavior(WeaponHolder guns)
+    public AIShootingBehavior(WeaponHolder guns, float minAttackDistance, float maxAttackDistance, float defaultSpeed, float escapeSpeed)
     {
         this.guns = guns;
+        minAttackDistanceSq = minAttackDistance*minAttackDistance;
+        maxAttackDistanceSq = maxAttackDistance*maxAttackDistance;
+        this.defaultSpeed = defaultSpeed;
+        this.escapeSpeed = escapeSpeed;
     }
 
     public void Act(AI ai)
     {
-        
+        ai.Chase();
+        if (ai.CanSeePlayer())
+        {
+            float sqDistance = ai.SquareDistanceToPlayer();
+            if (sqDistance > minAttackDistanceSq)
+            {
+                if (sqDistance < maxAttackDistanceSq)
+                {
+                    ai.agent.speed = 1;
+                    guns.Fire(0);
+                }
+                else
+                {
+                    ai.agent.speed = defaultSpeed;
+                }
+            }
+            else
+            {
+                ai.agent.speed = escapeSpeed;
+            }
+        }
+        else
+        {
+            ai.agent.speed = defaultSpeed;
+        }
     }
 }
 
 public class AIMeleeBehavior : IAIAttackBehavior
 {
     MeleeWeaponController melee;
-    float attackDistance;
+    float maxAttackDistance;
 
-    public AIMeleeBehavior(MeleeWeaponController melee, float attackDistance)
+    public AIMeleeBehavior(MeleeWeaponController melee, float maxAttackDistance)
     {
         this.melee = melee;
-        this.attackDistance = attackDistance;
+        this.maxAttackDistance = maxAttackDistance;
     }
 
     public void Act(AI ai)
     {
         melee.Attack();
         ai.Chase();
-        if (ai.agent.remainingDistance > attackDistance)
+        if (ai.agent.remainingDistance > maxAttackDistance)
         {
             ai.state = ai.chase;
         }

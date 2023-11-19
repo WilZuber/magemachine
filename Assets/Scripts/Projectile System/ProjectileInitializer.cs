@@ -19,5 +19,7 @@ public class ProjectileInitializer : MonoBehaviour
             projectileInstance.SetPrefab(prefab);
         }
         GunType.prefabs = gunPrefabs;
+        ShortRangeAI.InitializeGun();
+        LongRangeAI.InitializeGun();
     }
 }

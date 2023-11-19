@@ -7,7 +7,7 @@ public abstract class AI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Animator anim;
-    GameObject player;
+    public GameObject player;
     public Vector3 home;
     public IAIBehavior state;
     public AIWaitBehavior wait;
@@ -40,6 +40,12 @@ public abstract class AI : MonoBehaviour
             return hit.collider.CompareTag("Player");
         }
         return false;
+    }
+
+    public float SquareDistanceToPlayer()
+    {
+        Vector3 v = player.transform.position - transform.position;
+        return v.sqrMagnitude;
     }
 
     // Chase the player

@@ -57,6 +57,15 @@ public class HealthManager : MonoBehaviour
         if (TryGetComponent(out AI ai))
         {
             Destroy(ai);
+            if (TryGetComponent(out MeleeWeaponController melee))
+            {
+                Destroy(melee);
+            }
+            else
+            {
+                Destroy(GetComponent<WeaponHolder>());
+                Destroy(GetComponent<AIAimTarget>());
+            }
         }
         else if (TryGetComponent(out PlayerMovement move))
         {
