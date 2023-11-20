@@ -28,7 +28,7 @@ public class AIChaseBehavior : IAIBehavior
 
     public AIChaseBehavior(float startAttackDistance)
     {
-        startAttackDistanceSq = startAttackDistance*startAttackDistance;
+        startAttackDistanceSq = startAttackDistance * startAttackDistance;
     }
 
     public void Act(AI ai)
@@ -41,9 +41,13 @@ public class AIChaseBehavior : IAIBehavior
                 ai.state = ai.attack;
             }
         }
-        else if (ai.agent.remainingDistance < 0.5f)
+        else
         {
-            ai.state = ai.wait;
+            ai.anim.SetFloat("VVelocity", 1);
+            if (ai.agent.remainingDistance < 0.5f)
+            {
+                ai.state = ai.wait;
+            }
         }
     }
 }
@@ -64,15 +68,14 @@ public class AIShootingBehavior : IAIAttackBehavior
     public AIShootingBehavior(WeaponHolder guns, float minAttackDistance, float maxAttackDistance, float defaultSpeed, float escapeSpeed)
     {
         this.guns = guns;
-        minAttackDistanceSq = minAttackDistance*minAttackDistance;
-        maxAttackDistanceSq = maxAttackDistance*maxAttackDistance;
+        minAttackDistanceSq = minAttackDistance * minAttackDistance;
+        maxAttackDistanceSq = maxAttackDistance * maxAttackDistance;
         this.defaultSpeed = defaultSpeed;
         this.escapeSpeed = escapeSpeed;
     }
 
     public void Act(AI ai)
     {
-        ai.Chase();
         if (ai.CanSeePlayer())
         {
             float sqDistance = ai.SquareDistanceToPlayer();
@@ -83,24 +86,29 @@ public class AIShootingBehavior : IAIAttackBehavior
                     ai.agent.speed = 0;
                     ai.anim.SetFloat("VVelocity", 0);
                     ai.anim.SetBool("HasRightGun", true);
-                    ai.RotateToPlayer();
+                    ai.anim.SetLayerWeight(3, 0.8f);
                     guns.Fire(0);
+                    ai.RotateToPlayer();
                 }
                 else
                 {
-                    ai.agent.speed = defaultSpeed;
                     ai.anim.SetBool("HasRightGun", false);
+                    ai.anim.SetLayerWeight(3, 0.0f);
+                    ai.agent.speed = defaultSpeed;
+                    ai.state = ai.chase;
                 }
             }
             else
             {
                 ai.agent.speed = escapeSpeed;
                 ai.anim.SetBool("HasRightGun", false);
+                ai.anim.SetLayerWeight(3, 0.0f);
             }
         }
         else
         {
             ai.agent.speed = defaultSpeed;
+            ai.state = ai.chase;
         }
     }
 }

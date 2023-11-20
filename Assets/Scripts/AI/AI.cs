@@ -47,7 +47,12 @@ public abstract class AI : MonoBehaviour
         Ray ray = new(origin, direction);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            return hit.collider.CompareTag("Player");
+            if (hit.collider.CompareTag("Player"))
+            {
+                //decouple later
+                agent.SetDestination(player.transform.position);
+                return true;
+            }
         }
         return false;
     }

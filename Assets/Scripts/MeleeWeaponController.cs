@@ -7,6 +7,8 @@ public class MeleeWeaponController : MonoBehaviour
     private Animator anim;
     public GameObject weapon;
     private bool canAttack;
+    private float holdingLeftGun;
+    private float holdingRightGun;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,12 @@ public class MeleeWeaponController : MonoBehaviour
         {
             canAttack = false;
             anim.SetBool("MeleeAtk", true); //this parm must be consistentently n
+            // ^wtf
             Invoke(nameof(Activate), 0.25f);
+            holdingLeftGun = anim.GetLayerWeight(2);
+            holdingRightGun = anim.GetLayerWeight(3);
+            anim.SetLayerWeight(2, 0.0f);
+            anim.SetLayerWeight(3, 0.0f);
         }
     }
 
@@ -39,5 +46,7 @@ public class MeleeWeaponController : MonoBehaviour
     {
         weapon.SetActive(false);
         canAttack = true;
+        anim.SetLayerWeight(2, holdingLeftGun);
+        anim.SetLayerWeight(3, holdingRightGun);
     }
 }

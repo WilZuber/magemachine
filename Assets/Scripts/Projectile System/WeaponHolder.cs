@@ -29,8 +29,8 @@ public class WeaponHolder : MonoBehaviour
         (gunModels[index], guns[index]) = gunType.Spawn(gunPositions[index], target);
     }
 
-    public void Fire(int index)
+    public bool Fire(int index)
     {
-        guns[index].Fire();
+        return guns[index].Fire();
     }
 }
