@@ -5,6 +5,12 @@ using UnityEngine;
 public class Aiming : MonoBehaviour
 {
     public AimTarget target;
+    private Transform spawn;
+
+    void Start()
+    {
+        spawn = transform.GetChild(0).GetChild(0);
+    }
 
     // Update is called once per frame
     void Update()
@@ -15,6 +21,7 @@ public class Aiming : MonoBehaviour
             Vector3 up = transform.parent.up;
             Quaternion look = Quaternion.LookRotation(forward, up);
             transform.rotation = look;
+            Debug.DrawRay(spawn.position, spawn.forward, Color.magenta);
         }
     }
 
@@ -22,7 +29,7 @@ public class Aiming : MonoBehaviour
     {
         if (target.validTarget)
         {
-            return target.target - transform.position;
+            return target.target - spawn.position;//transform.position;
         }
         else
         {

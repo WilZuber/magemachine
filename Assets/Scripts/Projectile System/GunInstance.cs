@@ -12,26 +12,38 @@ public class GunInstance : MonoBehaviour
     {
         this.gunType = gunType;
         GetComponent<Aiming>().target = target;
+
     }
     void Update()
     {
         if (reloadTimer > 0)
         {
             reloadTimer -= Time.deltaTime;
+            Debug.DrawRay(spawnPoint.position, 2*spawnPoint.forward, Color.yellow);
         }
     }
 
-    public void Fire()
+    public bool Fire()
     {
-        Fire(gunType.projectileType);
+        return Fire(gunType.projectileType);
     }
 
-    public void Fire(ProjectileType projectile)
+    public bool Fire(ProjectileType projectile)
     {
         if (reloadTimer <= 0) //able to fire
         {
+            //Vector3 firePosition = transform.GetChild(0).GetChild(0).position;
+            //Vector3 fireDirection = transform.GetChild(0).GetChild(0).forward;
+            Vector3 firePosition = spawnPoint.position;
+            Vector3 fireDirection = spawnPoint.forward;
             reloadTimer = gunType.reloadDuration;
-            projectile.Fire(spawnPoint.position, spawnPoint.forward);
+            projectile.Fire(firePosition, fireDirection);
+            Debug.DrawRay(firePosition, 20*fireDirection, Color.blue, 0.4f);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

@@ -20,7 +20,7 @@ public class AIAimTarget : AimTarget
     {
         if (ai.CanSeePlayer())
         {
-            target = ai.player.transform.position + Vector3.up;
+            target = ai.player.transform.position + 0.5f*Vector3.up;
             validTarget = true;
         }
         else
