@@ -2676,6 +2676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialTrigger (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3006207153242105152, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -2793,6 +2797,10 @@ PrefabInstance:
     - target: {fileID: 3877402438508593438, guid: c3781cdeb2202234b91d08d918d399d5, type: 3}
       propertyPath: m_Name
       value: Decorations3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877402438508593438, guid: c3781cdeb2202234b91d08d918d399d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7392182424945388139, guid: c3781cdeb2202234b91d08d918d399d5, type: 3}
       propertyPath: m_LocalPosition.x
