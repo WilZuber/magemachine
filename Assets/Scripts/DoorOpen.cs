@@ -5,10 +5,14 @@ using UnityEngine;
 public class DoorOpen : MonoBehaviour
 {
     private Animator anim;
+    private AudioSource buttonSound;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        //this script is attached to the doorface object which is a sibling of button
+        //needs to be more specific if other door sounds added
+        buttonSound = transform.parent.GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,11 +29,15 @@ public class DoorOpen : MonoBehaviour
         }
     }
 
-    void onTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             anim.SetBool("PlayerInRange", false);
         }
+    }
+    public void playButtonNoise()
+    {
+        buttonSound.Play();
     }
 }
