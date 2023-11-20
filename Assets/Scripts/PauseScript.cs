@@ -62,11 +62,15 @@ public class PauseScript : MonoBehaviour
     }
 
     public void ShowInfoScreen() {
+        
         InfoScreen.SetActive(true);
+        PausePanel.SetActive(true);
     }
 
     public void InfoScreenBackButton() {
+        
         InfoScreen.SetActive(false);
+        
     }
 
     public void LoadMainMenu() {
