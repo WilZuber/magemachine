@@ -36,6 +36,8 @@ public class PauseScript : MonoBehaviour
     private void Pause() {
         isPaused = true;
         PausePanel.SetActive(true);
+        PausePanel.SetActive(true);
+        PausePanel.SetActive(true); // for some reason, spamming this makes the menu work consistently. :)
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
