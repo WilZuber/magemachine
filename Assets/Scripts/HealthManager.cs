@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -74,6 +75,12 @@ public class HealthManager : MonoBehaviour
             PlayerAttack attack = GetComponent<PlayerAttack>();
             Destroy(move);
             Destroy(attack);
+
+            Transform camera = transform.GetChild(2);
+            GameObject empty = Instantiate(new GameObject("Empty"), transform);
+            camera.gameObject.GetComponent<MouseLook>().player = empty;//camera.gameObject;
+            camera.SetParent(empty.transform);
+            Invoke(nameof(GoToMenu), 4.0f);
         }
         Destroy(GetComponent<Collider>());
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -84,5 +91,10 @@ public class HealthManager : MonoBehaviour
     private void DeathFinish()
     {
         Destroy(gameObject);
+    }
+
+    private void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
