@@ -86,12 +86,14 @@ public class AIShootingBehavior : IAIAttackBehavior
                     ai.agent.speed = 0;
                     ai.anim.SetFloat("VVelocity", 0);
                     ai.anim.SetBool("HasRightGun", true);
+                    ai.anim.SetLayerWeight(3, 0.8f);
                     guns.Fire(0);
                     ai.RotateToPlayer();
                 }
                 else
                 {
                     ai.anim.SetBool("HasRightGun", false);
+                    ai.anim.SetLayerWeight(3, 0.0f);
                     ai.agent.speed = defaultSpeed;
                     ai.state = ai.chase;
                 }
@@ -100,6 +102,7 @@ public class AIShootingBehavior : IAIAttackBehavior
             {
                 ai.agent.speed = escapeSpeed;
                 ai.anim.SetBool("HasRightGun", false);
+                ai.anim.SetLayerWeight(3, 0.0f);
             }
         }
         else

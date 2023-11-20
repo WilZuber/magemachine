@@ -10,7 +10,9 @@ public class AnimationController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("HasLeftGun", true);
+        anim.SetLayerWeight(2, 0.8f);
         anim.SetBool("HasRightGun", true);
+        anim.SetLayerWeight(3, 0.8f);
     }
 
     // Update is called once per frame
