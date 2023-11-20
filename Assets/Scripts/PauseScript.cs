@@ -46,12 +46,6 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 0; // pause time
     }
 
-    public void UnpauseThroughButton() {
-        Unpause();
-        Unpause();
-        Unpause();
-        Unpause();
-    }
 
     public void Unpause() {
             isPaused = false;

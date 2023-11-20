@@ -401,7 +401,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8113260616322160930}
         m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
-        m_MethodName: UnpauseThroughButton
+        m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
