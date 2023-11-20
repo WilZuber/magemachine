@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2540139510078227042, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 58324b197fcf2034894ba8d8f220fea3, type: 2}
     - target: {fileID: 6378444435832098751, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
       propertyPath: m_Name
       value: DefaultRoom Variant (3)
@@ -258,6 +262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultRoom Variant Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5851339985496691883, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: e225d575a92f87a4ab277d4b02fd5eb9, type: 2}
     - target: {fileID: 9182936962687024526, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -408,6 +416,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2540139510078227042, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: e157e6fa72fb1a54cb49fb68dfa901ac, type: 2}
     - target: {fileID: 6378444435832098751, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
       propertyPath: m_Name
       value: DefaultRoom Variant (5)
@@ -733,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultRoom Variant Variant (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5851339985496691883, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: af8468c81dc91394fa53f4a425939c0d, type: 2}
     - target: {fileID: 9182936962687024526, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -790,6 +806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultRoom Variant Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5851339985496691883, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: e93a94d703d88894a87b423378d3365e, type: 2}
     - target: {fileID: 9182936962687024526, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -940,6 +960,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2540139510078227042, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: a1550de5ed4d7394aa554797165aad97, type: 2}
     - target: {fileID: 6378444435832098751, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
       propertyPath: m_Name
       value: DefaultRoom Variant (4)
@@ -997,6 +1021,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2540139510078227042, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: a531199b0fbc0794eb589594f29fd679, type: 2}
     - target: {fileID: 6378444435832098751, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
       propertyPath: m_Name
       value: DefaultRoom Variant (2)
@@ -1222,6 +1250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2540139510078227042, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 59cf14aa80734cf419e00c2c52a17c2b, type: 2}
     - target: {fileID: 6378444435832098751, guid: ff681e5add99b534a960dd0604261cc7, type: 3}
       propertyPath: m_Name
       value: DefaultRoom Variant (1)
@@ -1302,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultRoom Variant Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5851339985496691883, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: fcdabc3c86fe53f43ad9d29070eccc1d, type: 2}
     - target: {fileID: 9182936962687024526, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1767,6 +1803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultRoom Variant Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5851339985496691883, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 0d2f64798a92db64d88b2a98db202b0d, type: 2}
     - target: {fileID: 9182936962687024526, guid: b4cd025ec7ee06c48a7c8a1eda3cfd3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -1868,6 +1908,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7997133796347833120, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 572ddc33617351b4ca6452ad71447f4a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1994,6 +2038,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7997133796347833120, guid: 6f46dd4d0019d294baf32a27375e3526, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 14eebe5bcea30a64aaee8c0ffd15ee29, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
