@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour
 {
     bool isPaused = false;
-    float pausedTimeScale;
+    float originalTimeScale;
 
     public static GameObject player;
 
@@ -42,8 +42,15 @@ public class PauseScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        pausedTimeScale = Time.timeScale;
+        originalTimeScale = Time.timeScale;
         Time.timeScale = 0; // pause time
+    }
+
+    public void UnpauseThroughButton() {
+        Unpause();
+        Unpause();
+        Unpause();
+        Unpause();
     }
 
     public void Unpause() {
@@ -54,7 +61,7 @@ public class PauseScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            Time.timeScale = pausedTimeScale;
+            Time.timeScale = originalTimeScale;
     }
 
     public void ShowInfoScreen() {
