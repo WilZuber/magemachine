@@ -11,6 +11,7 @@ public class MysteryBoxScript : MonoBehaviour
     private bool isInteracted = false;
     private bool isOpened = false;
     private int mysteryRoll;
+    private AudioSource mysteryBoxOpenAudio;
 
     public GameObject weapon;
     public GameObject soulPotion;
@@ -20,6 +21,7 @@ public class MysteryBoxScript : MonoBehaviour
     void Start()
     {
         mysteryBoxAnim = GetComponentInChildren<Animator>();
+        mysteryBoxOpenAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -74,5 +76,10 @@ public class MysteryBoxScript : MonoBehaviour
         {
             isInteracted = true;       
         }
+    }
+
+    public void playOpeningSound()
+    {
+        mysteryBoxOpenAudio.Play();
     }
 }

@@ -7,14 +7,17 @@ using System;
 public class LevelExit: MonoBehaviour
 {
     public static string[] levelList = {"MainMenu", "Tutorial", "Level1", "Level2"};
-
+    private AudioSource levelExitAudio;
+    private bool audioPlayed;
     // This assumes the script is being used on the Tutorial level first.
     public static int currentLevel;
     //public GameObject endLevelText;
 
-    //void Start() {
+    void Start() {
     //    endLevelText.SetActive(false);
-    //}
+        levelExitAudio = GetComponent<AudioSource>();
+        audioPlayed = false;
+    }
 
     // Attach this script to the hitbox of the level exit.
     void OnTriggerStay(Collider other) {
@@ -22,8 +25,14 @@ public class LevelExit: MonoBehaviour
             // Displays text on-screen.
             //endLevelText.SetActive(true);
             
+          
             // Add a prompt here to start the next level.
             if (Input.GetKey(KeyCode.R)) {
+                if (!audioPlayed)
+                {
+                    audioPlayed = true;
+                    levelExitAudio.Play();
+                }
                 if (currentLevel == 1)
                 {
                     SceneManager.LoadScene("MainMenu");
