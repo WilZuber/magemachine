@@ -63,13 +63,9 @@ public class PauseScript : MonoBehaviour
 
     public void ShowInfoScreen() {
         InfoScreen.SetActive(true);
-        InfoScreen.SetActive(true);
-        InfoScreen.SetActive(true);
     }
 
     public void InfoScreenBackButton() {
-        InfoScreen.SetActive(false);
-        InfoScreen.SetActive(false);
         InfoScreen.SetActive(false);
     }
 
