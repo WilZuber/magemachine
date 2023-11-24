@@ -12,6 +12,7 @@ public class SoulMagicGunInstance : GunInstance
     {
         base.Initialize(gunType, target, holder);
         soulManager = holder.GetComponent<SoulManager>();
+        Debug.Log("^w^");
     }
 
     // Fire (SoulMagic)

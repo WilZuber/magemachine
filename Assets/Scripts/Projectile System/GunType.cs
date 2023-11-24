@@ -31,6 +31,7 @@ public abstract class GunType : ScriptableObject
         instance.GetComponent<Aiming>().target = target;
         GunInstance gun = instance.GetComponent<GunInstance>();
         gun.Initialize(this, target, holder);
+        Debug.Log(">w<");
         return (instance, gun);
     }
 }

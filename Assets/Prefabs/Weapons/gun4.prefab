@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1055282275553643262}
-  - component: {fileID: 1858817432143954106}
   - component: {fileID: 2855388222210148134}
+  - component: {fileID: 2586404851440100928}
   m_Layer: 0
   m_Name: gun4
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   - {fileID: 6203593073653780233}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1858817432143954106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3030570479364708680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9040b7551b75e4147bc706f40e3dc9d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 7982079825297391671}
 --- !u!114 &2855388222210148134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &2586404851440100928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3030570479364708680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5703cb6a444ce1a4f92437026825cf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 7982079825297391671}
+  gunType: {fileID: 0}
+  reloadTimer: 0
 --- !u!1 &6727330716650395059
 GameObject:
   m_ObjectHideFlags: 0
