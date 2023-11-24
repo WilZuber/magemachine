@@ -1161,6 +1161,7 @@ GameObject:
   - component: {fileID: 120178239963329519}
   - component: {fileID: 4848663805708677680}
   - component: {fileID: 4780479303793740723}
+  - component: {fileID: 8645404948288077055}
   - component: {fileID: 5923910939372250829}
   - component: {fileID: 4221337901231199121}
   - component: {fileID: 7107749900432813431}
@@ -1205,7 +1206,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Bone.015'\n\tTransform 'Bone.018'\n\tTransform
+    'Bone.014'\n\tTransform 'Bone.016'\n\tTransform 'Bone.019'\n\tTransform 'Bone.017'\n\tFrom
+    animation clip 'HoldGunLeftHand'\n\tFrom animation clip 'HoldGunRightHand'\n\tFrom
+    animation clip 'HoldGunLeftHand'\n\tFrom animation clip 'HoldGunRightHand'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -1302,6 +1308,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+--- !u!114 &8645404948288077055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573079381323550919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7118f2a83af13b488ff9297e1fd151b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSoul: 100
 --- !u!114 &5923910939372250829
 MonoBehaviour:
   m_ObjectHideFlags: 0
