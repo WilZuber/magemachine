@@ -8,6 +8,14 @@ public class GunInstance : MonoBehaviour
     GunType gunType;
     float reloadTimer = 0;
     
+    // Initialize
+    // initializes a instance of a gun of gunType
+    // Parameters:
+    //      gunType: GunType representing the type of gun
+    //      target: AimTarget gets information on where the gun should point
+    //      holder: WeaponHolder is the holder for the gun (used by a subclass)
+    // Pre:
+    // Post: an instance of a gun of gunType is initialized with a specified AimTarget
     public virtual void Initialize(GunType gunType, AimTarget target, WeaponHolder holder)
     {
         this.gunType = gunType;
@@ -23,17 +31,26 @@ public class GunInstance : MonoBehaviour
         }
     }
 
+    // Fire
+    // delegates to Fire
+    // Parameters: none
+    // Pre:
+    // Post: if it is possible for the gun to fire, return true and fire. Else, returns false and does not fire
     public bool Fire()
     {
         return Fire(gunType.projectileType);
     }
 
+    // Fire
+    // checks if possible to fire gun, fires if so
+    // Parameters:
+    //      projecile: ProjectileType which represents a type of projectile
+    // Pre:
+    // Post: if possible to fire, fire and returns true, else returns false.
     public virtual bool Fire(ProjectileType projectile)
     {
         if (reloadTimer <= 0) //able to fire
         {
-            //Vector3 firePosition = transform.GetChild(0).GetChild(0).position;
-            //Vector3 fireDirection = transform.GetChild(0).GetChild(0).forward;
             Vector3 firePosition = spawnPoint.position;
             Vector3 fireDirection = spawnPoint.forward;
             reloadTimer = gunType.reloadDuration;

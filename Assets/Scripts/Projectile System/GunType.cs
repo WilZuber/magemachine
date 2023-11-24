@@ -10,6 +10,10 @@ public abstract class GunType : ScriptableObject
     private float projectileSpeed;
     public float reloadDuration;
 
+    // SetProjectileType
+    // sets the type of the projectile
+    // Parameters:
+    //      ProjectileType: projectileType
     public void SetProjectileType(ProjectileType projectileType)
     {
         this.projectileType = projectileType;
