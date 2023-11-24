@@ -5,13 +5,13 @@ using UnityEngine;
 //teleports a projectile into the first obstacle
 public class LinearBlink : ProjectileType
 {
-    public override void Fire(Vector3 position, Vector3 direction, float speed, GameObject ignoreCollision)
+    public override void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision, float damageMultiplier)
     {
         Ray ray = new(position, direction);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Vector3 nextPosition = hit.point;
-            Expire(nextPosition, direction, null);
+            SpawnNext(nextPosition, direction, null, damageMultiplier);
         }
     }
 

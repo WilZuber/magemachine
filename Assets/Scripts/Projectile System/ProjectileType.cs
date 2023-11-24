@@ -34,15 +34,15 @@ public abstract class ProjectileType : ScriptableObject
         if (HasNext()) //ignore if there aren't any projectiles to spawn
         {
             Vector3 position = self.transform.position;
-            Expire(position, nextDirection, ignoreCollision);
+            SpawnNext(position, nextDirection, ignoreCollision, self.damageMultiplier);
         }
     }
 
-    public void Expire(Vector3 position, Vector3 nextDirection, GameObject ignoreCollision)
+    public void SpawnNext(Vector3 position, Vector3 nextDirection, GameObject ignoreCollision, float damageMultiplier)
     {
         foreach (ProjectileType nextProjectile in next)
         {
-            nextProjectile.Fire(position, nextDirection, ignoreCollision);
+            nextProjectile.Fire(position, nextDirection, ignoreCollision, damageMultiplier);
         }
     }
 
@@ -54,23 +54,33 @@ public abstract class ProjectileType : ScriptableObject
     //Fire with the projectile's own speed
     public void Fire(Vector3 position, Vector3 direction)
     {
-        Fire(position, direction, speed, null);
+        Fire(position, speed, direction, null, 1);
     }
 
     //Fire at the given speed
-    public void Fire(Vector3 position, Vector3 direction, float speed)
+    public void Fire(Vector3 position, float speed, Vector3 direction)
     {
-        Fire(position, direction, speed, null);
+        Fire(position, speed, direction, null, 1);
     }
 
     public void Fire(Vector3 position, Vector3 direction, GameObject ignoreCollision)
     {
-        Fire(position, direction, speed, ignoreCollision);
+        Fire(position, speed, direction, ignoreCollision, 1);
+    }
+
+    public void Fire(Vector3 position, Vector3 direction, float damageMultiplier)
+    {
+        Fire(position, speed, direction, null, damageMultiplier);
+    }
+
+    public void Fire(Vector3 position, Vector3 direction, GameObject ignoreCollision, float damageMultiplier)
+    {
+        Fire(position, speed, direction, ignoreCollision, damageMultiplier);
     }
 
     //override when there isn't an instance
-    public virtual void Fire(Vector3 position, Vector3 direction, float speed, GameObject ignoreCollision)
+    public virtual void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision, float damageMultiplier)
     {
-        ProjectileInstance.CreateProjectile(this, position, speed * direction, ignoreCollision);
+        ProjectileInstance.CreateProjectile(this, position, speed * direction, ignoreCollision, damageMultiplier);
     }
 }

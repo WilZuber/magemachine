@@ -13,7 +13,8 @@ public class ProjectileInstance : MonoBehaviour
     public bool expired;
     public float damageMultiplier; // instance-specific damage multiplier
 
-    public static void CreateProjectile(ProjectileType projectileType, Vector3 position, Vector3 velocity, GameObject ignoreCollision)
+    public static void CreateProjectile(ProjectileType projectileType, Vector3 position, Vector3 velocity,
+            GameObject ignoreCollision, float damageMultiplier)
     {
         GameObject instance = Instantiate(projectileType.GetPrefab(), position, Quaternion.identity);
         ProjectileInstance newProjectile = instance.GetComponent<ProjectileInstance>();
@@ -24,7 +25,7 @@ public class ProjectileInstance : MonoBehaviour
         newProjectile.lifetime = projectileType.lifetime;
         newProjectile.ignoreCollision = ignoreCollision;
         newProjectile.expired = false;
-        newProjectile.damageMultiplier = 1;
+        newProjectile.damageMultiplier = damageMultiplier;
     }
     void FixedUpdate()
     {

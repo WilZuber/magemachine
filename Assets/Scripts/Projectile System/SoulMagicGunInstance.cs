@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoulMagicGunInstance : GunInstance
 {
-    private float soulMagicDamage;
     private SoulManager soulManager;
 
     // Initialize (SoulMagic)
@@ -24,15 +23,22 @@ public class SoulMagicGunInstance : GunInstance
             return false;
         }
 
-        soulManager.UseSoul(5); // deplenish soul meter by 5 
-        UpdateProjectileDamageModifier();
-        
-        return base.Fire(projectile); // do whatever base fire does (should always return true)
+        soulManager.UseSoul(5); // deplenish soul meter by 5
+
+        float damageModifier = GetProjectileDamageModifier();
+        Vector3 firePosition = spawnPoint.position;
+        Vector3 fireDirection = spawnPoint.forward;
+        reloadTimer = gunType.reloadDuration;
+        projectile.Fire(firePosition, fireDirection, damageModifier);
+        return true;
     }
 
     // UpdateProjectileDamageModifier
-    private void UpdateProjectileDamageModifier()
+    private float GetProjectileDamageModifier()
     {
-        // taking a break for now this is too much
+        float maxSoul = soulManager.getMaxSoul();
+        float soulAmount = soulManager.getSoul();
+        float damageMultiplier = maxSoul/soulAmount;
+        return damageMultiplier;
     }
 }

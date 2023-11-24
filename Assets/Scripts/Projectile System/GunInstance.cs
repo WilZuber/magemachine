@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunInstance : MonoBehaviour
 {
     public Transform spawnPoint;
-    GunType gunType;
+    public GunType gunType;
     public float reloadTimer = 0;
     
     // Initialize

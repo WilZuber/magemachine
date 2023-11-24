@@ -13,7 +13,17 @@ public class SoulManager : MonoBehaviour
     {
         soul = maxSoul;
     }
+
+    public float getMaxSoul()
+    {
+        return this.maxSoul;
+    }
     
+    public float getSoul()
+    {
+        return this.soul;
+    }
+
     public void UseSoul(float amount)
     {
         soul -= amount;
