@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoulMagicGunInstance : GunInstance
 {
     private SoulManager soulManager;
+    public static float damageSkew = 4f;
 
     // Initialize (SoulMagic)
     // Creates an instance of a soul magic gun
@@ -39,7 +40,7 @@ public class SoulMagicGunInstance : GunInstance
     {
         float maxSoul = soulManager.getMaxSoul();
         float soulAmount = soulManager.getSoul();
-        float damageMultiplier = maxSoul/soulAmount;
+        float damageMultiplier = (maxSoul/(damageSkew * soulAmount)) + (1-(1/damageSkew)); // damage increases closer to 0 soul, start at 1 multiplier
         return damageMultiplier;
     }
 }
