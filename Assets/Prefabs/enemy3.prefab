@@ -126,6 +126,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab3fc7e30f784114cbc85cee68e01c15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5700675812493272940}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab3fc7e30f784114cbc85cee68e01c15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4591576863722728713}
   m_SourcePrefab: {fileID: 100100000, guid: ab3fc7e30f784114cbc85cee68e01c15, type: 3}
 --- !u!4 &3763405595096951313 stripped
 Transform:
@@ -153,7 +156,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Bone.015'\n\tTransform 'Bone.018'\n\tTransform
+    'Bone.014'\n\tTransform 'Bone.016'\n\tTransform 'Bone.019'\n\tTransform 'Bone.017'\n\tFrom
+    animation clip 'HoldGunLeftHand'\n\tFrom animation clip 'HoldGunRightHand'\n\tFrom
+    animation clip 'HoldGunLeftHand'\n\tFrom animation clip 'HoldGunRightHand'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -293,3 +301,16 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &4591576863722728713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143074568357289753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7118f2a83af13b488ff9297e1fd151b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSoul: 1000
