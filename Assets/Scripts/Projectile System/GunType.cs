@@ -25,7 +25,7 @@ public abstract class GunType : ScriptableObject
         projectileSpeed = speed;
     }
 
-    public (GameObject, GunInstance) Spawn(Transform parent, AimTarget target, WeaponHolder holder)
+    public virtual (GameObject, GunInstance) Spawn(Transform parent, AimTarget target, WeaponHolder holder)
     {
         GameObject instance = Instantiate(prefab, parent);
         instance.GetComponent<Aiming>().target = target;
