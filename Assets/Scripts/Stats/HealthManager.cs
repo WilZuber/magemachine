@@ -35,7 +35,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    private void DeathStart()
+    public void DeathStart()
     {
         if (deathListener != null)
         {
