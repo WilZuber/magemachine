@@ -8,7 +8,7 @@ public class GunInstance : MonoBehaviour
     GunType gunType;
     float reloadTimer = 0;
     
-    public void Initialize(GunType gunType, AimTarget target)
+    public virtual void Initialize(GunType gunType, AimTarget target, WeaponHolder holder)
     {
         this.gunType = gunType;
         GetComponent<Aiming>().target = target;
@@ -28,7 +28,7 @@ public class GunInstance : MonoBehaviour
         return Fire(gunType.projectileType);
     }
 
-    public bool Fire(ProjectileType projectile)
+    public virtual bool Fire(ProjectileType projectile)
     {
         if (reloadTimer <= 0) //able to fire
         {

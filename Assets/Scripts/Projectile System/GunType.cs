@@ -21,12 +21,12 @@ public abstract class GunType : ScriptableObject
         projectileSpeed = speed;
     }
 
-    public (GameObject, GunInstance) Spawn(Transform parent, AimTarget target)
+    public (GameObject, GunInstance) Spawn(Transform parent, AimTarget target, WeaponHolder holder)
     {
         GameObject instance = Instantiate(prefab, parent);
         instance.GetComponent<Aiming>().target = target;
         GunInstance gun = instance.GetComponent<GunInstance>();
-        gun.Initialize(this, target);
+        gun.Initialize(this, target, holder);
         return (instance, gun);
     }
 }
