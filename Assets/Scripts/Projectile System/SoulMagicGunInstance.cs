@@ -12,7 +12,7 @@ public class SoulMagicGunInstance : GunInstance
     public override void Initialize(GunType gunType, AimTarget target, WeaponHolder holder)
     {
         base.Initialize(gunType, target, holder);
-        soulManager = holder.GetComponent<soulManager>();
+        soulManager = holder.GetComponent<SoulManager>();
     }
 
     // Fire (SoulMagic)

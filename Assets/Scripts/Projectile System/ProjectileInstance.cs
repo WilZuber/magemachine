@@ -24,7 +24,7 @@ public class ProjectileInstance : MonoBehaviour
         newProjectile.lifetime = projectileType.lifetime;
         newProjectile.ignoreCollision = ignoreCollision;
         newProjectile.expired = false;
-        newProjectile.damageMultipler = 1;
+        newProjectile.damageMultiplier = 1;
     }
     void FixedUpdate()
     {

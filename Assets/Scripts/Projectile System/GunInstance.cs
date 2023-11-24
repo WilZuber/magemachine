@@ -6,7 +6,7 @@ public class GunInstance : MonoBehaviour
 {
     public Transform spawnPoint;
     GunType gunType;
-    float reloadTimer = 0;
+    public float reloadTimer = 0;
     
     // Initialize
     // initializes a instance of a gun of gunType
