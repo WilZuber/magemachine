@@ -24,15 +24,15 @@ public class SoulMagicGunInstance : GunInstance
             return false;
         }
 
-        soulManager.useSoul(5); // deplenish soul meter by 5 
-        // update damage
+        soulManager.UseSoul(5); // deplenish soul meter by 5 
+        UpdateProjectileDamageModifier();
         
         return base.Fire(projectile); // do whatever base fire does (should always return true)
     }
 
-    // UpdateProjectileDamage
-    private void UpdateProjectileDamage()
+    // UpdateProjectileDamageModifier
+    private void UpdateProjectileDamageModifier()
     {
-
+        // taking a break for now this is too much
     }
 }

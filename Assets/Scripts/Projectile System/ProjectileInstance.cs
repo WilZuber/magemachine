@@ -11,6 +11,7 @@ public class ProjectileInstance : MonoBehaviour
     private Vector3 initialVelocity;
     float lifetime;
     public bool expired;
+    public float damageMultiplier; // instance-specific damage multiplier
 
     public static void CreateProjectile(ProjectileType projectileType, Vector3 position, Vector3 velocity, GameObject ignoreCollision)
     {
@@ -23,6 +24,7 @@ public class ProjectileInstance : MonoBehaviour
         newProjectile.lifetime = projectileType.lifetime;
         newProjectile.ignoreCollision = ignoreCollision;
         newProjectile.expired = false;
+        newProjectile.damageMultipler = 1;
     }
     void FixedUpdate()
     {

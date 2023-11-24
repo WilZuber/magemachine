@@ -21,7 +21,7 @@ public abstract class ProjectileType : ScriptableObject
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
-            hp.TakeDamage(damage);
+            hp.TakeDamage(damage * self.damageMultiplier);
         }
 
         Expire(self, bounceDirection, other);
