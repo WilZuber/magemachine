@@ -5,7 +5,9 @@ using UnityEngine;
 public class SoulMagicGunInstance : GunInstance
 {
     private SoulManager soulManager;
-    public static float damageSkew = 4f;
+    private SoulMagicGunType type;
+    private float factor;
+    private float exponent;
 
     // Initialize (SoulMagic)
     // Creates an instance of a soul magic gun
@@ -13,7 +15,15 @@ public class SoulMagicGunInstance : GunInstance
     {
         base.Initialize(gunType, target, holder);
         soulManager = holder.GetComponent<SoulManager>();
-        Debug.Log("^w^");
+        type = (SoulMagicGunType)gunType;
+        PrepareFormula();
+    }
+
+    // Set the formula parameters so that f(2*cost) = maxSafeMultiplier and f((shotsAfterDouble + 1)*cost) = 2
+    private void PrepareFormula()
+    {
+        factor = 1.0f / (soulManager.maxSoul - (type.shotsAfterDouble + 1) * type.cost);
+        exponent = Mathf.Log(type.maxSafeMultiplier - 1, (soulManager.maxSoul - 2*type.cost) * factor);
     }
 
     // Fire (SoulMagic)
@@ -25,22 +35,23 @@ public class SoulMagicGunInstance : GunInstance
             return false;
         }
 
-        soulManager.UseSoul(5); // deplenish soul meter by 5
-
         float damageModifier = GetProjectileDamageModifier();
+        soulManager.UseSoul(type.cost); // deplenish soul meter by 5
+
         Vector3 firePosition = spawnPoint.position;
         Vector3 fireDirection = spawnPoint.forward;
-        reloadTimer = gunType.reloadDuration;
+        reloadTimer = type.reloadDuration;
         projectile.Fire(firePosition, fireDirection, damageModifier);
         return true;
     }
 
-    // UpdateProjectileDamageModifier
+    // GetProjectileDamageModifier
     private float GetProjectileDamageModifier()
     {
         float maxSoul = soulManager.getMaxSoul();
         float soulAmount = soulManager.getSoul();
-        float damageMultiplier = (maxSoul/(damageSkew * soulAmount)) + (1-(1/damageSkew)); // damage increases closer to 0 soul, start at 1 multiplier
+        // damage increases closer to 0 soul, start at 1 multiplier
+        float damageMultiplier = Mathf.Pow((maxSoul - soulAmount) * factor, exponent) + 1;
         return damageMultiplier;
     }
 }

@@ -9,6 +9,10 @@ public class TestGun3 : SoulMagicGunType
         SetProjectileType(TestProjectile3());
         prefab = prefabs[3];
         reloadDuration = 0.5f; // actually inverse fire rate, not reload duration
+
+        cost = 5.0f;
+        shotsAfterDouble = 5;
+        maxSafeMultiplier = 16;
     }
 
     private ProjectileType TestProjectile3()
@@ -18,7 +22,6 @@ public class TestGun3 : SoulMagicGunType
 
         blink.next.Add(explosion);
 
-        Debug.Log("owo");
         return blink;
     }
 }
