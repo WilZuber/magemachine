@@ -7,8 +7,7 @@ public class ProjectileInstance : MonoBehaviour
 
     public ProjectileType projectile;
     Rigidbody rb;
-    public GameObject ignoreCollision; //ignore a wall after bouncing from it
-    private Vector3 initialVelocity;
+    public GameObject ignoreCollision; //ignore an object after bouncing from it
     float lifetime;
     public bool expired;
     public float damageMultiplier; // instance-specific damage multiplier
@@ -21,7 +20,6 @@ public class ProjectileInstance : MonoBehaviour
         newProjectile.projectile = projectileType;
         newProjectile.rb = instance.GetComponent<Rigidbody>();
         newProjectile.rb.velocity = velocity;
-        newProjectile.initialVelocity = velocity;
         newProjectile.lifetime = projectileType.lifetime;
         newProjectile.ignoreCollision = ignoreCollision;
         newProjectile.expired = false;
@@ -40,41 +38,47 @@ public class ProjectileInstance : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == ignoreCollision)
         {
             ignoreCollision = null;
-            rb.velocity = initialVelocity;
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject != ignoreCollision && !expired)
+        if (!other.isTrigger && other.gameObject != ignoreCollision && !expired)
         {
             Vector3 bounceDirection = Bounce(other);
             projectile.Hit(this, other.gameObject, bounceDirection);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.isTrigger && !expired)
-        {
-            projectile.Hit(this, other.gameObject, Vector3.zero);
-        }
-    }
-
-    private Vector3 Bounce(Collision other)
+    private Vector3 Bounce(Collider other)
     {
         if (!projectile.HasNext()) //skip calculation since it won't be used
         {
             return Vector3.zero;
         }
-        Vector3 normal = other.GetContact(0).normal;
-        //Vector3 currentDirection = rb.velocity.normalized;
-        Vector3 currentDirection = initialVelocity.normalized;
+        //as long as the projectile is a sphere, the closest point is the point of contact,
+        //and the normal of the other surface at that point must pass through the center of the projectile
+        Vector3 contactPoint = other.ClosestPoint(transform.position);
+        Vector3 normal;
+        if (contactPoint.Equals(transform.position))
+        {
+            //used if the projectile's origin is inside the other collider
+            Physics.ComputePenetration(
+                GetComponent<Collider>(), transform.position, transform.rotation,
+                other, other.transform.position, other.transform.rotation,
+                out normal, out _);
+        }
+        else
+        {
+            normal = (transform.position - contactPoint).normalized;
+        }
+        Vector3 currentDirection = rb.velocity.normalized;
+        //reflect across the normal vector to bounce
         Vector3 newDirection = Vector3.Reflect(currentDirection, normal);
         return newDirection;
     }
