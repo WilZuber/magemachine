@@ -7,13 +7,14 @@ public class PlayerAttack : MonoBehaviour
     WeaponHolder guns;
     MeleeWeaponController melee;
     //teleport script
+    Teleporter teleport;
 
     // Start is called before the first frame update
     void Start()
     {
         guns = GetComponent<WeaponHolder>();
         melee = GetComponent<MeleeWeaponController>();
-        //set teleport script
+        teleport = GetComponent<Teleporter>();
         
         GunType[] newGuns = {ScriptableObject.CreateInstance<TestGun1>(), ScriptableObject.CreateInstance<TestGun3>()};
         for (int i = 0; i < 2; i++)
@@ -44,6 +45,7 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //teleport use
+            teleport.NewPosition;
         }
     }
 }
