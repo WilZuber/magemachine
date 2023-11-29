@@ -26,7 +26,7 @@ public class LongRangeAI : AI
     }
 }
 
-public class LongRangeAIGun : GunType
+public class LongRangeAIGun : SoulMagicGunType
 {
     void Awake()
     {

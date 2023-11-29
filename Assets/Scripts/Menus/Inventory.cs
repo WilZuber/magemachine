@@ -10,13 +10,19 @@ public class Inventory : MonoBehaviour
 
     private static int soulRefills;
     private static int skillPoints;
+
+    private static float currentSoul; //carry between levels
     private WeaponHolder playerGuns;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject player = GameObject.Find("MainCharacter");
+        //player.GetComponent<SoulManager>().SetSoul(currentSoul);
         playerGuns = player.GetComponent<WeaponHolder>();
+
+        leftGunSelection = 0;
+        rightGunSelection = 1;
         playerGuns.SpawnGun(guns[leftGunSelection], 0);
         playerGuns.SpawnGun(guns[rightGunSelection], 1);
     }

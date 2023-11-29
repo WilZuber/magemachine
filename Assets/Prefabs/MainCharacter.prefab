@@ -211,9 +211,6 @@ MonoBehaviour:
   lookSpeedY: 3
   minV: -90
   maxV: 90
-  v0: 0
-  v1: 0
-  v2: 0
   angles: {x: 0, y: 0, z: 0}
   player: {fileID: 7573079381323550919}
 --- !u!1 &2306863169215978363
@@ -1354,8 +1351,12 @@ MonoBehaviour:
   gunPositions:
   - {fileID: 2207015047580326305}
   - {fileID: 4080934792998209718}
-  gunModels: []
-  guns: []
+  gunModels:
+  - {fileID: 0}
+  - {fileID: 0}
+  guns:
+  - {fileID: 0}
+  - {fileID: 0}
   target: {fileID: 3831729577489599601}
 --- !u!114 &7107749900432813431
 MonoBehaviour:
