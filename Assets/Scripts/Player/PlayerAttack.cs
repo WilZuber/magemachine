@@ -14,12 +14,6 @@ public class PlayerAttack : MonoBehaviour
         guns = GetComponent<WeaponHolder>();
         melee = GetComponent<MeleeWeaponController>();
         //set teleport script
-        
-        GunType[] newGuns = {ScriptableObject.CreateInstance<TestGun1>(), ScriptableObject.CreateInstance<TestGun3>()};
-        for (int i = 0; i < 2; i++)
-        {
-            guns.SpawnGun(newGuns[i], i);
-        }
     }
 
     // Update is called once per frame
