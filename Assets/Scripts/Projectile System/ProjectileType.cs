@@ -12,28 +12,30 @@ public abstract class ProjectileType : ScriptableObject
     public virtual void SetPrefab(GameObject prefab) {}
     public virtual GameObject GetPrefab() => null;
 
+    //override with false if the projectile should be still after hitting a moving object
+    public virtual bool AdditiveBounceVelocity() => true;
+
     public bool HasNext()
     {
         return next.Count != 0;
     }
     
-    public virtual void Hit(ProjectileInstance self, GameObject other, Vector3 bounceDirection)
+    public virtual void Hit(ProjectileInstance self, GameObject other, Vector3 bouncePosition, Vector3 bounceDirection)
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
             hp.TakeDamage(damage * self.damageMultiplier);
         }
 
-        Expire(self, bounceDirection, other);
+        Expire(self, bouncePosition, bounceDirection, other);
     }
 
-    public void Expire(ProjectileInstance self, Vector3 nextDirection, GameObject ignoreCollision)
+    public void Expire(ProjectileInstance self, Vector3 position, Vector3 nextDirection, GameObject ignoreCollision)
     {
         self.expired = true;
         Destroy(self.gameObject);
         if (HasNext()) //ignore if there aren't any projectiles to spawn
         {
-            Vector3 position = self.transform.position;
             SpawnNext(position, nextDirection, ignoreCollision, self.damageMultiplier);
         }
     }

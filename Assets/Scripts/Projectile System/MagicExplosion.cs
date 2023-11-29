@@ -8,6 +8,8 @@ public class MagicExplosion : Explosion
     public override void SetPrefab(GameObject prefab) => childPrefab = prefab;
     public override GameObject GetPrefab() => childPrefab;
 
+    public override bool AdditiveBounceVelocity() => false;
+
     public static new MagicExplosion New()
     {
         return CreateInstance<MagicExplosion>();

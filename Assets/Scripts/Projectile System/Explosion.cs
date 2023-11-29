@@ -8,13 +8,15 @@ public class Explosion : ProjectileType
     public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;
     public override GameObject GetPrefab() => sharedPrefab;
 
+    public override bool AdditiveBounceVelocity() => false;
+
     void Awake()
     {
         damage = 10.0f;
         lifetime = 0.375f;
     }
 
-    public override void Hit(ProjectileInstance self, GameObject other, Vector3 bounceDirection)
+    public override void Hit(ProjectileInstance self, GameObject other, Vector3 bouncePosition, Vector3 bounceDirection)
     {
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
