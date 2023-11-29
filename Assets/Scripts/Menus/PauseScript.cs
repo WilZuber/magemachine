@@ -13,12 +13,16 @@ public class PauseScript : MonoBehaviour
 
     public static GameObject PausePanel;
 
+    public static GameObject PauseCamera;
+
     public static GameObject InfoScreen;
     void Awake() {
         InfoScreen = GameObject.Find("PauseScreen/Canvas/PausePanel/InfoScreen");
         PausePanel = GameObject.Find("PauseScreen/Canvas/PausePanel");
+        PauseCamera = GameObject.Find("PauseScreen/Canvas/PauseCamera");
         player = GameObject.Find("/MainCharacter");
 
+        PauseCamera.SetActive(false);
         InfoScreen.SetActive(false);
         PausePanel.SetActive(false);
     }
@@ -47,6 +51,9 @@ public class PauseScript : MonoBehaviour
 
         originalTimeScale = Time.timeScale;
         Time.timeScale = 0; // pause time
+
+        PauseCamera.SetActive(true);
+        player.SetActive(false);
     }
 
 
@@ -59,21 +66,23 @@ public class PauseScript : MonoBehaviour
         Cursor.visible = false;
 
         Time.timeScale = originalTimeScale;
+
+        player.SetActive(true);
+        PauseCamera.SetActive(false);
     }
 
     public void ShowInfoScreen() {
-        
         InfoScreen.SetActive(true);
         PausePanel.SetActive(true);
     }
 
     public void InfoScreenBackButton() {
-        
         InfoScreen.SetActive(false);
-        
     }
 
     public void LoadMainMenu() {
+        Time.timeScale = originalTimeScale;
+        isPaused = false;
         SceneManager.LoadScene("MainMenu");
     }
 }
