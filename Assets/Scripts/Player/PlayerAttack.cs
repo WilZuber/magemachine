@@ -41,13 +41,13 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Q))
         {
             //switch with teleport point if set
-            teleport.SetTeleportPoint;
+            teleport.SetTeleportPoint();
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //teleport use
                 //test basic teleporting before testing full mechanic
-            teleport.NewPosition;
+            teleport.NewPosition();
             //teleport.SwitchWithTeleportPoint
         }
     }

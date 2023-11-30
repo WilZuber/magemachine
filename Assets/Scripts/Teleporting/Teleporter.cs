@@ -19,18 +19,25 @@ public class Teleporter : MonoBehaviour
         }
     }
 
+    // sets teleport point,
     public void SetTeleportPoint(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision) {
         Ray ray = new(position, direction);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            teleportPoint = hit.point;
+            // assumes the player is teleporting to a wall
+            teleportPoint = hit.point + hit.normal; //* player.Collider.radius; <- find out how to do this
         }
-        // write else if for if the reticle is on a standard enemy
+        // next, write the above as an "else if," and have the first "if" check the raycast and if it's hitting an enemy
     }
 
     public void SwitchWithTeleportPoint(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision) {
         if (teleportPoint != null) {
             player.transform.position = teleportPoint;
         }
+    }
+
+    public static Teleporter New()
+    {
+        return CreateInstance<Teleporter>();
     }
 }
