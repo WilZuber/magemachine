@@ -32,6 +32,22 @@ public class Inventory : MonoBehaviour
     {
         
     }
+    
+    public static void CollectItem(Pickup item)
+    {
+        switch (item.type)
+        {
+            case PickupType.SoulRefillPotion: soulRefills++; break;
+            case PickupType.SkillPoint: skillPoints++; break;
+            case PickupType.WeaponPart: CollectWeaponPart((WeaponPartPickup)item); break;
+            case PickupType.Gun: guns.Add(((GunPickup)item).gunType); break;
+        }
+    }
+
+    public static void CollectWeaponPart(WeaponPartPickup part)
+    {
+
+    }
 
     public static void ResetInventory()
     {
