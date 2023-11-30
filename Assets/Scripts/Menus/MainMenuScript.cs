@@ -18,6 +18,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void ShowInfoScreen() {
         InfoScreen.SetActive(true);
+        InfoScreen.SetActive(true);
     }
 
     public void InfoScreenBackButton() {
