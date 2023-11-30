@@ -72,18 +72,24 @@ public class PauseScript : MonoBehaviour
         PauseCamera.SetActive(false);
     }
 
-    /* this method is now revolting to witness, and here's why I did it:
+    /* 
+    *  this method is now revolting to witness, and here's why I did it:
     *  1.) the InfoScreen has to be clicked twice if it's only set to active once. 
     *      setting it to active twice fixes this.
     * 2.) if I don't quickly turn the player on and off again, 
     *     unity loses track of the main camera and it is permanently disabled upon loading the InfoScreen.
     *     I know that sounds like it doesn't make sense, because it doesn't, but I've fixed it regardless.
-    * if something else weird happens, tell me, because dear god I refuse to let this thing create any more bugs. */
+    * 3.) even though it should already be active since the game is paused, setting PauseCamera to active
+    *     makes sure the game never loses both cameras at once. if I don't set it to active in this method,
+    *     unity temporarily loses track of the camera the first time the info screen is shown in the pause menu.
+    * if something else weird happens, tell me, because dear god I refuse to let this thing create any more bugs. 
+    */
     public void ShowInfoScreen() {
         player.SetActive(true);
         InfoScreen.SetActive(true);
         InfoScreen.SetActive(true);
         PausePanel.SetActive(true);
+        PauseCamera.SetActive(true);
         player.SetActive(false);
     }
 
