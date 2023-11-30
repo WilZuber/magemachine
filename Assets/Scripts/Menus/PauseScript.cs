@@ -16,6 +16,7 @@ public class PauseScript : MonoBehaviour
     public static GameObject PauseCamera;
 
     public static GameObject InfoScreen;
+    public static GameObject TutorialUI;
     void Awake() {
         InfoScreen = GameObject.Find("PauseScreen/Canvas/PausePanel/InfoScreen");
         PausePanel = GameObject.Find("PauseScreen/Canvas/PausePanel");

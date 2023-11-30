@@ -1775,11 +1775,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
---- !u!20 &1239460731 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 5997691674559799557, guid: f1846964488fffd42a6162d93beab22b, type: 3}
-  m_PrefabInstance: {fileID: 2037345006}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1265627111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,7 +2858,7 @@ PrefabInstance:
     - target: {fileID: 6179379865588071492, guid: 8d0728b52ab41d94985a70cf9673bb12, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1239460731}
+      objectReference: {fileID: 0}
     - target: {fileID: 6297090503537572037, guid: 8d0728b52ab41d94985a70cf9673bb12, type: 3}
       propertyPath: m_Name
       value: PauseScreen
