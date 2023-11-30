@@ -30,8 +30,6 @@ public class Inventory : MonoBehaviour
         //player.GetComponent<SoulManager>().SetSoul(currentSoul);
         playerGuns = player.GetComponent<WeaponHolder>();
 
-        leftGunSelection = 0;
-        rightGunSelection = 1;
         playerGuns.SpawnGun(guns[leftGunSelection], 0);
         playerGuns.SpawnGun(guns[rightGunSelection], 1);
 
@@ -107,6 +105,11 @@ public class Inventory : MonoBehaviour
             ScriptableObject.CreateInstance<TestGun1>(),
             ScriptableObject.CreateInstance<TestGun3>()
         };
+        leftGunSelection = 0;
+        rightGunSelection = 1;
+
+        soulRefills = 0;
+        skillPoints = 0;
     }
 
     private void UpdateSoulRefillCounter()
