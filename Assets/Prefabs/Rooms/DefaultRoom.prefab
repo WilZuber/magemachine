@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 3273168289923733314}
   - component: {fileID: 7866192810230110218}
   - component: {fileID: 7845844643951738595}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: MiniMapTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
