@@ -48,6 +48,14 @@ public abstract class ProjectileType : ScriptableObject
         }
     }
 
+    public void SpawnNext(Vector3 position, Vector3 nextDirection, GameObject ignoreCollision, float damageMultiplier, RaycastHit lastHit)
+    {
+        foreach (ProjectileType nextProjectile in next)
+        {
+            nextProjectile.Fire(position, nextDirection, ignoreCollision, damageMultiplier, lastHit);
+        }
+    }
+
     public virtual void UpdateProjectile(ProjectileInstance instance)
     {
         //do nothing by default, but can override
@@ -84,5 +92,15 @@ public abstract class ProjectileType : ScriptableObject
     public virtual void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision, float damageMultiplier)
     {
         ProjectileInstance.CreateProjectile(this, position, speed * direction, ignoreCollision, damageMultiplier);
+    }
+
+    public void Fire(Vector3 position, Vector3 direction, GameObject ignoreCollision, float damageMultiplier, RaycastHit lastHit)
+    {
+        Fire(position, speed, direction, ignoreCollision, damageMultiplier, lastHit);
+    }
+    public virtual void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision,
+            float damageMultiplier, RaycastHit lastHit)
+    {
+        ProjectileInstance.CreateProjectile(this, position, speed * direction, ignoreCollision, damageMultiplier, lastHit);
     }
 }

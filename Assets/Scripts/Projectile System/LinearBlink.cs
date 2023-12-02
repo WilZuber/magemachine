@@ -11,7 +11,7 @@ public class LinearBlink : ProjectileType
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Vector3 nextPosition = hit.point;
-            SpawnNext(nextPosition, direction, null, damageMultiplier);
+            SpawnNext(nextPosition, direction, null, damageMultiplier, hit);
         }
     }
 

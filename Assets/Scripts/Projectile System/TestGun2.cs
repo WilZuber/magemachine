@@ -14,8 +14,8 @@ public class TestGun2 : GunType
     private ProjectileType TestProjectile2()
     {
         LinearBlink blink = LinearBlink.New();
-        Bullet bullet = Bullet.New();
-        Bullet child = Bullet.New();
+        Bullet bullet = RedBullet.New();
+        Bullet child = RedBullet.New();
         child.damage = 5;
         Explosion explosion = Explosion.New();
 

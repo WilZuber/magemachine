@@ -27,7 +27,6 @@ public class GunInstance : MonoBehaviour
         if (reloadTimer > 0)
         {
             reloadTimer -= Time.deltaTime;
-            Debug.DrawRay(spawnPoint.position, 2*spawnPoint.forward, Color.yellow);
         }
     }
 
@@ -55,7 +54,6 @@ public class GunInstance : MonoBehaviour
             Vector3 fireDirection = spawnPoint.forward;
             reloadTimer = gunType.reloadDuration;
             projectile.Fire(firePosition, fireDirection);
-            Debug.DrawRay(firePosition, 20*fireDirection, Color.blue, 0.4f);
             return true;
         }
         else
