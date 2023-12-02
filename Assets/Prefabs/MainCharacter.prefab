@@ -957,7 +957,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c88112f0038d37743bb2a7f58b2360b7, type: 2}
+  - {fileID: 2100000, guid: 015ffddf0fa7b994db4bda17c8a7835e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1315,7 +1315,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0.75
-    width: 0.25
+    width: 0.15
     height: 0.25
   near clip plane: 0.3
   far clip plane: 1000
@@ -1325,7 +1325,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
