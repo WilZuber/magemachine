@@ -76,16 +76,14 @@ public class Inventory : MonoBehaviour
     {
         inventoryOpen = true;
         inventoryCanvas.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        PlayerInputToggle.Disable();
     }
 
     private void CloseInventory()
     {
         inventoryOpen = false;
         inventoryCanvas.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        PlayerInputToggle.Enable();
     }
 
     //World interaction
