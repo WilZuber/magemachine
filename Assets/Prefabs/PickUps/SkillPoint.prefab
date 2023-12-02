@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8020354160700647742}
-  - component: {fileID: -7055173773282174164}
   m_Layer: 0
   m_Name: SkillPoint
   m_TagString: Untagged
@@ -33,19 +32,6 @@ Transform:
   - {fileID: 2278469897831459945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7055173773282174164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4632018779667474318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5632f9f6deb7148933ff50b75a2526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
 --- !u!1001 &1735145010574609282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,6 +106,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a48cfe8a53d0bf9429849b2607ab1682, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2547492909322345414}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a48cfe8a53d0bf9429849b2607ab1682, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8581218971738517883}
   m_SourcePrefab: {fileID: 100100000, guid: a48cfe8a53d0bf9429849b2607ab1682, type: 3}
 --- !u!1 &1501124606148900563 stripped
 GameObject:
@@ -168,6 +157,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8581218971738517883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501124606148900563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5632f9f6deb7148933ff50b75a2526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!4 &2278469897831459945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a48cfe8a53d0bf9429849b2607ab1682, type: 3}

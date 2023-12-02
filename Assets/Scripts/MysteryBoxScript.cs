@@ -32,7 +32,7 @@ public class MysteryBoxScript : MonoBehaviour
             isOpened = true; //prevents looping
             
             mysteryBoxAnim.SetBool("isOpen", true); //open animation
-            mysteryRoll = UnityEngine.Random.Range(0, 3); //roll for rewards
+            mysteryRoll = UnityEngine.Random.Range(0, 4); //roll for rewards
             Vector3 pos = transform.position;
             Quaternion rot = Quaternion.identity;
             Transform parent = GetComponent<Transform>().parent;
