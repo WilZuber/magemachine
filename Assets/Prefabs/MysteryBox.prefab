@@ -157,7 +157,7 @@ MonoBehaviour:
   weapon: {fileID: 6417374485855813208, guid: 35f915259d322084daea50955a4b29e6, type: 3}
   soulPotion: {fileID: 636052109238612503, guid: 3b1a98ef4e7eb8743957d4a36c49dd4c, type: 3}
   techPart: {fileID: 85654708664957080, guid: 64f9a379d0c21c248abac60066df54d8, type: 3}
-  skillPoint: {fileID: 3151148365839529456, guid: d3e9e8693019327489e43ebbadd92b34, type: 3}
+  skillPoint: {fileID: 4632018779667474318, guid: 163c2c1a7d0f4bc458f56d2aed51d24e, type: 3}
 --- !u!65 &3199174356987087079
 BoxCollider:
   m_ObjectHideFlags: 0
