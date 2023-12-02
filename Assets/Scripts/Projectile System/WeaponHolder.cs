@@ -28,6 +28,13 @@ public class WeaponHolder : MonoBehaviour
     // Post: creates gun model??? idk I give up on documenting this stuff -W
     public void SpawnGun(GunType gunType, int index)
     {
+        if (gunType == null)
+        {
+            Destroy(gunModels[index]);
+            guns[index] = null;
+            return;
+        }
+
         //clear slot if it is already used
         if (gunModels[index] != null)
         {
@@ -45,6 +52,13 @@ public class WeaponHolder : MonoBehaviour
     // Post: Fires the gun if it is possible to fire, return true. If not possible fire, returns false.
     public bool Fire(int index)
     {
-        return guns[index].Fire();
+        if (guns[index] != null)
+        {
+            return guns[index].Fire();
+        }
+        else
+        {
+            return false;
+        }
     }
 }

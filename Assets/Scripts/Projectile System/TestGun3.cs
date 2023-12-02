@@ -7,7 +7,7 @@ public class TestGun3 : SoulMagicGunType
     void Awake()
     {
         SetProjectileType(TestProjectile3());
-        prefab = prefabs[3];
+        SetModel(3);
         reloadDuration = 0.5f; // actually inverse fire rate, not reload duration
 
         cost = 5.0f;

@@ -5,7 +5,9 @@ using UnityEngine;
 public abstract class GunType : ScriptableObject
 {
     public static GameObject[] prefabs;
+    public static Sprite[] inventorySprites;
     public GameObject prefab;
+    public Sprite inventorySprite;
     public ProjectileType projectileType;
     private float projectileSpeed;
     public float reloadDuration;
@@ -23,6 +25,12 @@ public abstract class GunType : ScriptableObject
     {
         this.projectileType = projectileType;
         projectileSpeed = speed;
+    }
+
+    public void SetModel(int modelIndex)
+    {
+        prefab = prefabs[modelIndex];
+        inventorySprite = inventorySprites[modelIndex];
     }
 
     public virtual (GameObject, GunInstance) Spawn(Transform parent, AimTarget target, WeaponHolder holder)

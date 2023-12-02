@@ -9,9 +9,10 @@ public class Pickup : MonoBehaviour
     void OnTriggerStay(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             if (Input.GetKey(KeyCode.R)) {
-                Inventory.CollectItem(this);
-                print(type);
-                Destroy(gameObject);
+                if (Inventory.CollectItem(this))
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
