@@ -8,6 +8,7 @@ public class ProjectileInitializer : MonoBehaviour
 {
     public GameObject[] projectilePrefabs;
     public GameObject[] gunPrefabs;
+    public GameObject[] collectableGunPrefabs;
     public Sprite[] gunSprites;
     void Start()
     {
@@ -21,6 +22,7 @@ public class ProjectileInitializer : MonoBehaviour
         }
 
         GunType.prefabs = gunPrefabs;
+        GunType.collectablePrefabs = collectableGunPrefabs;
         GunType.inventorySprites = gunSprites;
         ShortRangeAI.InitializeGun();
         LongRangeAI.InitializeGun();

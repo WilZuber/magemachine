@@ -5,8 +5,10 @@ using UnityEngine;
 public abstract class GunType : ScriptableObject
 {
     public static GameObject[] prefabs;
+    public static GameObject[] collectablePrefabs;
     public static Sprite[] inventorySprites;
     public GameObject prefab;
+    public GameObject collectablePrefab;
     public Sprite inventorySprite;
     public ProjectileType projectileType;
     private float projectileSpeed;
@@ -30,6 +32,7 @@ public abstract class GunType : ScriptableObject
     public void SetModel(int modelIndex)
     {
         prefab = prefabs[modelIndex];
+        collectablePrefab = collectablePrefabs[modelIndex];
         inventorySprite = inventorySprites[modelIndex];
     }
 
@@ -40,5 +43,12 @@ public abstract class GunType : ScriptableObject
         GunInstance gun = instance.GetComponent<GunInstance>();
         gun.Initialize(this, target, holder);
         return (instance, gun);
+    }
+
+    public void SpawnPickup(Vector3 position, Transform parent)
+    {
+        GameObject instance = Instantiate(collectablePrefab, position, Quaternion.identity, parent);
+        GameObject pickup = instance.transform.GetChild(0).gameObject;
+        pickup.GetComponent<GunPickup>().gunType = this;
     }
 }

@@ -211,7 +211,7 @@ public class Inventory : MonoBehaviour
 
     public void OpenMap()
     {
-
+        GunLists.CreateGun().SpawnPickup(playerGuns.transform.position, null);
     }
 
     //Display

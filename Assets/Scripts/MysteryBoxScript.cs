@@ -39,7 +39,7 @@ public class MysteryBoxScript : MonoBehaviour
             switch (mysteryRoll)
             {
                 case 0: //weapon
-                    Instantiate(weapon, pos + new Vector3(0, 1, 0), rot, parent);
+                    GunLists.CreateGun().SpawnPickup(pos, parent);
                     break;
 
                 case 1: //soul refill potion

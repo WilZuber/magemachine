@@ -57,8 +57,13 @@ MonoBehaviour:
   - {fileID: 6396735625098323917, guid: 15c5f2a39efea9140b71f0690109ef00, type: 3}
   - {fileID: 3030570479364708680, guid: fbd706ccfc190364ba516e825d87e235, type: 3}
   - {fileID: 9161986229013132710, guid: b40df13bdc13fc140ac67dcaa2119004, type: 3}
+  collectableGunPrefabs:
+  - {fileID: 6417374485855813208, guid: 35f915259d322084daea50955a4b29e6, type: 3}
+  - {fileID: 8307107818500922939, guid: 5d2df3defc11e794db7c8730003f9cb3, type: 3}
+  - {fileID: 6396735625098323917, guid: e2e635bafb3afd94a87bb9b3e06945f4, type: 3}
+  - {fileID: 3030570479364708680, guid: 646b90072b28a904c91178626db17fb6, type: 3}
   gunSprites:
   - {fileID: 21300000, guid: 559de3d7ba13c0c449d98e87d155283c, type: 3}
-  - {fileID: 21300000, guid: 3f1ed61dbf397da49b878526e1de7439, type: 3}
-  - {fileID: 21300000, guid: cfc02582067590148a77d7d886f21022, type: 3}
+  - {fileID: 21300000, guid: cf84e3a5bb24aeb498e8912e0c564179, type: 3}
   - {fileID: 21300000, guid: b9ad75bff5b71bd4ebe740e0840029ab, type: 3}
+  - {fileID: 21300000, guid: 3f1ed61dbf397da49b878526e1de7439, type: 3}

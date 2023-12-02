@@ -7,7 +7,7 @@ public class TestGun2 : GunType
     void Awake()
     {
         SetProjectileType(TestProjectile2());
-        SetModel(1);
+        SetModel(2);
         reloadDuration = 0.5f;
     }
 
