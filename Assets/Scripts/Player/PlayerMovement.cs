@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private float jumpTime;
     public float jumpTimeout = 0.5f;
     public float extraGravity = 0.25f;
+    private Animator playerAnimator;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        playerAnimator = gameObject.GetComponent<Animator>();
     }
     
     void FixedUpdate()
@@ -34,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
 
         // Set velocity
         rb.velocity = (moveX * transform.right) + (moveZ * transform.forward) + (moveY * Vector3.up);
+
+        playerAnimator.SetBool("IsJumping", jumping);
     }
 
     // Added to vertical velocity if the player is jumping
