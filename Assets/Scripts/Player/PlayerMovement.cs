@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Running
         float moveSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        // put stamina manager here
 
         // Horizontal Movement
         float moveX = moveSpeed * Input.GetAxis("Horizontal");
