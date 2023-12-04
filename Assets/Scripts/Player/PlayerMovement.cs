@@ -15,17 +15,27 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTimeout = 0.5f;
     public float extraGravity = 0.25f;
     private Animator playerAnimator;
+    private StaminaManager stamina;
+    
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         playerAnimator = gameObject.GetComponent<Animator>();
+        stamina = GetComponent<StaminaManager>();
     }
     
     void FixedUpdate()
     {
         // Running
-        float moveSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        float moveSpeed = (Input.GetKey(KeyCode.LeftShift) && (stamina.getStamina() > 15)) ? runSpeed : walkSpeed;
+        
+        // stamina reduction when sprinting, refill when not
+        if (moveSpeed == runSpeed) {
+            stamina.ReduceStamina(1);
+        } else if (stamina.StaminaNotFull()){
+            stamina.RefillStamina(1);
+        }
 
         // Horizontal Movement
         float moveX = moveSpeed * Input.GetAxis("Horizontal");
