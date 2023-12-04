@@ -37,8 +37,6 @@ public class PlayerMovement : MonoBehaviour
             stamina.RefillStamina(1);
         }
 
-        print(moveSpeed); 
-
         // Horizontal Movement
         float moveX = moveSpeed * Input.GetAxis("Horizontal");
         float moveZ = moveSpeed * Input.GetAxis("Vertical");
