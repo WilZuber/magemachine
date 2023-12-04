@@ -16,6 +16,14 @@ public class StaminaManager : MonoBehaviour
         stamina = maxStamina;
         hasStamina = true;
     }
+
+    public bool StaminaNotFull() {
+        return stamina != maxStamina;
+    }
+
+    public float getStamina() {
+        return stamina;
+    }
     
     public void ReduceStamina(float reductionAmount)
     {

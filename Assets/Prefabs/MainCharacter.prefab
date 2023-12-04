@@ -1357,6 +1357,7 @@ GameObject:
   - component: {fileID: 3647000889311054599}
   - component: {fileID: 4221337901231199121}
   - component: {fileID: 7107749900432813431}
+  - component: {fileID: 1029969955377845625}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Player
@@ -1579,6 +1580,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1337627919597355709}
+--- !u!114 &1029969955377845625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573079381323550919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9296f25368bce7342acf66415b403fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 75
+  hasStamina: 1
 --- !u!1 &7616213564599355113
 GameObject:
   m_ObjectHideFlags: 0
