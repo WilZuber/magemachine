@@ -8,11 +8,8 @@ public class TeleportPoint : ProjectileType
     public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;
     public override GameObject GetPrefab() => sharedPrefab;
 
-    // delete Awake if it doesn't break anything
-    void Awake()
-    {
-        damage = 0f;
-        speed = 0f;
+    public override void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision) {
+        ProjectileInstance.CreateProjectile(this, position, 0, ignoreCollision, 0);
     }
 
     public static Bullet New()
