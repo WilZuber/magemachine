@@ -35,6 +35,7 @@ public class TextRevealer : MonoBehaviour {
 			yield return new WaitForSeconds(0.09f);
 		}
         TextLoaded = true;
+        // reveal a little bit of text telling the player they can continue if they press a key
 	}
 
     public void CanGoToMenu() {

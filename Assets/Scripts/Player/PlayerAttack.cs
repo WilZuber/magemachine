@@ -6,14 +6,17 @@ public class PlayerAttack : MonoBehaviour
 {
     WeaponHolder guns;
     MeleeWeaponController melee;
-    //teleport script
+    TeleportGun teleporter;
 
     // Start is called before the first frame update
     void Start()
     {
         guns = GetComponent<WeaponHolder>();
         melee = GetComponent<MeleeWeaponController>();
-        //set teleport script
+        
+        TeleportType type = ScriptableObject.CreateInstance<TeleportType>();
+        guns.SpawnGun(type, 2);
+        teleporter = guns.guns[2];
     }
 
     // Update is called once per frame
@@ -34,10 +37,12 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Q))
         {
             //teleport set
+            teleporter.Fire();
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //teleport use
+            teleporter.SwitchWithTeleportPoint();
         }
     }
 }

@@ -6,23 +6,17 @@ public class TeleportType : GunType
 {
     void Awake()
     {
-        SetProjectileType(TestProjectile2());
+        SetProjectileType(TeleportProjectile());
         SetModel(4);
         reloadDuration = 0.5f;
     }
 
-    private ProjectileType TestProjectile2()
+    private ProjectileType TeleportProjectile()
     {
-        LinearBlink blink = LinearBlink.New();
-        Bullet bullet = RedBullet.New();
-        Bullet child = RedBullet.New();
-        child.damage = 5;
-        Explosion explosion = Explosion.New();
+        Teleporter teleport = Teleporter.New();
+        TeleportPoint point = TeleportPoint.New();
+        teleport.point = point;
 
-        child.next.Add(explosion);
-        bullet.next.Add(child);
-        blink.next.Add(bullet);
-
-        return blink;
+        return teleport;
     }
 }
