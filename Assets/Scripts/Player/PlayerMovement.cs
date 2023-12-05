@@ -6,8 +6,8 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
-    public float walkSpeed = 5f;
-    public float runSpeed = 8f;
+    public float walkSpeed = 4f;
+    public float runSpeed = 9f;
     public float jumpSpeed = 7.5f;
     private bool jumpPressed;
     private bool jumping;
