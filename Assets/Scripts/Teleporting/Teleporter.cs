@@ -17,9 +17,9 @@ public class Teleporter : ProjectileType
             Vector3 teleportDestination = hit.point + hit.normal * 1f; // multiply by radius, experiment with this
             Collider hitCollider = hit.collider;
 
-            // create new collider once the corner teleport glitch is fixed
+            // create new collider once the corner teleport glitch is fixed to replace player.GetComponent
             //Collider playerCollider = new CapsuleCollider();
-            Collider playerCollider = player.GetComponent<Collider>();
+            CapsuleCollider playerCollider = player.GetComponent<CapsuleCollider>();
             // hell (positioning the teleport point so the player doesn't clip through anything while teleporting)
             if (Physics.ComputePenetration(playerCollider, teleportDestination, Quaternion.identity,
                                       hitCollider, hitCollider.transform.position, hitCollider.transform.rotation,
