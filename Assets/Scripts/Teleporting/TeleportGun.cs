@@ -19,7 +19,7 @@ public class TeleportGun : GunInstance
 
     public void SwitchWithTeleportPoint() {
         if (teleportPoint != null) {
-            player.transform.position = teleportPoint.transform.position;
+            player.transform.position = teleportPoint.transform.position + Vector3.down;
             Destroy(teleportPoint);
         }
     }
