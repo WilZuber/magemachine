@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class TeleportGun : MonoBehaviour
 {
-    public GameObject teleportPoint;
+    public static GameObject player;
+    public static GameObject teleportPoint;
+
+    void Awake() {
+        player = GameObject.Find("/MainCharacter");
+    }
     public void SwitchWithTeleportPoint(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision) {
         if (teleportPoint != null) {
             player.transform.position = teleportPoint.transform.position;

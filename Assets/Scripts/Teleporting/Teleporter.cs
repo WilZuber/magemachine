@@ -6,7 +6,7 @@ public class Teleporter : ProjectileType
 {
     public TeleportPoint point;
 
-    public override void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision) {
+    public override void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision, float damageMultiplier) {
         Ray ray = new(position, direction);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {

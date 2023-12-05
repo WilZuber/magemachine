@@ -8,12 +8,13 @@ public class TeleportPoint : ProjectileType
     public override void SetPrefab(GameObject prefab) => sharedPrefab = prefab;
     public override GameObject GetPrefab() => sharedPrefab;
 
-    public override void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision) {
-        ProjectileInstance.CreateProjectile(this, position, 0, ignoreCollision, 0);
+    public override void Fire(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision, float damageMultiplier) {
+        ProjectileInstance instance = ProjectileInstance.CreateProjectile(this, position, Vector3.zero, ignoreCollision, 0f);
+        TeleportGun.teleportPoint = instance.gameObject;
     }
 
-    public static Bullet New()
+    public static TeleportPoint New()
     {
-        return CreateInstance<Bullet>();
+        return CreateInstance<TeleportPoint>();
     }
 }
