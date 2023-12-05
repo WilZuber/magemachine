@@ -7,7 +7,7 @@ public class TeleportType : GunType
     void Awake()
     {
         SetProjectileType(TestProjectile2());
-        SetModel(2);
+        SetModel(4);
         reloadDuration = 0.5f;
     }
 
