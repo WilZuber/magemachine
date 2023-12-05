@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         // Running
         float moveSpeed = (Input.GetKey(KeyCode.LeftShift) && (stamina.getStamina() > 15)) ? runSpeed : walkSpeed;
         
-        // stamina reduction when sprinting, refill when not
+        // Stamina Management
         if (moveSpeed == runSpeed) {
             stamina.ReduceStamina(1);
         } else if (stamina.StaminaNotFull()){
