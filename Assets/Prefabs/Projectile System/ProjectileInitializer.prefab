@@ -63,8 +63,10 @@ MonoBehaviour:
   - {fileID: 8307107818500922939, guid: 5d2df3defc11e794db7c8730003f9cb3, type: 3}
   - {fileID: 6396735625098323917, guid: e2e635bafb3afd94a87bb9b3e06945f4, type: 3}
   - {fileID: 3030570479364708680, guid: 646b90072b28a904c91178626db17fb6, type: 3}
+  - {fileID: 0}
   gunSprites:
   - {fileID: 21300000, guid: 0a9f50bb9a2340f4583bf89d1c79bdf5, type: 3}
   - {fileID: 21300000, guid: 43a502110e8d4e24e91a7c9474b1f2fa, type: 3}
   - {fileID: 21300000, guid: 5653b0bd2e89f3440994fbe59657cb11, type: 3}
   - {fileID: 21300000, guid: bb56c14c5f3c55c46b01944a6de7cc4b, type: 3}
+  - {fileID: 0}

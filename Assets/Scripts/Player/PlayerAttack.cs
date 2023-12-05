@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
         
         TeleportType type = ScriptableObject.CreateInstance<TeleportType>();
         guns.SpawnGun(type, 2);
-        teleporter = guns.guns[2];
+        teleporter = (TeleportGun)guns.guns[2];
     }
 
     // Update is called once per frame
