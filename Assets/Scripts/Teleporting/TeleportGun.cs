@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportGun : MonoBehaviour
+public class TeleportGun : GunInstance
 {
     public static GameObject player;
     public static GameObject teleportPoint;
