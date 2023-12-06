@@ -48,8 +48,8 @@ public class SoulMagicGunInstance : GunInstance
     // GetProjectileDamageModifier
     private float GetProjectileDamageModifier()
     {
-        float maxSoul = soulManager.getMaxSoul();
-        float soulAmount = soulManager.getSoul();
+        float maxSoul = soulManager.GetMaxSoul();
+        float soulAmount = soulManager.GetSoul();
         // damage increases closer to 0 soul, start at 1 multiplier
         float damageMultiplier = Mathf.Pow((maxSoul - soulAmount) * factor, exponent) + 1;
         return damageMultiplier;

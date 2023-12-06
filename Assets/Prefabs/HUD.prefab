@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7687981520124863950}
   - component: {fileID: 6152554147874242708}
   m_Layer: 0
-  m_Name: Image
+  m_Name: SoulImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 8473653304248864658}
   - component: {fileID: 8262691944059901202}
   m_Layer: 0
-  m_Name: Image
+  m_Name: StaminaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,6 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3181022188812464699}
   - component: {fileID: 8535729831302402836}
+  - component: {fileID: 6378311076868305239}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -500,6 +501,39 @@ MonoBehaviour:
   gunSprites:
   - {fileID: 4030423571198652929}
   - {fileID: 4820821758427714516}
+--- !u!114 &6378311076868305239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896200179333426569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2cc7f380f7af4181778a2a3840a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulMetreSprites:
+  - {fileID: 21300000, guid: e336696cf779f1548a2291d87063c393, type: 3}
+  - {fileID: 21300000, guid: 53155231805fa9b4dab35de038211f86, type: 3}
+  - {fileID: 21300000, guid: cac9ab5e823870b4b9ff20c2b86a4a19, type: 3}
+  - {fileID: 21300000, guid: c68f1cd6d975b244f92cda0915eda72d, type: 3}
+  - {fileID: 21300000, guid: b0fb2b16908816e43908531dcd516ad2, type: 3}
+  - {fileID: 21300000, guid: 826a3b754852504449f3085ea66681ed, type: 3}
+  - {fileID: 21300000, guid: 51c31f37803b35144b0de747faf19512, type: 3}
+  - {fileID: 21300000, guid: 5445d268e7e7350409afa73da0089b68, type: 3}
+  - {fileID: 21300000, guid: b20fd82dc7fe4414c848b3c1b62c19b8, type: 3}
+  - {fileID: 21300000, guid: 92409b9221839af4da36fb05bc004a34, type: 3}
+  - {fileID: 21300000, guid: e98a78943b212234781e559405534ea3, type: 3}
+  - {fileID: 21300000, guid: 8201025d4a8c99b44bd75c7aff06639c, type: 3}
+  - {fileID: 21300000, guid: a60afda277338ed439592c609e99024b, type: 3}
+  - {fileID: 21300000, guid: f19f21da6b273f64b9b26d518b261889, type: 3}
+  - {fileID: 21300000, guid: 99806ba00148e7b46bfc16593c24b9b7, type: 3}
+  - {fileID: 21300000, guid: 89558bbfabbd6614baa875c0c6d453a8, type: 3}
+  - {fileID: 21300000, guid: dd3aee0e1f595f547ae56c7fc528427f, type: 3}
+  - {fileID: 21300000, guid: a13a8b4cf49693940b74cf4f70f3b1af, type: 3}
+  soulMetreImage: {fileID: 6152554147874242708}
+  playerSoulManager: {fileID: 8645404948288077055, guid: f1846964488fffd42a6162d93beab22b, type: 3}
 --- !u!1 &8090595363620785704
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +688,7 @@ GameObject:
   - component: {fileID: 5367701121704614686}
   - component: {fileID: 1831485443288577818}
   m_Layer: 0
-  m_Name: Image
+  m_Name: HealthImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
