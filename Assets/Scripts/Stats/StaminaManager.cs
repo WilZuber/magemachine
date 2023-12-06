@@ -51,5 +51,6 @@ public class StaminaManager : MonoBehaviour
         if (stamina > maxStamina) {
             stamina = maxStamina;
         }
+        hasStamina = true;
     }
 }

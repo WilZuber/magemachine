@@ -17,6 +17,7 @@ public class HUDUpdateStaminaSprite : MonoBehaviour
     void Update()
     {
         UpdateStaminaMeterSprite();
+        print(playerStaminaManager.GetStamina());
     }
 
     public void UpdateStaminaMeterSprite()
