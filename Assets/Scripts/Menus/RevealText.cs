@@ -14,7 +14,7 @@ public class TextRevealer : MonoBehaviour {
 	}
 
     void Update() {
-        // user can skip directly to menu if the text is fully loaded
+        // user can skip directly to menu if the exposition text is fully loaded
         CanGoToMenu();
     }
 	
