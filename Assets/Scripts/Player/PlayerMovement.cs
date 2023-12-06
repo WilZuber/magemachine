@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
     public float walkSpeed = 4f;
-    public float runSpeed = 9f;
+    public float runSpeed = 20f;
     public float jumpSpeed = 7.5f;
     private bool jumpPressed;
     private bool jumping;
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Running
-        float moveSpeed = (Input.GetKey(KeyCode.LeftShift) && (stamina.getStamina() > 15)) ? runSpeed : walkSpeed;
+        float moveSpeed = (Input.GetKey(KeyCode.LeftShift) && (stamina.hasStamina)) ? runSpeed : walkSpeed;
         
         // Stamina Management
         if (moveSpeed == runSpeed) {

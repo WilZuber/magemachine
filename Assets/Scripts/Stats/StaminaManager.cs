@@ -17,6 +17,16 @@ public class StaminaManager : MonoBehaviour
         hasStamina = true;
     }
 
+    public float GetStamina()
+    {
+        return this.stamina;
+    }
+
+    public float GetMaxStamina()
+    {
+        return this.maxStamina;
+    }
+
     public bool StaminaNotFull() {
         return stamina != maxStamina;
     }
@@ -41,5 +51,6 @@ public class StaminaManager : MonoBehaviour
         if (stamina > maxStamina) {
             stamina = maxStamina;
         }
+        hasStamina = true;
     }
 }

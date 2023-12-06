@@ -14,12 +14,12 @@ public class SoulManager : MonoBehaviour
         soul = maxSoul;
     }
 
-    public float getMaxSoul()
+    public float GetMaxSoul()
     {
         return this.maxSoul;
     }
     
-    public float getSoul()
+    public float GetSoul()
     {
         return this.soul;
     }
