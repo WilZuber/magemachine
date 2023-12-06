@@ -259,7 +259,12 @@ public class Inventory : MonoBehaviour
         Sprite[] sprites = new Sprite[2];
         
         for (int i = 0; i < gunSelections.Length; i++) {
-            sprites[i] = (guns[gunSelections[i]].inventorySprite);
+            if (gunSelections[i] < 0) // gunSelections returns a -1 if no gun held
+            {
+                // dont do anything, as new array index already instantiated to null
+            } else {
+                sprites[i] = (guns[gunSelections[i]].inventorySprite); 
+            }
         }
 
         return sprites;
