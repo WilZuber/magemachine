@@ -127,6 +127,7 @@ public class Inventory : MonoBehaviour
         {
             guns[index] = gun;
             currentInventory.UpdateGunSprite(index);
+            HUDUpdateGunSprites.UpdateGunSprites();
             return true;
         }
     }
@@ -181,6 +182,7 @@ public class Inventory : MonoBehaviour
         {
             SetGun(index, gunSideIndex);
         }
+        HUDUpdateGunSprites.UpdateGunSprites();
     }
 
     private void SetGun(int index, int gunSideIndex)
@@ -250,5 +252,16 @@ public class Inventory : MonoBehaviour
     private void UpdateSkillPointCounter()
     {
         skillPointCounter.text = skillPoints.ToString();
+    }
+
+    public static Sprite[] GetGunSprites()
+    {
+        Sprite[] sprites = new Sprite[2];
+        
+        for (int i = 0; i < gunSelections.Length; i++) {
+            sprites[i] = (guns[gunSelections[i]].inventorySprite);
+        }
+
+        return sprites;
     }
 }
