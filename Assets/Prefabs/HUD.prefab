@@ -463,6 +463,7 @@ GameObject:
   - component: {fileID: 3181022188812464699}
   - component: {fileID: 8535729831302402836}
   - component: {fileID: 6378311076868305239}
+  - component: {fileID: 8392854976716069966}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -533,7 +534,38 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd3aee0e1f595f547ae56c7fc528427f, type: 3}
   - {fileID: 21300000, guid: a13a8b4cf49693940b74cf4f70f3b1af, type: 3}
   soulMetreImage: {fileID: 6152554147874242708}
-  playerSoulManager: {fileID: 8645404948288077055, guid: f1846964488fffd42a6162d93beab22b, type: 3}
+--- !u!114 &8392854976716069966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896200179333426569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f383136cc0bc9a54984df61acebbf64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMetreSprites:
+  - {fileID: 21300000, guid: 08f073e22c956c74e8a0b0c1dd765d26, type: 3}
+  - {fileID: 21300000, guid: ae8146c5f223fe240a065cf84f91a556, type: 3}
+  - {fileID: 21300000, guid: ae7c3aa8df497fa4c87d6f877b1398a3, type: 3}
+  - {fileID: 21300000, guid: abf158b9e1ed8de46898521adc11f836, type: 3}
+  - {fileID: 21300000, guid: 894d924f9e872fe44b9c29ac7af9899a, type: 3}
+  - {fileID: 21300000, guid: 8f77f99ae0a26614b88e9311d74525e6, type: 3}
+  - {fileID: 21300000, guid: 3bd5b8e244afba149bdbb07955bd842c, type: 3}
+  - {fileID: 21300000, guid: ffa7e3385500a0544bce56a6d6ad2f21, type: 3}
+  - {fileID: 21300000, guid: 6cfa6ce6b28f61a4bb8c08c9fa4071d4, type: 3}
+  - {fileID: 21300000, guid: 8de1e9e38b534914181a825ab2cbfcc1, type: 3}
+  - {fileID: 21300000, guid: f62ead35fd806054f80f9d1b1937302f, type: 3}
+  - {fileID: 21300000, guid: baac5505091b2a541a71edb26087abb4, type: 3}
+  - {fileID: 21300000, guid: 8e1485e7921c0934db6c67216ae325b9, type: 3}
+  - {fileID: 21300000, guid: 123bc8f75b9fb334eb3b7bcf7444c6c4, type: 3}
+  - {fileID: 21300000, guid: b7e3b567a464c3146af5da2be3c8e68f, type: 3}
+  - {fileID: 21300000, guid: f8b8b91c627bdf245a9757d1a37dac81, type: 3}
+  - {fileID: 21300000, guid: b41c126ce18408641ae6a752cd2fa137, type: 3}
+  - {fileID: 21300000, guid: 0e37401e64fec894f98e2d212aa34ae0, type: 3}
+  healthMetreImage: {fileID: 1831485443288577818}
 --- !u!1 &8090595363620785704
 GameObject:
   m_ObjectHideFlags: 0
