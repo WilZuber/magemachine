@@ -20,9 +20,12 @@ public class TextRevealer : MonoBehaviour {
 	
 	IEnumerator RevealText() {
 		var originalString = textObject.text;
-
+        var textLength = originalString.Substring(0, originalString.Length - 22);
 		var numCharsRevealed = 0;
-		while (numCharsRevealed < originalString.Length)
+
+        // reveals all of the text except the delayed prompt to press a key
+        // after the exposition intro has been fully loaded
+		while (numCharsRevealed < textLength.Length)
 		{
             // Skips Spaces
             while (originalString[numCharsRevealed] == ' ') {
@@ -35,7 +38,22 @@ public class TextRevealer : MonoBehaviour {
 			yield return new WaitForSeconds(0.09f);
 		}
         TextLoaded = true;
-        // reveal a little bit of text telling the player they can continue if they press a key
+
+        yield return new WaitForSeconds(3f);
+        textLength = originalString.Substring(0, originalString.Length);
+
+        while (numCharsRevealed < textLength.Length)
+		{
+            // Skips Spaces
+            while (originalString[numCharsRevealed] == ' ') {
+                ++numCharsRevealed;
+            }
+
+			++numCharsRevealed;
+			textObject.text = originalString.Substring(0, numCharsRevealed);
+
+			yield return new WaitForSeconds(0.09f);
+		}
 	}
 
     public void CanGoToMenu() {
