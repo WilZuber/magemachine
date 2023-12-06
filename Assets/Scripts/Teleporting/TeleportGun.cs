@@ -6,20 +6,18 @@ public class TeleportGun : GunInstance
 {
     private static GameObject player;
     public static GameObject teleportPoint;
+    public CapsuleCollider playerCollider;
 
     void Awake() {
         player = GameObject.Find("/MainCharacter");
+        playerCollider = player.GetComponent<CapsuleCollider>();
     }
-    // public void SwitchWithTeleportPoint(Vector3 position, float speed, Vector3 direction, GameObject ignoreCollision) {
-    //     if (teleportPoint != null) {
-    //         player.transform.position = teleportPoint.transform.position;
-    //         Destroy(teleportPoint);
-    //     }
-    // }
 
     public void SwitchWithTeleportPoint() {
         if (teleportPoint != null) {
-            player.transform.position = teleportPoint.transform.position + Vector3.down;
+            float halfHeight = playerCollider.height / 2;
+
+            player.transform.position = teleportPoint.transform.position + halfHeight * Vector3.down;
             Destroy(teleportPoint);
         }
     }

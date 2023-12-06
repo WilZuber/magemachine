@@ -6,6 +6,8 @@ public class Teleporter : ProjectileType
 {
     public TeleportPoint point;
     public GameObject player;
+    public Vector3 point0;
+    public Vector3 point1;
 
     public override void Fire(Vector3 position, float speed, Vector3 currentDirection, GameObject ignoreCollision, float damageMultiplier)
     {
@@ -20,12 +22,31 @@ public class Teleporter : ProjectileType
             // create new collider once the corner teleport glitch is fixed to replace player.GetComponent
             //Collider playerCollider = new CapsuleCollider();
             CapsuleCollider playerCollider = player.GetComponent<CapsuleCollider>();
+            
             // hell (positioning the teleport point so the player doesn't clip through anything while teleporting)
-            if (Physics.ComputePenetration(playerCollider, teleportDestination, Quaternion.identity,
-                                      hitCollider, hitCollider.transform.position, hitCollider.transform.rotation,
-                                      out Vector3 direction, out float distance))
-            {
-                teleportDestination += distance * direction;
+
+            // source for next part https://roundwide.com/physics-overlap-capsule/
+            // calculating point0 and point1 for the CapsuleCollider,
+            // taking into account the direction property of the CapsuleCollider,
+            // which can be 0, 1, or 2 corresponding to the x, y, or the z axis
+            var playerDirection = new Vector3 {[playerCollider.direction] = 1};
+            var offset = playerCollider.height / 2 - playerCollider.radius;
+            var point0 = playerCollider.center - playerDirection * offset;
+            var point1= playerCollider.center + playerDirection * offset;
+
+            // creating array of colliders to iterate through and depenetrate if currently penetrated
+                // using OverlapCapsuleNonAlloc instead of OverlapCapsule because OverlapCapsuleNonAlloc allocates the array in advance
+            Collider[] colliders = Physics.OverlapCapsule(point0, point1, playerCollider.radius);
+            foreach (Collider overlappingCollider in colliders) {
+                if (!(overlappingCollider.isTrigger) && !(overlappingCollider.CompareTag("Player") || overlappingCollider.CompareTag("Enemy"))) {
+                    Debug.Log(overlappingCollider.gameObject);
+                    bool overlapping = Physics.ComputePenetration(playerCollider, teleportDestination, Quaternion.identity,
+                                                                  overlappingCollider, overlappingCollider.transform.position, 
+                                                                  overlappingCollider.transform.rotation, out Vector3 direction, out float distance);
+                    if (overlapping) {
+                        teleportDestination += distance * direction;
+                    }
+                }
             }
 
             point.Fire(teleportDestination, currentDirection);
