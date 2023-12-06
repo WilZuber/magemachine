@@ -35,10 +35,12 @@ public class TextRevealer : MonoBehaviour {
 			++numCharsRevealed;
 			textObject.text = originalString.Substring(0, numCharsRevealed);
 
+            // wait between each character
 			yield return new WaitForSeconds(0.09f);
 		}
         TextLoaded = true;
 
+        // wait to display prompt after the main exposition text has fully loaded
         yield return new WaitForSeconds(3f);
         textLength = originalString.Substring(0, originalString.Length);
 
