@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 8535729831302402836}
   - component: {fileID: 6378311076868305239}
   - component: {fileID: 8392854976716069966}
+  - component: {fileID: 6661571488923430688}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -566,6 +567,38 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b41c126ce18408641ae6a752cd2fa137, type: 3}
   - {fileID: 21300000, guid: 0e37401e64fec894f98e2d212aa34ae0, type: 3}
   healthMetreImage: {fileID: 1831485443288577818}
+--- !u!114 &6661571488923430688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896200179333426569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ffea97386684d4ba719be606c6da80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaMetreSprites:
+  - {fileID: 21300000, guid: 16698b0ecb23f6b4c86cb3d1a049e7d8, type: 3}
+  - {fileID: 21300000, guid: 11898ecdc20930c429c315f6e9e38bfd, type: 3}
+  - {fileID: 21300000, guid: 7433c9ef814100940a7939e6325ce030, type: 3}
+  - {fileID: 21300000, guid: a40c0697822f87b4db9eaa61e3cafa86, type: 3}
+  - {fileID: 21300000, guid: 818f48aeadd2ffb4e94968974ca76032, type: 3}
+  - {fileID: 21300000, guid: 3cb5babfd79fb4d4ab0fce6f9a1ff2b9, type: 3}
+  - {fileID: 21300000, guid: 7341acef4e4e9a64898b609d7c68448d, type: 3}
+  - {fileID: 21300000, guid: 9872629712b81c94188000c4fe9951e1, type: 3}
+  - {fileID: 21300000, guid: 13fe970020a90084b9f6045c60291d25, type: 3}
+  - {fileID: 21300000, guid: a394c87022798814fa64260f7060b122, type: 3}
+  - {fileID: 21300000, guid: f242f89bfaf3d7a43afcf31fd850c6c4, type: 3}
+  - {fileID: 21300000, guid: 2b27afc6fb7aa8845af2034528251a35, type: 3}
+  - {fileID: 21300000, guid: a953e56b25299d645bed2d420fc68332, type: 3}
+  - {fileID: 21300000, guid: c8c53570c4cb39b4891822033c2fe03b, type: 3}
+  - {fileID: 21300000, guid: 2b3a519284df19e449f1b270c9a1650a, type: 3}
+  - {fileID: 21300000, guid: d47e3dbe319ac8945ad6f261c13b0404, type: 3}
+  - {fileID: 21300000, guid: fa4be2ba4bdad6c468175c3f53b79c53, type: 3}
+  - {fileID: 21300000, guid: 28591b6501e543f438218f4d4125913e, type: 3}
+  staminaMetreImage: {fileID: 8262691944059901202}
 --- !u!1 &8090595363620785704
 GameObject:
   m_ObjectHideFlags: 0
