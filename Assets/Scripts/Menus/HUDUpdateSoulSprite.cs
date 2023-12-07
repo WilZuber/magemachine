@@ -31,7 +31,8 @@ public class HUDUpdateSoulSprite : MonoBehaviour
         {
             currentSpriteIndex = 17;
         }
-
-        soulMetreImage.sprite = soulMetreSprites[currentSpriteIndex]; // update sprite
+        if (soulMetreImage.sprite != soulMetreSprites[currentSpriteIndex]) {
+            soulMetreImage.sprite = soulMetreSprites[currentSpriteIndex]; // update sprite
+        }
     }
 }

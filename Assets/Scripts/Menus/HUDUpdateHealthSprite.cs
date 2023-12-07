@@ -32,6 +32,8 @@ public class HUDUpdateHealthSprite : MonoBehaviour
             currentSpriteIndex = 17;
         }
 
-        healthMetreImage.sprite = healthMetreSprites[currentSpriteIndex]; // update sprite
+        if (healthMetreImage.sprite != healthMetreSprites[currentSpriteIndex]) {
+            healthMetreImage.sprite = healthMetreSprites[currentSpriteIndex]; // update sprite
+        }
     }
 }

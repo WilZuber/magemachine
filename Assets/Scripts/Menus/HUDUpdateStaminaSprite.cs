@@ -43,6 +43,8 @@ public class HUDUpdateStaminaSprite : MonoBehaviour
             currentSpriteIndex = 17;
         }
 
-        staminaMetreImage.sprite = staminaMetreSprites[currentSpriteIndex]; // update sprite
+        if (staminaMetreImage.sprite != staminaMetreSprites[currentSpriteIndex]) {
+            staminaMetreImage.sprite = staminaMetreSprites[currentSpriteIndex]; // update sprite
+        }
     }
 }
