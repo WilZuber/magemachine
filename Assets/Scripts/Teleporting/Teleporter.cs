@@ -49,6 +49,7 @@ public class Teleporter : ProjectileType
                 }
             }
 
+            // delete other instances of teleportpoint when a new one is fired
             point.Fire(teleportDestination, currentDirection);
         }
         // next, write the above as an "else if," and have the first "if" check the raycast and if it's hitting an enemy
