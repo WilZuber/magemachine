@@ -7,18 +7,36 @@ public class TeleportGun : GunInstance
     private static GameObject player;
     public static GameObject teleportPoint;
     public CapsuleCollider playerCollider;
+    public float halfHeight;
 
     void Awake() {
         player = GameObject.Find("/MainCharacter");
         playerCollider = player.GetComponent<CapsuleCollider>();
+        halfHeight = playerCollider.height / 2;
+        //Teleporter.playerCollider = playerCollider;
     }
 
     public void SwitchWithTeleportPoint() {
         if (teleportPoint != null) {
-            float halfHeight = playerCollider.height / 2;
 
-            player.transform.position = teleportPoint.transform.position + halfHeight * Vector3.down;
+            // if the teleportation point is high, teleport a higher position of the player
+            // if the teleportation point is low, teleport a lower position of the player
+            if (HighCheck(teleportPoint.transform.position.y)) {
+                Vector3 moveDown = new Vector3(0, -2f, 0);
+                player.transform.position = teleportPoint.transform.position + halfHeight * moveDown;
+            } else {
+                player.transform.position = teleportPoint.transform.position - (0.25f * halfHeight) * Vector3.down;
+            }
+                
+
             Destroy(teleportPoint);
         }
+    }
+
+    // this is a quickfix to prevent the player from teleporting out of bounds or into walls
+        // if this is still here after the class is over and levels have more verticality,
+        // rewrite this code so that "3.875" here is replaced with the height of any room the player is currently in.
+    public bool HighCheck(float yValue) {
+        return yValue >= (3.875 - halfHeight);
     }
 }

@@ -45,7 +45,7 @@ public class StaminaManager : MonoBehaviour
             hasStamina = false;
 
             // intentionally setting stamina negative so the player has to wait a moment when they're out of stamina
-            stamina = -20;
+            stamina = -50;
         }
     }
 
