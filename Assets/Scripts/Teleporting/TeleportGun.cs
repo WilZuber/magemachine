@@ -28,7 +28,6 @@ public class TeleportGun : GunInstance
                 player.transform.position = teleportPoint.transform.position - (0.25f * halfHeight) * Vector3.down;
             }
                 
-
             Destroy(teleportPoint);
         }
     }

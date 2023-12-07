@@ -9,9 +9,6 @@ public class Teleporter : ProjectileType
     public Vector3 point0;
     public Vector3 point1;
     //public static CapsuleCollider playerCollider;
-
-
-
     public override void Fire(Vector3 position, float speed, Vector3 currentDirection, GameObject ignoreCollision, float damageMultiplier)
     {
         player = GameObject.Find("/MainCharacter");

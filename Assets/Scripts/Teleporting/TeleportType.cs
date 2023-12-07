@@ -8,7 +8,7 @@ public class TeleportType : GunType
     {
         SetProjectileType(TeleportProjectile());
         SetModel(4);
-        reloadDuration = 0.5f;
+        reloadDuration = 1f;
     }
 
     private ProjectileType TeleportProjectile()
