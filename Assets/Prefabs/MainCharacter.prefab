@@ -1504,8 +1504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11ccd733bde6f346abba763f61c85fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 8
+  walkSpeed: 4
+  runSpeed: 9
   jumpSpeed: 7.5
   jumpTimeout: 0.5
   extraGravity: 0.25
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9296f25368bce7342acf66415b403fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStamina: 75
+  maxStamina: 100
   hasStamina: 1
 --- !u!1 &7616213564599355113
 GameObject:
