@@ -6,8 +6,12 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
-    public float walkSpeed = 4f;
-    public float runSpeed = 20f;
+
+    // do not try to change these in this script, change them in unity,
+    // they're public values and they'll be rewritten with 
+    // whatever unity has for the gameobject.
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
     public float jumpSpeed = 7.5f;
     private bool jumpPressed;
     private bool jumping;
@@ -29,11 +33,12 @@ public class PlayerMovement : MonoBehaviour
     {
         // Running
         float moveSpeed = (Input.GetKey(KeyCode.LeftShift) && (stamina.hasStamina)) ? runSpeed : walkSpeed;
+        print(moveSpeed);
         
         // Stamina Management
         if (moveSpeed == runSpeed) {
-            stamina.ReduceStamina(1);
-        } else if (stamina.StaminaNotFull()){
+            stamina.ReduceStamina(2);
+        } else if (stamina.StaminaNotFull() && !(Input.GetKey(KeyCode.LeftShift))){
             stamina.RefillStamina(1);
         }
 

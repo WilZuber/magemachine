@@ -31,26 +31,32 @@ public class StaminaManager : MonoBehaviour
         return stamina != maxStamina;
     }
 
-    public float getStamina() {
-        return stamina;
-    }
+    // not used, will delete if commenting it out doesn't break anything
+    // public float getStamina() {
+    //     return stamina;
+    // }
     
     public void ReduceStamina(float reductionAmount)
     {
-        if ((stamina > 0)) {
+        if ((stamina >= 0)) {
             hasStamina = true;
             stamina -= reductionAmount;
         } else {
             hasStamina = false;
+
+            // intentionally setting stamina negative so the player has to wait a moment when they're out of stamina
+            stamina = -20;
         }
     }
 
     public void RefillStamina(float refill)
     {
         stamina += refill;
-        if (stamina > maxStamina) {
+        if (stamina >= maxStamina) {
             stamina = maxStamina;
         }
-        hasStamina = true;
+        if (stamina >= 0) {
+            hasStamina = true;
+        }
     }
 }

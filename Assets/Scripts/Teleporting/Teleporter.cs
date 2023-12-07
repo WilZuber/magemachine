@@ -39,7 +39,7 @@ public class Teleporter : ProjectileType
             Collider[] colliders = Physics.OverlapCapsule(point0, point1, playerCollider.radius);
             foreach (Collider overlappingCollider in colliders) {
                 if (!(overlappingCollider.isTrigger) && !(overlappingCollider.CompareTag("Player") || overlappingCollider.CompareTag("Enemy"))) {
-                    Debug.Log(overlappingCollider.gameObject);
+                    //Debug.Log(overlappingCollider.gameObject);
                     bool overlapping = Physics.ComputePenetration(playerCollider, teleportDestination, Quaternion.identity,
                                                                   overlappingCollider, overlappingCollider.transform.position, 
                                                                   overlappingCollider.transform.rotation, out Vector3 direction, out float distance);
