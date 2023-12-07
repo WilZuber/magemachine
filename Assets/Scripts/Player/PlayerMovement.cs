@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Running
         float moveSpeed = (Input.GetKey(KeyCode.LeftShift) && (stamina.hasStamina)) ? runSpeed : walkSpeed;
-        print(moveSpeed);
         
         // Stamina Management
         if (moveSpeed == runSpeed) {
