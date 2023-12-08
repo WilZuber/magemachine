@@ -9,13 +9,17 @@ public class LevelGenerator : MonoBehaviour
     private enum Decoration {};
 
     public static int level;
-    public GameObject prefab;
-    public static GameObject staticPrefab;
+    public GameObject[] prefabs;
+    private static Quaternion[] rotations;
+    private static GameObject[] emptyRoom;
+    private static GameObject[] wall;
+    private static GameObject[] door;
+    private static GameObject[] corner;
     private static readonly float mergeChance = 0.5f; //chance for connected rooms to be merged when applicable
 
     private static Cell[,] cells;
     private static List<Cell> standardCells;
-    private static int r, d;
+    private static int radius, diameter;
 
     // Directions: NESW
     private static readonly int[][] nextDirs = new[]{new[]{0, 1, 3}, new[]{0, 1, 2}, new[]{1, 2, 3}, new[]{0, 2, 3}}; // [0,3] \ incoming
@@ -26,14 +30,14 @@ public class LevelGenerator : MonoBehaviour
     private class Cell {
         public WallType[] sides = new WallType[4];
         public RoomType type;
-        private int x, y;
-        private static readonly float size = 8;
+        private readonly int R, C;
+        private static readonly float size = 10;
         
         public Cell(int x, int y, int dir, RoomType type) {
             this.type = type;
-            this.x = x;
-            this.y = y;
-            cells[this.y, this.x] = this;
+            C = x;
+            R = y;
+            cells[R, C] = this;
             standardCells.Add(this);
             foreach (int nextDir in nextDirs[dir])
                 sides[nextDir] = WallType.wall;
@@ -41,7 +45,7 @@ public class LevelGenerator : MonoBehaviour
         
         //the adjacent cell in the given direction
         public Cell CellOnSide(int dir) {
-            return cells[y + dy[dir], x + dx[dir]];
+            return cells[R + dy[dir], C + dx[dir]];
         }
         
         public void SetSide(int dir, WallType wallType) {
@@ -53,18 +57,19 @@ public class LevelGenerator : MonoBehaviour
         }
 
         public void Output() {
-            Vector3 position = new((x - r) * size, 0, (y - r) * size);
-            Instantiate(staticPrefab, position, Quaternion.identity);
+            Vector3 position = new((C - radius) * size, 0, -(R - radius) * size);
+            int roomType = type == RoomType.challenge ? 1 : 0;
+            PlaceRoom(position, roomType, sides);
         }
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        staticPrefab = prefab;
+        Initialize();
         //level -> radius: 1 -> 2, 2-3 -> 3, 4-6 -> 4, 7-10 -> 5, etc
-        r = Mathf.CeilToInt(Mathf.Sqrt(2*level + 0.25f) + 0.5f);
-        d = 2*r + 1;
+        radius = Mathf.CeilToInt(Mathf.Sqrt(2*level + 0.25f) + 0.5f);
+        diameter = 2*radius + 1;
         Generate();
     }
 
@@ -72,16 +77,16 @@ public class LevelGenerator : MonoBehaviour
         int startDir = Random.Range(0, 4);
         bool retry;
         do {
-            cells = new Cell[d, d];
+            cells = new Cell[diameter, diameter];
             standardCells = new();
 
-            Cell startCell = new(r, r, startDir, RoomType.start);
+            Cell startCell = new(radius, radius, startDir, RoomType.start);
             standardCells.Clear(); //don't do anything else with the starting room
             startCell.SetSide(incoming[startDir], WallType.wall);
-            Generate(r, r, startDir, r);
+            Generate(radius, radius, startDir, radius);
             
             //ensure there are at least 4r non-starting rooms (probably change to something else later)
-            retry = standardCells.Count < 4*r;
+            retry = standardCells.Count < 4*radius;
         } while (retry);
         
         AssignRooms(startDir);
@@ -90,12 +95,10 @@ public class LevelGenerator : MonoBehaviour
     
     //in: direction of new room from previous room (0123 -> NESW)
     private void Generate(int x, int y, int dir, int remaining) {
-                                //updateX(x);
-                                //updateY(y);
         Cell currentCell = cells[y, x];
         
         foreach (int nextDir in nextDirs[dir]) {
-            if (Random.Range(0f, r) < remaining) { //whether to proceed in this direction (linear falloff chance)
+            if (Random.Range(0f, radius) < remaining) { //whether to proceed in this direction (linear falloff chance)
                 
                 int newX = x + dx[nextDir];
                 int newY = y + dy[nextDir];
@@ -115,7 +118,7 @@ public class LevelGenerator : MonoBehaviour
     
     private List<Cell> CellsNextToStart(int startDir) {
         List<Cell> adjCells = new(3);
-        Cell startCell = cells[r, r];
+        Cell startCell = cells[radius, radius];
         foreach (int dir in nextDirs[startDir]) {
             adjCells.Add(startCell.CellOnSide(dir));
         }
@@ -174,6 +177,42 @@ public class LevelGenerator : MonoBehaviour
         foreach (Cell cell in cells)
         {
             cell?.Output();
+        }
+    }
+    
+    public void Initialize()
+    {
+        emptyRoom = new[]{prefabs[0], prefabs[4]};
+        wall = new[]{prefabs[1], prefabs[5]};
+        door = new[]{prefabs[2], prefabs[6]};
+        corner = new[]{prefabs[3], prefabs[7]};
+        rotations = new Quaternion[4];
+        for (int i = 0; i < 4; i++)
+        {
+            rotations[i] = Quaternion.Euler(0, 90*i, 0);
+        }
+    }
+
+    private static void PlaceRoom(Vector3 position, int roomType, WallType[] wallTypes) {
+
+        //room
+        Transform room = Instantiate(emptyRoom[roomType], position, Quaternion.identity).transform;
+        
+        for (int i = 0; i < 4; i++)
+        {
+            int side0 = i;
+            int side1 = (i+1) % 4;
+
+            //walls
+            switch (wallTypes[i]) {
+                case WallType.wall: Instantiate(wall[roomType], position, rotations[i], room); break;
+                case WallType.door: Instantiate(door[roomType], position, rotations[i], room); break;
+            }
+            
+            //corners
+            if (wallTypes[side0] != WallType.empty || wallTypes[side1] != WallType.empty) {
+                Instantiate(corner[roomType], position, rotations[i], room);
+            }
         }
     }
 }
