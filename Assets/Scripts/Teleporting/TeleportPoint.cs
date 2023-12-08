@@ -13,7 +13,7 @@ public class TeleportPoint : ProjectileType
         if (TeleportGun.teleportPoint != null) {
             Destroy(TeleportGun.teleportPoint);
         }
-        Debug.Log(isTeleportableEnemy);
+        Debug.Log("TeleportPoint isTeleportableEnemy check: " + isTeleportableEnemy);
         if (!isTeleportableEnemy) {
             ProjectileInstance instance = ProjectileInstance.CreateProjectile(this, position, Vector3.zero, ignoreCollision, 0f);
             TeleportGun.teleportPoint = instance.gameObject;
