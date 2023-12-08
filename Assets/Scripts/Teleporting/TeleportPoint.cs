@@ -11,8 +11,15 @@ public class TeleportPoint : ProjectileType
         if (TeleportGun.teleportPoint != null) {
             Destroy(TeleportGun.teleportPoint);
         }
-        ProjectileInstance instance = ProjectileInstance.CreateProjectile(this, position, Vector3.zero, ignoreCollision, 0f);
-        TeleportGun.teleportPoint = instance.gameObject;
+
+        Debug.Log("TeleportPoint running");
+
+        // if the player wants to teleport an enemy, a projectile is intentionally not shot 
+        // since the teleport point is created by activating a gameobject on the enemy
+        if (!Teleporter.isTeleportableEnemy) {
+            ProjectileInstance instance = ProjectileInstance.CreateProjectile(this, position, Vector3.zero, ignoreCollision, 0f);
+            TeleportGun.teleportPoint = instance.gameObject; 
+        } 
     }
 
     public static TeleportPoint New()

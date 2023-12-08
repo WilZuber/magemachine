@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     WeaponHolder guns;
     MeleeWeaponController melee;
     TeleportGun teleporter;
+    //public static bool isTeleportableEnemy;
 
     // Start is called before the first frame update
     void Start()
