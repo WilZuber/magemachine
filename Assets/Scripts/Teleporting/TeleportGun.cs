@@ -31,6 +31,7 @@ public class TeleportGun : GunInstance
 
         // deactivates teleport point above enemy's head
         Teleporter.enemyTeleportPoint.SetActive(false);
+        Teleporter.enemyTeleportPoint.SetActive(false);
     }
 
     public void SwitchWithSurface() {
