@@ -15,6 +15,7 @@ public class LevelGenerator : MonoBehaviour
     private static GameObject[] wall;
     private static GameObject[] door;
     private static GameObject[] corner;
+    private static GameObject levelExit;
     private static readonly float mergeChance = 0.5f; //chance for connected rooms to be merged when applicable
 
     private static Cell[,] cells;
@@ -31,7 +32,7 @@ public class LevelGenerator : MonoBehaviour
         public WallType[] sides = new WallType[4];
         public RoomType type;
         private readonly int R, C;
-        private static readonly float size = 10;
+        private static readonly float size = 8;
         
         public Cell(int x, int y, int dir, RoomType type) {
             this.type = type;
@@ -58,8 +59,7 @@ public class LevelGenerator : MonoBehaviour
 
         public void Output() {
             Vector3 position = new((C - radius) * size, 0, -(R - radius) * size);
-            int roomType = type == RoomType.challenge ? 1 : 0;
-            PlaceRoom(position, roomType, sides);
+            PlaceRoom(position, type, sides);
         }
     }
     
@@ -178,6 +178,7 @@ public class LevelGenerator : MonoBehaviour
         {
             cell?.Output();
         }
+        level++;
     }
     
     public void Initialize()
@@ -186,17 +187,20 @@ public class LevelGenerator : MonoBehaviour
         wall = new[]{prefabs[1], prefabs[5]};
         door = new[]{prefabs[2], prefabs[6]};
         corner = new[]{prefabs[3], prefabs[7]};
+        levelExit = prefabs[8];
         rotations = new Quaternion[4];
         for (int i = 0; i < 4; i++)
         {
             rotations[i] = Quaternion.Euler(0, 90*i, 0);
         }
+        LevelExit.currentLevel = 3;
     }
 
-    private static void PlaceRoom(Vector3 position, int roomType, WallType[] wallTypes) {
+    private static void PlaceRoom(Vector3 position, RoomType roomType, WallType[] wallTypes) {
+        int environment = roomType == RoomType.challenge ? 1 : 0;
 
         //room
-        Transform room = Instantiate(emptyRoom[roomType], position, Quaternion.identity).transform;
+        Transform room = Instantiate(emptyRoom[environment], position, Quaternion.identity).transform;
         
         for (int i = 0; i < 4; i++)
         {
@@ -205,14 +209,18 @@ public class LevelGenerator : MonoBehaviour
 
             //walls
             switch (wallTypes[i]) {
-                case WallType.wall: Instantiate(wall[roomType], position, rotations[i], room); break;
-                case WallType.door: Instantiate(door[roomType], position, rotations[i], room); break;
+                case WallType.wall: Instantiate(wall[environment], position, rotations[i], room); break;
+                case WallType.door: Instantiate(door[environment], position, rotations[i], room); break;
             }
             
             //corners
-            if (wallTypes[side0] != WallType.empty || wallTypes[side1] != WallType.empty) {
-                Instantiate(corner[roomType], position, rotations[i], room);
-            }
+            //if (wallTypes[side0] != WallType.empty || wallTypes[side1] != WallType.empty) {
+                Instantiate(corner[environment], position, rotations[i], room);
+            //}
+        }
+
+        if (roomType == RoomType.exit) {
+            Instantiate(levelExit, position, Quaternion.identity);
         }
     }
 }
