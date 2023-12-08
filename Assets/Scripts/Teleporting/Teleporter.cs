@@ -21,16 +21,15 @@ public class Teleporter : ProjectileType
             Collider hitCollider = hit.collider;
 
             // code for setting up teleport point with enemy
-                // the first condition checks if the string of the gameObject is long enough to use substring to avoid errors
             if (hitCollider.gameObject.tag == "Enemy") {
                 // nesting this if statement looks unoptimized, but C# will give an error if this is in the previous if statement
                 if (hitCollider.gameObject.name.Substring(0,6) == "enemy1" || hitCollider.gameObject.name.Substring(0,6) == "enemy3") {
-                    Debug.Log("Teleporter Running");
                     isTeleportableEnemy = true;
                 
                     enemyToTeleport = hitCollider.gameObject;
                     // activates a teleport point above the enemy
                     enemyTeleportPoint = enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject;
+                    enemyTeleportPoint.SetActive(true);
                     enemyTeleportPoint.SetActive(true);
 
                     // note : point.fire is still called after this if statement, but the teleport destination does not matter since the
@@ -45,6 +44,7 @@ public class Teleporter : ProjectileType
                 // since this else statement is for when the player wants to teleport to a surface instead of an enemy,
                 // this if statement deactivates the teleport point above an enemy's head if there is one and resets the variable
                 if (enemyToTeleport != null) {
+                    enemyTeleportPoint.SetActive(false);
                     enemyTeleportPoint.SetActive(false);
                     enemyToTeleport = null;
                 }
@@ -72,18 +72,15 @@ public class Teleporter : ProjectileType
                 // var point1 = hit.point + offset;
 
                 // creating array of colliders to iterate through and depenetrate if currently penetrated
-                    // using OverlapCapsuleNonAlloc instead of OverlapCapsule because OverlapCapsuleNonAlloc allocates the array in advance
+        
                 // Collider[] colliders = Physics.OverlapCapsule(point0, point1, trueRadius);
                 Collider[] colliders = Physics.OverlapCapsule(point0, point1, playerCollider.radius);
                 foreach (Collider overlappingCollider in colliders) {
-                    //Debug.Log(overlappingCollider.gameObject);
                     if (!(overlappingCollider.isTrigger) && !(overlappingCollider.CompareTag("Player") || overlappingCollider.CompareTag("Enemy"))) {
-                        //Debug.Log(overlappingCollider.gameObject);
                         bool overlapping = Physics.ComputePenetration(playerCollider, teleportDestination, Quaternion.identity,
                                                                     overlappingCollider, overlappingCollider.transform.position, 
                                                                     overlappingCollider.transform.rotation, out Vector3 direction, out float distance);
                         if (overlapping) {
-                            Debug.Log(overlapping);
                             teleportDestination += distance * direction;
                         }
                     }

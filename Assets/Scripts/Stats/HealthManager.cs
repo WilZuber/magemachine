@@ -53,8 +53,6 @@ public class HealthManager : MonoBehaviour
         }
         if (TryGetComponent(out Animator anim))
         {
-            GameObject.Find("/MainCharacter/CameraPivot/Main Camera/DeathScreenCanvas").SetActive(true);
-            DeathScreen.playerDead = true;
             anim.SetTrigger("Die");
             RemoveComponents();
             //Invoke(nameof(DeathFinish), 5f);
@@ -84,6 +82,10 @@ public class HealthManager : MonoBehaviour
         }
         else if (TryGetComponent(out PlayerMovement move))
         {
+            // activate death screen
+            GameObject.Find("/MainCharacter/CameraPivot/Main Camera/DeathScreenCanvas").SetActive(true);
+            DeathScreen.playerDead = true;
+
             PlayerAttack attack = GetComponent<PlayerAttack>();
             Destroy(move);
             Destroy(attack);
