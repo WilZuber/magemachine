@@ -15,8 +15,8 @@ public class TeleportGun : GunInstance
         halfHeight = playerCollider.height / 2;
     }
 
-    public void SwitchWithTeleportPoint(bool enemy) {
-        if (enemy) {
+    public void SwitchWithTeleportPoint() {
+        if (Teleporter.enemyTeleportPoint != null && Teleporter.enemyTeleportPoint.activeSelf) {
             SwitchWithEnemy();
         } else {
             SwitchWithSurface();
@@ -30,7 +30,7 @@ public class TeleportGun : GunInstance
         Teleporter.enemyToTeleport.transform.position = tempPosition;
 
         // deactivates teleport point above enemy's head
-        Teleporter.enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+        Teleporter.enemyTeleportPoint.SetActive(false);
     }
 
     public void SwitchWithSurface() {

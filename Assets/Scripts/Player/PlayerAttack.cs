@@ -43,8 +43,7 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //teleport use
-            Debug.Log("playerattack isTeleportableEnemy: " + Teleporter.isTeleportableEnemy);
-            teleporter.SwitchWithTeleportPoint(Teleporter.isTeleportableEnemy);
+            teleporter.SwitchWithTeleportPoint();
         }
     }
 }

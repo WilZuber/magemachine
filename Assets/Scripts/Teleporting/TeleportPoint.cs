@@ -12,6 +12,8 @@ public class TeleportPoint : ProjectileType
             Destroy(TeleportGun.teleportPoint);
         }
 
+        Debug.Log("TeleportPoint running");
+
         // if the player wants to teleport an enemy, a projectile is intentionally not shot 
         // since the teleport point is created by activating a gameobject on the enemy
         if (!Teleporter.isTeleportableEnemy) {

@@ -8,6 +8,7 @@ public class Teleporter : ProjectileType
     public GameObject player;
     public static bool isTeleportableEnemy;
     public static GameObject enemyToTeleport;
+    public static GameObject enemyTeleportPoint;
     public Vector3 point0;
     public Vector3 point1;
     public override void Fire(Vector3 position, float speed, Vector3 currentDirection, GameObject ignoreCollision, float damageMultiplier)
@@ -20,15 +21,21 @@ public class Teleporter : ProjectileType
             Collider hitCollider = hit.collider;
 
             // code for setting up teleport point with enemy
-            if (hitCollider.gameObject.name == "enemy1" || hitCollider.gameObject.name == "enemy3") {
-                isTeleportableEnemy = true;
-               
-                // activates a teleport point above the enemy
-                enemyToTeleport = hitCollider.gameObject;
-                enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+                // the first condition checks if the string of the gameObject is long enough to use substring to avoid errors
+            if (hitCollider.gameObject.tag == "Enemy") {
+                // nesting this if statement looks unoptimized, but C# will give an error if this is in the previous if statement
+                if (hitCollider.gameObject.name.Substring(0,6) == "enemy1" || hitCollider.gameObject.name.Substring(0,6) == "enemy3") {
+                    Debug.Log("Teleporter Running");
+                    isTeleportableEnemy = true;
+                
+                    enemyToTeleport = hitCollider.gameObject;
+                    // activates a teleport point above the enemy
+                    enemyTeleportPoint = enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject;
+                    enemyTeleportPoint.SetActive(true);
 
-                // note : point.fire is still called after this if statement, but the teleport destination does not matter since the
-                // teleportPoint does not set where the player goes, the enemy's position sets where the player goes
+                    // note : point.fire is still called after this if statement, but the teleport destination does not matter since the
+                    // teleportPoint does not set where the player goes, the enemy's position sets where the player goes
+                }
             } else {
                 // this else statement assumes the player is teleporting to a surface
 
@@ -38,7 +45,7 @@ public class Teleporter : ProjectileType
                 // since this else statement is for when the player wants to teleport to a surface instead of an enemy,
                 // this if statement deactivates the teleport point above an enemy's head if there is one and resets the variable
                 if (enemyToTeleport != null) {
-                    enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+                    enemyTeleportPoint.SetActive(false);
                     enemyToTeleport = null;
                 }
             
