@@ -6,8 +6,6 @@ public class TeleportGun : GunInstance
 {
     private static GameObject player;
     public static GameObject teleportPoint;
-    public static bool isTeleportableEnemy;
-    public static GameObject enemyToTeleport;
     public CapsuleCollider playerCollider;
     public float halfHeight;
 
@@ -17,8 +15,8 @@ public class TeleportGun : GunInstance
         halfHeight = playerCollider.height / 2;
     }
 
-    public void SwitchWithTeleportPoint(bool isTeleportableEnemy) {
-        if (isTeleportableEnemy) {
+    public void SwitchWithTeleportPoint(bool enemy) {
+        if (enemy) {
             SwitchWithEnemy();
         } else {
             SwitchWithSurface();
@@ -28,11 +26,11 @@ public class TeleportGun : GunInstance
     public void SwitchWithEnemy() {
         // saves player position, sends player to enemy position, sends enemy to previous player position
         Vector3 tempPosition = player.transform.position;
-        enemyToTeleport.transform.position = tempPosition; 
-        player.transform.position = teleportPoint.transform.position - (0.25f * halfHeight) * Vector3.down;
+        player.transform.position = Teleporter.enemyToTeleport.transform.position  - (0.25f * halfHeight) * Vector3.down;
+        Teleporter.enemyToTeleport.transform.position = tempPosition;
 
         // deactivates teleport point above enemy's head
-        enemyToTeleport.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+        Teleporter.enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void SwitchWithSurface() {

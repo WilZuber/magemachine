@@ -22,16 +22,18 @@ public class Teleporter : ProjectileType
             // code for setting up teleport point with enemy
             if (hitCollider.gameObject.name == "enemy1" || hitCollider.gameObject.name == "enemy3") {
                 isTeleportableEnemy = true;
-                Debug.Log(hitCollider.gameObject.name + " teleport set up, boolean: " + isTeleportableEnemy);
-
-                enemyToTeleport = hitCollider.gameObject;
-                teleportDestination = enemyToTeleport.transform.position;
                
                 // activates a teleport point above the enemy
-                Debug.Log(enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.name);
+                enemyToTeleport = hitCollider.gameObject;
                 enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+
+                // note : point.fire is still called after this if statement, but the teleport destination does not matter since the
+                // teleportPoint does not set where the player goes, the enemy's position sets where the player goes
             } else {
+                // this else statement assumes the player is teleporting to a surface
+
                 isTeleportableEnemy = false;
+
                 // checks if an enemy has already been marked for teleportation
                 // since this else statement is for when the player wants to teleport to a surface instead of an enemy,
                 // this if statement deactivates the teleport point above an enemy's head if there is one and resets the variable
@@ -39,7 +41,6 @@ public class Teleporter : ProjectileType
                     enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
                     enemyToTeleport = null;
                 }
-                // assumes the player is teleporting to a surface
             
                 CapsuleCollider playerCollider = player.GetComponent<CapsuleCollider>();
                 
