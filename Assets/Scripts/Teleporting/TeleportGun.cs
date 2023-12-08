@@ -6,6 +6,8 @@ public class TeleportGun : GunInstance
 {
     private static GameObject player;
     public static GameObject teleportPoint;
+    public static bool isTeleportableEnemy;
+    public static GameObject enemyToTeleport;
     public CapsuleCollider playerCollider;
     public float halfHeight;
 
@@ -13,12 +15,28 @@ public class TeleportGun : GunInstance
         player = GameObject.Find("/MainCharacter");
         playerCollider = player.GetComponent<CapsuleCollider>();
         halfHeight = playerCollider.height / 2;
-        //Teleporter.playerCollider = playerCollider;
     }
 
-    public void SwitchWithTeleportPoint() {
-        if (teleportPoint != null) {
+    public void SwitchWithTeleportPoint(bool isTeleportableEnemy) {
+        if (isTeleportableEnemy) {
+            SwitchWithEnemy();
+        } else {
+            SwitchWithSurface();
+        }
+    }
 
+    public void SwitchWithEnemy() {
+        // saves player position, sends player to enemy position, sends enemy to previous player position
+        Vector3 tempPosition = player.transform.position;
+        enemyToTeleport.transform.position = tempPosition; 
+        player.transform.position = teleportPoint.transform.position - (0.25f * halfHeight) * Vector3.down;
+
+        // deactivates teleport point above enemy's head
+        enemyToTeleport.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+    }
+
+    public void SwitchWithSurface() {
+        if (teleportPoint != null) {
             // if the teleportation point is high, teleport a higher position of the player
             // if the teleportation point is low, teleport a lower position of the player
             if (HighCheck(teleportPoint.transform.position.y)) {
@@ -35,6 +53,7 @@ public class TeleportGun : GunInstance
     // this is a quickfix to prevent the player from teleporting out of bounds or into walls
         // if this is still here after the class is over and levels have more verticality,
         // rewrite this code so that "3.875" here is replaced with the height of any room the player is currently in.
+        // maybe have a raycast check the closest thing above the player and get the y value of the collided object?
     public bool HighCheck(float yValue) {
         return yValue >= (3.875 - halfHeight);
     }

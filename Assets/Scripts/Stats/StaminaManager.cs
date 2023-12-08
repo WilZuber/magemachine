@@ -30,11 +30,6 @@ public class StaminaManager : MonoBehaviour
     public bool StaminaNotFull() {
         return stamina != maxStamina;
     }
-
-    // not used, will delete if commenting it out doesn't break anything
-    // public float getStamina() {
-    //     return stamina;
-    // }
     
     public void ReduceStamina(float reductionAmount)
     {
