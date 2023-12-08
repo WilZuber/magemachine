@@ -41,7 +41,8 @@ public class LevelExit: MonoBehaviour
                     currentLevel += 1;
                     SceneManager.LoadScene(levelList[currentLevel]);
                 } else {
-                    print("ERROR: There are only four levels currently.");
+                    //print("ERROR: There are only four levels currently.");
+                    SceneManager.LoadScene("Level1"); //rework once procedural levels are fully implemented
                 }
             }
         }
