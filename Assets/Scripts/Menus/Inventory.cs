@@ -19,10 +19,13 @@ public class Inventory : MonoBehaviour
     private WeaponHolder playerGuns;
 
     private static Inventory currentInventory;
-    private bool inventoryOpen;
 
     //Components
     public GameObject inventoryCanvas;
+    public GameObject inventoryPanel;
+    public GameObject gunEditorPanel;
+    public GameObject skillTreePanel;
+    private GameObject activePanel;
     public TextMeshProUGUI soulRefillCounter;
     public TextMeshProUGUI skillPointCounter;
     public Image[] gunSprites;
@@ -43,9 +46,9 @@ public class Inventory : MonoBehaviour
         playerGuns.SpawnGun(guns[gunSelections[1]], 1);
 
         currentInventory = this;
-        inventoryOpen = false;
+        activePanel = inventoryPanel;
         inventoryCanvas.SetActive(false);
-        
+
         for (int i = 0; i < guns.Length; i++)
         {
             UpdateGunSprite(i);
@@ -61,29 +64,39 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (!inventoryOpen)
+            if (inventoryCanvas.activeSelf)
             {
-                OpenInventory();
+                CloseInventory();
             }
             else
             {
-                CloseInventory();
+                OpenInventory();
             }
         }
     }
 
     private void OpenInventory()
     {
-        inventoryOpen = true;
+        SetPanel(inventoryPanel);
         inventoryCanvas.SetActive(true);
         PlayerInputToggle.Disable();
     }
 
     private void CloseInventory()
     {
-        inventoryOpen = false;
         inventoryCanvas.SetActive(false);
         PlayerInputToggle.Enable();
+    }
+
+    private void SetPanel(GameObject newPanel)
+    {
+        if (newPanel != activePanel)
+        {
+            activePanel.SetActive(false);
+            newPanel.SetActive(true);
+            activePanel = newPanel;
+        }
+
     }
 
     //World interaction
@@ -141,7 +154,7 @@ public class Inventory : MonoBehaviour
             null,
             null
         };
-        gunSelections = new int[]{0, 1};
+        gunSelections = new int[] { 0, 1 };
 
         soulRefills = 0;
         skillPoints = 0;
@@ -202,17 +215,18 @@ public class Inventory : MonoBehaviour
 
     public void RefillSoul()
     {
-        
+
+    }
+
+    public void OpenGunEditor()
+    {
+        //GunLists.CreateGun().SpawnPickup(playerGuns.transform.position, null);
+        SetPanel(gunEditorPanel);
     }
 
     public void OpenSkillTree()
     {
-
-    }
-
-    public void OpenMap()
-    {
-        GunLists.CreateGun().SpawnPickup(playerGuns.transform.position, null);
+        SetPanel(skillTreePanel);
     }
 
     //Display
@@ -258,13 +272,16 @@ public class Inventory : MonoBehaviour
     public static Sprite[] GetGunSprites()
     {
         Sprite[] sprites = new Sprite[2];
-        
-        for (int i = 0; i < gunSelections.Length; i++) {
+
+        for (int i = 0; i < gunSelections.Length; i++)
+        {
             if (gunSelections[i] < 0) // gunSelections returns a -1 if no gun held
             {
                 // dont do anything, as new array index already instantiated to null
-            } else {
-                sprites[i] = (guns[gunSelections[i]].inventorySprite); 
+            }
+            else
+            {
+                sprites[i] = (guns[gunSelections[i]].inventorySprite);
             }
         }
 
