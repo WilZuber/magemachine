@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class RevealMiniMapRoom : MonoBehaviour
 {
-    private GameObject roomCover;
+    public GameObject roomCover;
 
-    void Start()
-    {
-        roomCover = this.gameObject.transform.GetChild(0).gameObject;
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
