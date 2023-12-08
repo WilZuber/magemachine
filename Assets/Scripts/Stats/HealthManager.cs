@@ -53,6 +53,8 @@ public class HealthManager : MonoBehaviour
         }
         if (TryGetComponent(out Animator anim))
         {
+            GameObject.Find("/MainCharacter/CameraPivot/Main Camera/DeathScreenCanvas").SetActive(true);
+            DeathScreen.playerDead = true;
             anim.SetTrigger("Die");
             RemoveComponents();
             //Invoke(nameof(DeathFinish), 5f);
