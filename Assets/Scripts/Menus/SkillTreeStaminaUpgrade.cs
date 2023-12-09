@@ -42,7 +42,7 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
         }
     }
 
-    public void RerollModifer()
+    public void Reroll()
     {
         isMultiplier = (Random.value < 0.3); // 30% chance to be a multiplier value
         
@@ -55,5 +55,7 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
             modifier = ((Random.Range(10, 30)));
             price = Random.Range(1, 4); // could get cheap good rolls, or pricey bad rolls
         }
+
+        UpdateButtonText();
     }
 }
