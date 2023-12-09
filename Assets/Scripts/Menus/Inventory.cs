@@ -205,6 +205,17 @@ public class Inventory : MonoBehaviour
         skillPointCounter.text = skillPoints.ToString();
     }
 
+    public static bool UseSkillPoints(int amount)
+    {
+        if (skillPoints < amount)
+        {
+            return false;
+        }
+        skillPoints -= amount;
+        currentInventory.UpdateSkillPointCounter();
+        return true;
+    }
+
     public static Sprite[] GetGunSprites()
     {
         Sprite[] sprites = new Sprite[2];

@@ -12,9 +12,11 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
     private float modifier;
     private bool isMultiplier; // if this is false, addition instead.
     private int price;
+
     void Start()
     {
         playerStaminaManager = GameObject.Find("MainCharacter").GetComponent<StaminaManager>();
+        Reroll(); // set initial values
     }
 
     // sets the text on the button
@@ -33,6 +35,13 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
     // update player stamina
     public void UpdatePlayerStamina()
     {
+        if (!Inventory.UseSkillPoints(price)) // boot out of function if not enough skill points
+        {
+            // tell player they are bad
+            return;
+        }
+        // if enough skill points, continue to updating
+
         if (isMultiplier)
         {
             playerStaminaManager.SetMaxStamina(playerStaminaManager.GetMaxStamina() * modifier);
@@ -40,7 +49,9 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
         {
             playerStaminaManager.SetMaxStamina(playerStaminaManager.GetMaxStamina() + modifier);
         }
+        Reroll(); // dont let players spam their good catch
     }
+
 
     public void Reroll()
     {
