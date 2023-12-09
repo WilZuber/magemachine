@@ -70,6 +70,7 @@ public class HealthManager : MonoBehaviour
 
     private void RemoveComponents()
     {
+        gameObject.transform.Find("Minimap").gameObject.SetActive(false);
         if (TryGetComponent(out AI ai))
         {
             ai.agent.isStopped = true;
@@ -109,7 +110,6 @@ public class HealthManager : MonoBehaviour
 
     private void DeathFinish()
     {
-        gameObject.transform.Find("Minimap").gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
