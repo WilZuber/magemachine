@@ -18,6 +18,8 @@ public class LevelGenerator : MonoBehaviour
     private static GameObject[] door;
     private static GameObject[] corner;
     private static GameObject levelExit;
+    public GameObject[] enemyPrefabs;
+    private static GameObject[] enemies;
     private static readonly float mergeChance = 0.5f; //chance for connected rooms to be merged when applicable
 
     private static Cell[,] cells;
@@ -71,6 +73,13 @@ public class LevelGenerator : MonoBehaviour
         {
             Vector3 position = new((C - radius) * size, 0, -(R - radius) * size);
             room = PlaceRoom(position, this);
+
+            //place enemy (tmp)
+            if (type == RoomType.standard && Random.value < 0.5f) {
+                int index = Random.Range(0, 3);
+                GameObject enemy = enemies[index];
+                Instantiate(enemy, position, Quaternion.identity);
+            }
         }
     }
 
@@ -230,11 +239,13 @@ public class LevelGenerator : MonoBehaviour
 
     public void Initialize()
     {
-        emptyRoom = new[] { prefabs[0], prefabs[4] };
-        wall = new[] { prefabs[1], prefabs[5] };
-        door = new[] { prefabs[2], prefabs[6] };
-        corner = new[] { prefabs[3], prefabs[7] };
+        emptyRoom = new[] { prefabs[0], prefabs[4]};
+        wall = new[] { prefabs[1], prefabs[5]};
+        door = new[] { prefabs[2], prefabs[6]};
+        corner = new[] { prefabs[3], prefabs[7]};
         levelExit = prefabs[8];
+        enemies = enemyPrefabs;
+
         rotations = new Quaternion[4];
         for (int i = 0; i < 4; i++)
         {
