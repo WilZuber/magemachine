@@ -109,6 +109,7 @@ public class HealthManager : MonoBehaviour
 
     private void DeathFinish()
     {
+        gameObject.transform.Find("Minimap").gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
