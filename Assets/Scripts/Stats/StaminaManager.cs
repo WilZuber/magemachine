@@ -17,6 +17,11 @@ public class StaminaManager : MonoBehaviour
         hasStamina = true;
     }
 
+    public void SetMaxStamina(float maxStamina)
+    {
+        this.maxStamina = maxStamina;
+    }
+
     public float GetStamina()
     {
         return this.stamina;
