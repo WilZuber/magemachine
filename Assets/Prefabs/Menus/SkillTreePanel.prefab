@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierText: {fileID: 4485569520207202345}
   priceText: {fileID: 7655962784174039000}
+  currentStatManager: {fileID: 0}
 --- !u!1 &1169635238755071842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,6 +1649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierText: {fileID: 7094558630407631234}
   priceText: {fileID: 6125992217090354974}
+  currentStatManager: {fileID: 0}
 --- !u!1 &6969677645410706893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6403438136274186818}
+  - component: {fileID: 4958985503116665008}
   m_Layer: 5
   m_Name: SkillTreePanel
   m_TagString: Untagged
@@ -2085,6 +2088,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4958985503116665008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739396261945632056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ebb31d5c948c34b80cdd32a4ba67a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSoulText: {fileID: 0}
+  currentStaminaText: {fileID: 0}
+  currentHealthText: {fileID: 0}
+  playerHealthManager: {fileID: 0}
+  playerSoulManager: {fileID: 0}
+  playerStaminaManager: {fileID: 0}
 --- !u!1 &8253765850560593244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,3 +2390,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierText: {fileID: 3756647735930479665}
   priceText: {fileID: 1977964957937673399}
+  currentStatManager: {fileID: 0}
