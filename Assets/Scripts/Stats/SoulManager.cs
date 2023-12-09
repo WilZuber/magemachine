@@ -14,6 +14,11 @@ public class SoulManager : MonoBehaviour
         soul = maxSoul;
     }
 
+    public void SetMaxSoul(float maxSoul)
+    {
+        this.maxSoul = maxSoul;
+    }
+
     public float GetMaxSoul()
     {
         return this.maxSoul;

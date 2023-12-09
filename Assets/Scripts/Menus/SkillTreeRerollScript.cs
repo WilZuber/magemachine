@@ -10,6 +10,8 @@ public class SkillTreeRerollScript : MonoBehaviour
     public TextMeshProUGUI priceText;
     public SkillTreeStaminaUpgrade staminaUpgrade;
     public SkillTreeHealthUpgrade healthUpgrade;
+    public SkillTreeSoulUpgrade soulUpgrade;
+
     // Start is called before the first frame update
     public void Reroll()
     {
@@ -17,5 +19,6 @@ public class SkillTreeRerollScript : MonoBehaviour
         priceText.text = "x" + rerollCost;
         staminaUpgrade.Reroll();
         healthUpgrade.Reroll();
+        soulUpgrade.Reroll();
     }
 }

@@ -59,7 +59,7 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
         
         if (isMultiplier) // multiplier values should be small
         {
-            modifier = ((Random.Range(11, 31)))/10; // value between 1.1 and 3.0
+            modifier = ((Random.Range(11, 31)))/10f; // value between 1.1 and 3.0
             price = Random.Range(3, 6); // multipliers are more costly
         } else // addition values should be somewhat bigger
         {

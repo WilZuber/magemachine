@@ -4,18 +4,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillTreeHealthUpgrade : MonoBehaviour
+public class SkillTreeSoulUpgrade : MonoBehaviour
 {
     public TextMeshProUGUI modifierText;
     public TextMeshProUGUI priceText;
-    private HealthManager playerHealthManager;
+    private SoulManager playerSoulManager;
     private float modifier;
     private bool isMultiplier; // if this is false, addition instead.
     private int price;
 
     void Start()
     {
-        playerHealthManager = GameObject.Find("MainCharacter").GetComponent<HealthManager>();
+        playerSoulManager = GameObject.Find("MainCharacter").GetComponent<SoulManager>();
         Reroll(); // set initial values
     }
 
@@ -24,16 +24,16 @@ public class SkillTreeHealthUpgrade : MonoBehaviour
     {
         if (isMultiplier)
         {
-            modifierText.text = "x" + modifier + "\nHealth";
+            modifierText.text = "x" + modifier + "\nSoul";
         } else
         {
-            modifierText.text = "+" + modifier + "\nHealth";
+            modifierText.text = "+" + modifier + "\nSoul";
         }
         priceText.text = "x" + price;
     }
     
     // update player health
-    public void UpdatePlayerHealth()
+    public void UpdatePlayerSoul()
     {
         if (!Inventory.UseSkillPoints(price)) // boot out of function if not enough skill points
         {
@@ -44,10 +44,10 @@ public class SkillTreeHealthUpgrade : MonoBehaviour
 
         if (isMultiplier)
         {
-            playerHealthManager.SetMaxHealth(playerHealthManager.GetMaxHealth() * modifier);
+            playerSoulManager.SetMaxSoul(playerSoulManager.GetMaxSoul() * modifier);
         } else
         {
-            playerHealthManager.SetMaxHealth(playerHealthManager.GetMaxHealth() + modifier);
+            playerSoulManager.SetMaxSoul(playerSoulManager.GetMaxSoul() + modifier);
         }
         Reroll(); // dont let players spam their good catch
     }
