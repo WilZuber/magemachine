@@ -11,7 +11,10 @@ public class SoulManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        soul = maxSoul;
+        if (soul == 0) // allows persistence of current soul for the player
+        {
+            soul = maxSoul;
+        }
     }
 
     public void SetSoul(float soul)
