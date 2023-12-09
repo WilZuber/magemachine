@@ -1927,6 +1927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3576916058257344480}
+  - component: {fileID: 3831767460136998709}
   m_Layer: 5
   m_Name: SkillPointCounter
   m_TagString: Untagged
@@ -1955,6 +1956,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3831767460136998709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108584878553454820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5509dcb99b33fb4fa774567b17b9fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPointCounterText: {fileID: 8213428332081482529}
 --- !u!1 &7211155161395132313
 GameObject:
   m_ObjectHideFlags: 0

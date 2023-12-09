@@ -28,6 +28,7 @@ public class Inventory : MonoBehaviour
     public RectTransform[] gunSelectionHighlights; //left and right
     private SoulManager playerSoulManager;
     private static GameObject player;
+    public SkillTreeSkillPointCounterUpdater skillPointUpdater;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,11 @@ public class Inventory : MonoBehaviour
         UpdateGunSelectionHighlight(gunSelectionHighlights[1], gunSelections[1]);
         UpdateSoulRefillCounter();
         UpdateSkillPointCounter();
+    }
+
+    public static int GetSkillPoints()
+    {
+        return skillPoints;
     }
 
     //World interaction
@@ -233,6 +239,7 @@ public class Inventory : MonoBehaviour
     private void UpdateSkillPointCounter()
     {
         skillPointCounter.text = skillPoints.ToString();
+        skillPointUpdater.UpdateSkillTreeSkillPointCounter();
     }
 
     public static bool UseSkillPoints(int amount)
