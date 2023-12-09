@@ -26,6 +26,11 @@ public class HealthManager : MonoBehaviour
         return this.maxHealth;
     }
 
+    public void SetMaxHealth(float maxHealth)
+    {
+        this.maxHealth = maxHealth;
+    }
+
     public void TakeDamage(float damage)
     {
         health -= damage;

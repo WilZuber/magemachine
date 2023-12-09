@@ -653,6 +653,7 @@ GameObject:
   - component: {fileID: 6842465317700941050}
   - component: {fileID: 1272231901658231421}
   - component: {fileID: 9100833871430748775}
+  - component: {fileID: 5049677246987086693}
   m_Layer: 5
   m_Name: RerollButton
   m_TagString: Untagged
@@ -764,9 +765,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: RefillSoul
+      - m_Target: {fileID: 5049677246987086693}
+        m_TargetAssemblyTypeName: SkillTreeRerollScript, Assembly-CSharp
+        m_MethodName: Reroll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -776,6 +777,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5049677246987086693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3992066296092009058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02002966832eb674bae083625dbf100f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 841484082184730955}
+  staminaUpgrade: {fileID: 5861103407142116893}
+  healthUpgrade: {fileID: 7999678874481970272}
 --- !u!1 &4382107104669235264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1419,7 @@ GameObject:
   - component: {fileID: 7329860007765745944}
   - component: {fileID: 483724448551980636}
   - component: {fileID: 1702389748268652921}
+  - component: {fileID: 5861103407142116893}
   m_Layer: 5
   m_Name: StaminaUpgradeButton
   m_TagString: Untagged
@@ -1514,9 +1531,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: RefillSoul
+      - m_Target: {fileID: 5861103407142116893}
+        m_TargetAssemblyTypeName: SkillTreeStaminaUpgrade, Assembly-CSharp
+        m_MethodName: UpdatePlayerStamina
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1526,6 +1543,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5861103407142116893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6333557186551553092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651659697b9258848ade44088bd5bc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifierText: {fileID: 7094558630407631234}
+  priceText: {fileID: 6125992217090354974}
 --- !u!1 &6969677645410706893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +1954,7 @@ GameObject:
   - component: {fileID: 7468398633977844624}
   - component: {fileID: 7635388350081096871}
   - component: {fileID: 6336742458570106700}
+  - component: {fileID: 7999678874481970272}
   m_Layer: 5
   m_Name: HealthUpgradeButton
   m_TagString: Untagged
@@ -2034,9 +2066,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: RefillSoul
+      - m_Target: {fileID: 7999678874481970272}
+        m_TargetAssemblyTypeName: SkillTreeHealthUpgrade, Assembly-CSharp
+        m_MethodName: UpdatePlayerHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2046,3 +2078,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7999678874481970272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588734557548316944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9891cb6ae1ab3ef49a3097c8e69d8670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifierText: {fileID: 3756647735930479665}
+  priceText: {fileID: 1977964957937673399}
