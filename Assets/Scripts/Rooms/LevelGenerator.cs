@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -206,17 +207,24 @@ public class LevelGenerator : MonoBehaviour
         {
             cell?.Output();
         }
-        //GameObject floor = cells[radius, radius].room.GetChild(0).gameObject;
+        /*GameObject floor = cells[radius, radius].room.GetChild(0).gameObject;
         //floor.GetComponent<NavMeshSurface>().BuildNavMesh();
-        foreach (Cell cell in cells)
+        NavMeshBuildSettings settings = NavMesh.CreateSettings();
+        NavMeshSurface nav = floor.GetComponent<NavMeshSurface>();
+        NavMesh.AddNavMeshData(nav.navMeshData);*/
+        /*foreach (Cell cell in cells)
         {
             if (cell != null)
             {
                 int index = cell.type == RoomType.challenge ? 5 : 0;
+                Transform room = cell.room;
                 GameObject floor = cell.room.GetChild(index).gameObject;
-                floor.GetComponent<NavMeshSurface>().BuildNavMesh();
+                //floor.GetComponent<NavMeshSurface>().BuildNavMesh();
+                NavMeshSurface nav = floor.GetComponent<NavMeshSurface>();
+                nav.BuildNavMesh();
+                //NavMesh.AddNavMeshData(nav.navMeshData, room.position, room.rotation);
             }
-        }
+        }*/
         level++;
     }
 

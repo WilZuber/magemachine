@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 5219471001267577508}
   - component: {fileID: 1085199523257090903}
   - component: {fileID: 137460352285552358}
+  - component: {fileID: 1725056159283182962}
   m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
@@ -587,7 +588,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8738827560881532341}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
@@ -611,6 +612,26 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
+--- !u!114 &1725056159283182962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738827560881532341}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: -4}
+  m_EndPoint: {x: 0, y: 0, z: 4}
+  m_Width: 0
+  m_CostModifier: -1
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
 --- !u!1 &8803676838562702139
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3435157186970142659}
+  - component: {fileID: 6045281528915698359}
   m_Layer: 7
   m_Name: EmptyRoom
   m_TagString: Untagged
@@ -645,3 +667,17 @@ Transform:
   - {fileID: 3273168289923733314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6045281528915698359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803676838562702139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197e608b86a63864b93dccc6a7c60824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NavMesh: {fileID: 23800000, guid: c7b97f8446ac1bb448d8a47d36f12a4d, type: 2}
+  m_FollowTransform: 0
