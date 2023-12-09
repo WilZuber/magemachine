@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43942395, g: 0.47966617, b: 0.5242393, a: 1}
+  m_IndirectSpecularColor: {r: 0.43942434, g: 0.4796666, b: 0.52423984, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: If you run out of soul, you will perish.
+      value: Without purple soul, you will perish.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -484,7 +484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: As soul approaches empty, more powerful.
+      value: Magic power increases as you use soul.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -1946,7 +1946,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: TAB to open the inventory.
+      value: TAB to open inventory.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -2011,7 +2011,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: As soul approaches empty, more powerful.
+      value: Magic power increases as you use soul.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -3397,7 +3397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Q to set teleport point. E to teleport.
+      value: Q to set teleport point, E to teleport.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -3462,7 +3462,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: If you run out of soul, you will perish.
+      value: Without purple soul, you will perish.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -3648,7 +3648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Your life may end, but your soul will persist.
+      value: If your body breaks, your soul will endure.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -3835,7 +3835,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Q to set teleport point. E to teleport.
+      value: Q to set teleport point, E to teleport.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
