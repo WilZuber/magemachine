@@ -52,7 +52,7 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
             playerStaminaManager.SetMaxStamina(playerStaminaManager.GetMaxStamina() + modifier);
         }
         Reroll(); // dont let players spam their good catch
-        currentStatManager.UpdateCurrentHealthText();
+        currentStatManager.UpdateCurrentStaminaText();
     }
 
 

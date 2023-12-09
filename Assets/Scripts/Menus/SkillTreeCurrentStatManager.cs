@@ -22,17 +22,17 @@ public class SkillTreeCurrentStatManager : MonoBehaviour
 
     public void UpdateCurrentSoulText()
     {
-        currentSoulText.text = "Currently: " + playerSoulManager.GetMaxSoul();
+        currentSoulText.text = "(Current: " + playerSoulManager.GetMaxSoul() + ")";
     }
 
     public void UpdateCurrentHealthText()
     {
-        currentHealthText.text = "Currently: " + playerHealthManager.GetMaxHealth();
+        currentHealthText.text = "(Current: " + playerHealthManager.GetMaxHealth() + ")";
     }
 
     public void UpdateCurrentStaminaText()
     {
-        currentStaminaText.text = "Currently: " + playerStaminaManager.GetMaxStamina();
+        currentStaminaText.text = "(Current: " + playerStaminaManager.GetMaxStamina() + ")";
     }
 
 }

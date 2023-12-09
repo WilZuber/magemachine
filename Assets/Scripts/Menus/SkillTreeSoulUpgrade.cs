@@ -52,7 +52,7 @@ public class SkillTreeSoulUpgrade : MonoBehaviour
             playerSoulManager.SetMaxSoul(playerSoulManager.GetMaxSoul() + modifier);
         }
         Reroll(); // dont let players spam their good catch
-        currentStatManager.UpdateCurrentHealthText();
+        currentStatManager.UpdateCurrentSoulText();
     }
 
 
