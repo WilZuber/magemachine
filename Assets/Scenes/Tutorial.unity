@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43942434, g: 0.4796666, b: 0.52423984, a: 1}
+  m_IndirectSpecularColor: {r: 0.43942395, g: 0.47966617, b: 0.5242393, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Don't let them take your soul.
+      value: If you run out of soul, you will perish.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -474,6 +474,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08443739733e4c4ea155fa4a6002dd7, type: 3}
+--- !u!1001 &246903051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: prompt
+      value: As soul approaches empty, more powerful.
+      objectReference: {fileID: 0}
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: textMesh
+      value: 
+      objectReference: {fileID: 1483291826}
+    - target: {fileID: 3006207153242105152, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_Name
+      value: TutorialTrigger (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
 --- !u!1001 &324007105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1881,7 +1946,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Q to set teleport point. E to teleport.
+      value: TAB to open the inventory.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -1902,6 +1967,71 @@ PrefabInstance:
     - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+--- !u!1001 &1230147161
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: prompt
+      value: As soul approaches empty, more powerful.
+      objectReference: {fileID: 0}
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: textMesh
+      value: 
+      objectReference: {fileID: 1483291826}
+    - target: {fileID: 3006207153242105152, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_Name
+      value: TutorialTrigger (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3031,6 +3161,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+--- !u!1001 &1786314646
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: prompt
+      value: Your life may end, but your soul will persist.
+      objectReference: {fileID: 0}
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: textMesh
+      value: 
+      objectReference: {fileID: 1483291826}
+    - target: {fileID: 3006207153242105152, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_Name
+      value: TutorialTrigger (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
 --- !u!1 &1869525539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,7 +3397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Use what you have learned. You are about to be tested.
+      value: Q to set teleport point. E to teleport.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -3267,7 +3462,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Don't let them take your soul.
+      value: If you run out of soul, you will perish.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -3443,6 +3638,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3781cdeb2202234b91d08d918d399d5, type: 3}
+--- !u!1001 &2087886909
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: prompt
+      value: Your life may end, but your soul will persist.
+      objectReference: {fileID: 0}
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: textMesh
+      value: 
+      objectReference: {fileID: 1483291826}
+    - target: {fileID: 3006207153242105152, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_Name
+      value: TutorialTrigger (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
 --- !u!1001 &512562004195893969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3575,7 +3835,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Use what you have learned. You are about to be tested.
+      value: Q to set teleport point. E to teleport.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
@@ -3694,7 +3954,6 @@ SceneRoots:
   - {fileID: 699453721}
   - {fileID: 962034235}
   - {fileID: 1265627112}
-  - {fileID: 6484721650575245932}
   - {fileID: 512562004195893969}
   - {fileID: 1143099740}
   - {fileID: 2037345006}
@@ -3727,11 +3986,16 @@ SceneRoots:
   - {fileID: 342697125}
   - {fileID: 1608386632}
   - {fileID: 1549885404}
+  - {fileID: 6484721650575245932}
   - {fileID: 1091173607}
   - {fileID: 1169531548}
   - {fileID: 1888940250}
   - {fileID: 26267494}
   - {fileID: 1978011116}
+  - {fileID: 1230147161}
+  - {fileID: 1786314646}
+  - {fileID: 2087886909}
+  - {fileID: 246903051}
   - {fileID: 888274653}
   - {fileID: 1782159883}
   - {fileID: 1347321115}
