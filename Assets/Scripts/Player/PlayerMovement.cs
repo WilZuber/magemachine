@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping;
     private float jumpTime;
     public float jumpTimeout = 0.5f;
-    public float extraGravity = 0.25f;
+    public float extraGravity = 20f;
     private Animator playerAnimator;
     private StaminaManager stamina;
     

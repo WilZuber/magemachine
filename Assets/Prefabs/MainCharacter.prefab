@@ -1810,7 +1810,7 @@ MonoBehaviour:
   runSpeed: 9
   jumpSpeed: 7.5
   jumpTimeout: 0.5
-  extraGravity: 0.25
+  extraGravity: 0.4
 --- !u!114 &4848663805708677680
 MonoBehaviour:
   m_ObjectHideFlags: 0
