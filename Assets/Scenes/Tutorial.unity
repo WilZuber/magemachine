@@ -3171,7 +3171,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: prompt
-      value: Your life may end, but your soul will persist.
+      value: If your body breaks, your soul will endure.
       objectReference: {fileID: 0}
     - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
       propertyPath: textMesh
