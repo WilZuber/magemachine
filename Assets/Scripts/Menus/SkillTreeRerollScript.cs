@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SkillTreeRerollScript : MonoBehaviour
 {
-    private float rerollCost;
+    private int rerollCost;
     public TextMeshProUGUI priceText;
     public SkillTreeStaminaUpgrade staminaUpgrade;
     public SkillTreeHealthUpgrade healthUpgrade;
@@ -15,6 +15,10 @@ public class SkillTreeRerollScript : MonoBehaviour
     // Start is called before the first frame update
     public void Reroll()
     {
+        if (!Inventory.UseSkillPoints(rerollCost))
+        {
+            return; // boot out if can't buy
+        }
         rerollCost++;
         priceText.text = "x" + rerollCost;
         staminaUpgrade.Reroll();
