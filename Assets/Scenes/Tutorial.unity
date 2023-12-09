@@ -3161,6 +3161,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+--- !u!1001 &1786314646
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: prompt
+      value: Your life may end, but your soul will persist.
+      objectReference: {fileID: 0}
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: textMesh
+      value: 
+      objectReference: {fileID: 1483291826}
+    - target: {fileID: 3006207153242105152, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_Name
+      value: TutorialTrigger (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
 --- !u!1 &1869525539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,6 +3638,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3781cdeb2202234b91d08d918d399d5, type: 3}
+--- !u!1001 &2087886909
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: prompt
+      value: Your life may end, but your soul will persist.
+      objectReference: {fileID: 0}
+    - target: {fileID: 755225976626473415, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: textMesh
+      value: 
+      objectReference: {fileID: 1483291826}
+    - target: {fileID: 3006207153242105152, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_Name
+      value: TutorialTrigger (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463027752683794887, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5505facb724b4eb4f86dfe2343e3110c, type: 3}
 --- !u!1001 &512562004195893969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3863,6 +3993,8 @@ SceneRoots:
   - {fileID: 26267494}
   - {fileID: 1978011116}
   - {fileID: 1230147161}
+  - {fileID: 1786314646}
+  - {fileID: 2087886909}
   - {fileID: 246903051}
   - {fileID: 888274653}
   - {fileID: 1782159883}

@@ -13,7 +13,7 @@ public class TutorialTextUpdater : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             textMesh.text = prompt;
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
 }
