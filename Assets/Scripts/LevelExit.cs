@@ -33,6 +33,7 @@ public class LevelExit: MonoBehaviour
                     audioPlayed = true;
                     levelExitAudio.Play();
                 }
+                Inventory.FinishLevel();
                 if (currentLevel == 1)
                 {
                     SceneManager.LoadScene("MainMenu");

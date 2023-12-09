@@ -14,6 +14,9 @@ public class Inventory : MonoBehaviour
     private static int skillPoints;
 
     private static float currentSoul; //carry between levels
+    private static float maxSoul;
+    private static float maxStamina;
+    private static float maxHealth;
     private WeaponHolder playerGuns;
 
     private static Inventory currentInventory;
@@ -24,14 +27,21 @@ public class Inventory : MonoBehaviour
     public Image[] gunSprites;
     public RectTransform[] gunSelectionHighlights; //left and right
     private SoulManager playerSoulManager;
+    private static GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject player = GameObject.Find("MainCharacter");
+        player = GameObject.Find("MainCharacter");
         playerSoulManager = player.GetComponent<SoulManager>();
         playerSoulManager.SetSoul(currentSoul);
         playerGuns = player.GetComponent<WeaponHolder>();
+
+        player.GetComponent<HealthManager>().SetMaxHealth(maxHealth); // health and stamina should reset every level
+        player.GetComponent<SoulManager>().SetMaxSoul(maxSoul);
+        player.GetComponent<StaminaManager>().SetMaxStamina(maxStamina);
+
+        player.GetComponent<SoulManager>().SetSoul(currentSoul);
 
         playerGuns.SpawnGun(guns[gunSelections[0]], 0);
         playerGuns.SpawnGun(guns[gunSelections[1]], 1);
@@ -94,6 +104,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public static void FinishLevel()
+    {
+        maxHealth = player.GetComponent<HealthManager>().GetMaxHealth();
+        maxSoul = player.GetComponent<SoulManager>().GetMaxSoul();
+        maxStamina = player.GetComponent<StaminaManager>().GetMaxStamina();
+
+        currentSoul = player.GetComponent<SoulManager>().GetSoul();
+    }
     public static void ResetInventory()
     {
         guns = new GunType[]
@@ -109,6 +127,9 @@ public class Inventory : MonoBehaviour
         skillPoints = 0;
         LevelGenerator.level = 1; //move later
         currentSoul = 100;
+        maxSoul = 100;
+        maxStamina = 100;
+        maxHealth = 20;
     }
 
     //Buttons
