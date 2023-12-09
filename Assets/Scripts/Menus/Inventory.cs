@@ -23,12 +23,14 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI skillPointCounter;
     public Image[] gunSprites;
     public RectTransform[] gunSelectionHighlights; //left and right
+    private SoulManager playerSoulManager;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject player = GameObject.Find("MainCharacter");
-        //player.GetComponent<SoulManager>().SetSoul(currentSoul);
+        playerSoulManager = player.GetComponent<SoulManager>();
+        playerSoulManager.SetSoul(currentSoul);
         playerGuns = player.GetComponent<WeaponHolder>();
 
         playerGuns.SpawnGun(guns[gunSelections[0]], 0);
@@ -106,6 +108,7 @@ public class Inventory : MonoBehaviour
         soulRefills = 0;
         skillPoints = 0;
         LevelGenerator.level = 1; //move later
+        currentSoul = 100;
     }
 
     //Buttons
@@ -162,7 +165,13 @@ public class Inventory : MonoBehaviour
 
     public void RefillSoul()
     {
-
+        if (soulRefills <= 0)
+        {
+            return; // break out of function, as we dont want to refill
+        }
+        soulRefills--;
+        playerSoulManager.RefillSoulMax();
+        UpdateSoulRefillCounter();
     }
 
     //Display

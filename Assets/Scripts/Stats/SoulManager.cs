@@ -14,6 +14,11 @@ public class SoulManager : MonoBehaviour
         soul = maxSoul;
     }
 
+    public void SetSoul(float soul)
+    {
+        this.soul = soul;
+    }
+
     public void SetMaxSoul(float maxSoul)
     {
         this.maxSoul = maxSoul;
@@ -36,6 +41,11 @@ public class SoulManager : MonoBehaviour
         {
             GetComponent<HealthManager>().DeathStart();
         }
+    }
+
+    public void RefillSoulMax()
+    {
+        soul = maxSoul;
     }
 
     public void RefillSoul(float refill)
