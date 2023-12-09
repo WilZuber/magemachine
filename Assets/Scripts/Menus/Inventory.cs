@@ -7,10 +7,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    private static GunType[] guns;
-    //private static int leftGunSelection;
-    //private static int rightGunSelection;
-    private static int[] gunSelections;
+    private static GunType[] guns; //all guns the player has
+    private static int[] gunSelections; //left and right selections, -1 if unset
 
     private static int soulRefills;
     private static int skillPoints;
@@ -21,17 +19,10 @@ public class Inventory : MonoBehaviour
     private static Inventory currentInventory;
 
     //Components
-    public GameObject inventoryCanvas;
-    public GameObject inventoryPanel;
-    public GameObject gunEditorPanel;
-    public GameObject skillTreePanel;
-    private GameObject activePanel;
     public TextMeshProUGUI soulRefillCounter;
     public TextMeshProUGUI skillPointCounter;
     public Image[] gunSprites;
-    //public RectTransform leftSelectionHighlight;
-    //public RectTransform rightSelectionHighlight;
-    public RectTransform[] gunSelectionHighlights;
+    public RectTransform[] gunSelectionHighlights; //left and right
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +31,10 @@ public class Inventory : MonoBehaviour
         //player.GetComponent<SoulManager>().SetSoul(currentSoul);
         playerGuns = player.GetComponent<WeaponHolder>();
 
-        //playerGuns.SpawnGun(guns[leftGunSelection], 0);
-        //playerGuns.SpawnGun(guns[rightGunSelection], 1);
         playerGuns.SpawnGun(guns[gunSelections[0]], 0);
         playerGuns.SpawnGun(guns[gunSelections[1]], 1);
 
         currentInventory = this;
-        activePanel = inventoryPanel;
-        inventoryCanvas.SetActive(false);
 
         for (int i = 0; i < guns.Length; i++)
         {
@@ -59,49 +46,9 @@ public class Inventory : MonoBehaviour
         UpdateSkillPointCounter();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (inventoryCanvas.activeSelf)
-            {
-                CloseInventory();
-            }
-            else
-            {
-                OpenInventory();
-            }
-        }
-    }
-
-    private void OpenInventory()
-    {
-        SetPanel(inventoryPanel);
-        inventoryCanvas.SetActive(true);
-        PlayerInputToggle.Disable();
-    }
-
-    private void CloseInventory()
-    {
-        inventoryCanvas.SetActive(false);
-        PlayerInputToggle.Enable();
-    }
-
-    private void SetPanel(GameObject newPanel)
-    {
-        if (newPanel != activePanel)
-        {
-            activePanel.SetActive(false);
-            newPanel.SetActive(true);
-            activePanel = newPanel;
-        }
-
-    }
-
     //World interaction
 
-    //Try to collect the givenitem. Returns whether it was picked up.
+    //Try to collect the given item. Returns whether it was picked up.
     public static bool CollectItem(Pickup item)
     {
         switch (item.type)
@@ -216,17 +163,6 @@ public class Inventory : MonoBehaviour
     public void RefillSoul()
     {
 
-    }
-
-    public void OpenGunEditor()
-    {
-        //GunLists.CreateGun().SpawnPickup(playerGuns.transform.position, null);
-        SetPanel(gunEditorPanel);
-    }
-
-    public void OpenSkillTree()
-    {
-        SetPanel(skillTreePanel);
     }
 
     //Display
