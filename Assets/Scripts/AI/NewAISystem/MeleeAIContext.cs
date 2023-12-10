@@ -20,6 +20,29 @@ public class MeleeAIContext : MonoBehaviour
 
     private Vector3 spawnPosition;
 
+    MeleeWeaponController melee; // AI's melee weapon
+
+    // Getters
+    public IMeleeAIState GetLookState()
+    {
+        return lookState;
+    }
+
+    public IMeleeAIState GetAttackState()
+    {
+        return attackState;
+    }
+
+    public IMeleeAIState GetChaseState()
+    {
+        return chaseState;
+    }
+
+    public IMeleeAIState GetPatrolState()
+    {
+        return patrolState;
+    }
+
     // On start we want to do a few things:
     // Find our Melee AI agent and assign it to agent field
     // Find the player GameObject and assign it to player field
@@ -37,6 +60,8 @@ public class MeleeAIContext : MonoBehaviour
         patrolState = new MeleeAIPatrolState(this);
 
         spawnPosition = gameObject.transform.position;
+
+        MeleeWeaponController melee = GetComponent<MeleeWeaponController>();
 
         SetState(patrolState); // we want to start off patrolling
     }
@@ -114,6 +139,12 @@ public class MeleeAIContext : MonoBehaviour
         agent.SetDestination(initialPosition);
     }
 
+    public void LookAround()
+    {
+        // TODO make this happen
+        
+    }
+
     // make agent go back to where it was born
     public void GoBackToSpawnLocation()
     {
@@ -128,7 +159,9 @@ public class MeleeAIContext : MonoBehaviour
 
     public void BeginLookAtPlayer()
     {
-        // initiate looking directly at the player
+        Vector3 direction = player.transform.position;
+        Quaternion look = Quaternion.LookRotation(direction, transform.up);
+        transform.rotation = look;
     }
 
     public void EndLookAtPlayer()
@@ -138,17 +171,20 @@ public class MeleeAIContext : MonoBehaviour
 
     public void BeginChasePlayer()
     {
-        // Initiate chasing the player
+        while (gameObject.transform.position != player.transform.position)
+        {
+            agent.SetDestination(player.transform.position);
+        }
     }
 
     public void EndChasePlayer()
     {
-        // Stop Chasing player
+        GoBackToSpawnLocation();
     }
 
     public void Attack()
     {
-        // attack
+        melee.Attack();
     }
 
     // AI Boolean Methods
@@ -157,7 +193,7 @@ public class MeleeAIContext : MonoBehaviour
     public bool CanSeePlayer()
     {
         Vector3 origin = transform.position + transform.up;
-        Vector3 direction = transform.forward;
+        Vector3 direction = transform.forward - new Vector3(0, 3, 0);
         Ray ray = new(origin, direction);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore))
         {

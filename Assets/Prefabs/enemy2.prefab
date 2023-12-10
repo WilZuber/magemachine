@@ -176,10 +176,10 @@ PrefabInstance:
       addedObject: {fileID: 2977244136683260105}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1514883945286279877}
+      addedObject: {fileID: 5033616359913750812}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5033616359913750812}
+      addedObject: {fileID: 8876761649881081779}
   m_SourcePrefab: {fileID: 100100000, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
 --- !u!4 &2378474665466939951 stripped
 Transform:
@@ -267,23 +267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3216258447188499926}
---- !u!114 &1514883945286279877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3047207106112131221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07efc06bfbd67404eaeebae1e7b87872, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distancetmp: 0
-  agent: {fileID: 0}
-  anim: {fileID: 0}
-  player: {fileID: 0}
-  home: {x: 0, y: 0, z: 0}
 --- !u!195 &5033616359913750812
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -306,6 +289,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &8876761649881081779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047207106112131221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a889ba2665b03e429af308b1d89026f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8030363342378935709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5330335133381789785, guid: 6c2f476c0ca6d104baf15e3adcac4683, type: 3}
