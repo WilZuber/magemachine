@@ -21,6 +21,7 @@ public class MeleeAIContext : MonoBehaviour
     private Vector3 spawnPosition;
 
     MeleeWeaponController melee; // AI's melee weapon
+    private Animator anim;
 
     // Getters
     public IMeleeAIState GetLookState()
@@ -61,7 +62,10 @@ public class MeleeAIContext : MonoBehaviour
 
         spawnPosition = gameObject.transform.position;
 
-        MeleeWeaponController melee = GetComponent<MeleeWeaponController>();
+        melee = GetComponent<MeleeWeaponController>();
+        anim = GetComponent<Animator>();
+
+        anim.SetFloat("VVelocity", 0);
 
         SetState(patrolState); // we want to start off patrolling
     }
@@ -130,6 +134,7 @@ public class MeleeAIContext : MonoBehaviour
         Vector3 initialPosition = gameObject.transform.position;
         Vector3 newPosition = gameObject.transform.position + new Vector3(5, 0, 0);
         
+        anim.SetFloat("VVelocity", 1);
         agent.SetDestination(newPosition);
         if (gameObject.transform.position == newPosition)
         {
@@ -148,6 +153,7 @@ public class MeleeAIContext : MonoBehaviour
     // make agent go back to where it was born
     public void GoBackToSpawnLocation()
     {
+        anim.SetFloat("VVelocity", 1);
         agent.SetDestination(spawnPosition);
     }
 
@@ -171,6 +177,7 @@ public class MeleeAIContext : MonoBehaviour
 
     public void BeginChasePlayer()
     {
+        anim.SetFloat("VVelocity", 1);
         while (gameObject.transform.position != player.transform.position)
         {
             agent.SetDestination(player.transform.position);
