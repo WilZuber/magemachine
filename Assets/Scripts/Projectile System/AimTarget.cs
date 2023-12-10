@@ -11,7 +11,7 @@ public class AimTarget : MonoBehaviour
     void Update()
     {
         Ray ray = new(transform.position + 2 * transform.forward, transform.forward);
-        validTarget = Physics.Raycast(ray, out RaycastHit hit);
+        validTarget = Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore);
         target = validTarget ? hit.point : transform.forward;
     }
 }
