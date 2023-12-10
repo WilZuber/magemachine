@@ -37,6 +37,14 @@ public class MeleeAIContext : MonoBehaviour
         SetState(patrolState); // we want to start off patrolling
     }
 
+    void Update()
+    {
+        if (CanSeePlayer())
+        {
+            currentState.PlayerEnterSight();
+        }
+    }
+
     // STATE PATTERN METHODS
     public void SetState(IMeleeAIState state)
     {
@@ -68,14 +76,24 @@ public class MeleeAIContext : MonoBehaviour
     // Doing it like this so that we are not passing the agent into each state
     //      Also, because many states might want to use the same methods. Just implement them here.
 
+    // Have the agent move around in a few different directions over and over.
     public void BeginPatrol()
     {
-        // Initiate patrolling for agent
+        Vector3 initialPosition = gameObject.transform.position;
+        Vector3 newPosition = gameObject.transform.position + new Vector3(5, 0, 0);
+        
+        agent.SetDestination(newPosition);
+        if (gameObject.transform.position == newPosition)
+        {
+            newPosition = gameObject.transform.position + new Vector3(Random.Range(0,5), 0, Random.Range(0,5));
+        }
+
+        agent.SetDestination(initialPosition);
     }
 
     public void EndPatrol()
     {
-        // Stop Patrolling
+        agent.SetDestination(gameObject.transform.position); // stop moving
     }
 
     public void BeginLookAtPlayer()
@@ -96,5 +114,23 @@ public class MeleeAIContext : MonoBehaviour
     public void EndChasePlayer()
     {
         // Stop Chasing player
+    }
+
+    // AI Boolean Methods
+
+    // Check if the AI sees the player by seeing if player is in line of sight
+    public bool CanSeePlayer()
+    {
+        Vector3 origin = transform.position + transform.up;
+        Vector3 direction = transform.forward;
+        Ray ray = new(origin, direction);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
