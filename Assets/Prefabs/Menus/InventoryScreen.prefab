@@ -246,110 +246,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3663418640557248411}
     m_Modifications:
-    - target: {fileID: 208856997907869078, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 208856997907869078, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectRightGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988015539483578273, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 1988015539483578273, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectLeftGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 3179235159528328337, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 3179235159528328337, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectRightGun
-      objectReference: {fileID: 0}
     - target: {fileID: 3965115248637272111, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8849097040771898413}
-    - target: {fileID: 3965115248637272111, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSkillTree
-      objectReference: {fileID: 0}
-    - target: {fileID: 3965115248637272111, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4194125496032606605, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 4194125496032606605, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RefillSoul
-      objectReference: {fileID: 0}
     - target: {fileID: 4837425600850028056, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
       propertyPath: m_Name
       value: InventoryPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 4837425600850028056, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037398467791150778, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 6037398467791150778, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectRightGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6708754837079603662, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 6708754837079603662, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectLeftGun
-      objectReference: {fileID: 0}
     - target: {fileID: 7418886744882049186, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8849097040771898413}
-    - target: {fileID: 7418886744882049186, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenGunEditor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7418886744882049186, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7626422736608415442, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 7907675743119861700, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
+      propertyPath: skillPointUpdater
       value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 7626422736608415442, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectLeftGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 7893655809562395677, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 7893655809562395677, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectLeftGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253502862269501173, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1104346170931309965}
-    - target: {fileID: 8253502862269501173, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectRightGun
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5062973580344197301}
     - target: {fileID: 8854869605964823283, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -433,119 +345,18 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4837425600850028056, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1104346170931309965}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
---- !u!224 &1306106178228428344 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 76613915375680160, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1677509639415173167 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 321903418074248375, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1838420006888788741 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 771089791906084765, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4350836433165145525 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3409596528024416557, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4483064737076688869 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3244593896552338301, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5461337630049217007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6411585413040868727, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5769651675784921728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4837425600850028056, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
   m_PrefabInstance: {fileID: 1382630739759998104}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1104346170931309965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5769651675784921728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f81268957b0844aaeb23b57d2a64fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soulRefillCounter: {fileID: 7945833953562115081}
-  skillPointCounter: {fileID: 1838420006888788741}
-  gunSprites:
-  - {fileID: 7857972029203428450}
-  - {fileID: 4350836433165145525}
-  - {fileID: 4483064737076688869}
-  - {fileID: 5461337630049217007}
-  gunSelectionHighlights:
-  - {fileID: 1677509639415173167}
-  - {fileID: 1306106178228428344}
 --- !u!224 &7625376646698212971 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8854869605964823283, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
   m_PrefabInstance: {fileID: 1382630739759998104}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7857972029203428450 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9096436410022236410, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7945833953562115081 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9040222763631024273, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
-  m_PrefabInstance: {fileID: 1382630739759998104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5282564941087727221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -816,3 +627,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6403438136274186818, guid: a8e4582d41367644084989660b525284, type: 3}
   m_PrefabInstance: {fileID: 8317699436696786816}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5062973580344197301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3831767460136998709, guid: a8e4582d41367644084989660b525284, type: 3}
+  m_PrefabInstance: {fileID: 8317699436696786816}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5509dcb99b33fb4fa774567b17b9fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

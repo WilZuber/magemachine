@@ -12,11 +12,13 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
     private float modifier;
     private bool isMultiplier; // if this is false, addition instead.
     private int price;
+    public SkillTreeCurrentStatManager currentStatManager;
 
     void Start()
     {
         playerStaminaManager = GameObject.Find("MainCharacter").GetComponent<StaminaManager>();
         Reroll(); // set initial values
+        currentStatManager.UpdateCurrentStaminaText();
     }
 
     // sets the text on the button
@@ -50,6 +52,7 @@ public class SkillTreeStaminaUpgrade : MonoBehaviour
             playerStaminaManager.SetMaxStamina(playerStaminaManager.GetMaxStamina() + modifier);
         }
         Reroll(); // dont let players spam their good catch
+        currentStatManager.UpdateCurrentStaminaText();
     }
 
 

@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 6378311076868305239}
   - component: {fileID: 8392854976716069966}
   - component: {fileID: 6661571488923430688}
+  - component: {fileID: 1604284892973089947}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -599,6 +600,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fa4be2ba4bdad6c468175c3f53b79c53, type: 3}
   - {fileID: 21300000, guid: 28591b6501e543f438218f4d4125913e, type: 3}
   staminaMetreImage: {fileID: 8262691944059901202}
+--- !u!114 &1604284892973089947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896200179333426569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3994e2ec4ead14ba7d2573903c9bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HUDElements:
+  - {fileID: 8090595363620785704}
+  - {fileID: 2112457343543071387}
+  - {fileID: 2960927127328304583}
 --- !u!1 &8090595363620785704
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,26 +13,35 @@ public class InventoryManager : MonoBehaviour
     public GameObject gunEditorPanel;
     public GameObject skillTreePanel;
     private static GameObject activePanel;
+    public static bool isOpen;
 
     // Start is called before the first frame update
     void Start()
     {
         activePanel = inventoryPanel;
         inventoryCanvas.SetActive(false);
+        isOpen = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (isOpen)
         {
-            if (inventoryCanvas.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
             {
                 CloseInventory();
             }
-            else
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Tab) && !PauseScript.isPaused)
             {
                 OpenInventory();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseScript.Toggle();
             }
         }
     }
@@ -41,12 +50,14 @@ public class InventoryManager : MonoBehaviour
     {
         SetPanel(inventoryPanel);
         inventoryCanvas.SetActive(true);
+        isOpen = true;
         PlayerInputToggle.Disable();
     }
 
     private void CloseInventory()
     {
         inventoryCanvas.SetActive(false);
+        isOpen = false;
         PlayerInputToggle.Enable();
     }
 

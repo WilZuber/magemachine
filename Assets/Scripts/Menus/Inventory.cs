@@ -27,21 +27,25 @@ public class Inventory : MonoBehaviour
     public Image[] gunSprites;
     public RectTransform[] gunSelectionHighlights; //left and right
     private SoulManager playerSoulManager;
+    private HealthManager playerHealthManager;
+    private StaminaManager playerStaminaManager;
     private static GameObject player;
+    public SkillTreeSkillPointCounterUpdater skillPointUpdater;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("MainCharacter");
         playerSoulManager = player.GetComponent<SoulManager>();
-        playerSoulManager.SetSoul(currentSoul);
+        playerHealthManager = player.GetComponent<HealthManager>();
+        playerStaminaManager = player.GetComponent<StaminaManager>();
         playerGuns = player.GetComponent<WeaponHolder>();
 
-        player.GetComponent<HealthManager>().SetMaxHealth(maxHealth); // health and stamina should reset every level
-        player.GetComponent<SoulManager>().SetMaxSoul(maxSoul);
-        player.GetComponent<StaminaManager>().SetMaxStamina(maxStamina);
+        playerHealthManager.SetMaxHealth(maxHealth); // health and stamina should reset every level
+        playerSoulManager.SetMaxSoul(maxSoul);
+        playerStaminaManager.SetMaxStamina(maxStamina);
 
-        player.GetComponent<SoulManager>().SetSoul(currentSoul);
+        playerSoulManager.SetSoul(currentSoul);
 
         playerGuns.SpawnGun(guns[gunSelections[0]], 0);
         playerGuns.SpawnGun(guns[gunSelections[1]], 1);
@@ -56,6 +60,11 @@ public class Inventory : MonoBehaviour
         UpdateGunSelectionHighlight(gunSelectionHighlights[1], gunSelections[1]);
         UpdateSoulRefillCounter();
         UpdateSkillPointCounter();
+    }
+
+    public static int GetSkillPoints()
+    {
+        return skillPoints;
     }
 
     //World interaction
@@ -106,11 +115,11 @@ public class Inventory : MonoBehaviour
 
     public static void FinishLevel()
     {
-        maxHealth = player.GetComponent<HealthManager>().GetMaxHealth();
-        maxSoul = player.GetComponent<SoulManager>().GetMaxSoul();
-        maxStamina = player.GetComponent<StaminaManager>().GetMaxStamina();
+        maxHealth = currentInventory.playerHealthManager.GetMaxHealth();
+        maxSoul = currentInventory.playerSoulManager.GetMaxSoul();
+        maxStamina = currentInventory.playerStaminaManager.GetMaxStamina();
 
-        currentSoul = player.GetComponent<SoulManager>().GetSoul();
+        currentSoul = currentInventory.playerSoulManager.GetSoul();
     }
     public static void ResetInventory()
     {
@@ -233,6 +242,7 @@ public class Inventory : MonoBehaviour
     private void UpdateSkillPointCounter()
     {
         skillPointCounter.text = skillPoints.ToString();
+        skillPointUpdater.UpdateSkillTreeSkillPointCounter();
     }
 
     public static bool UseSkillPoints(int amount)

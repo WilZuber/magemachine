@@ -12,11 +12,13 @@ public class SkillTreeHealthUpgrade : MonoBehaviour
     private float modifier;
     private bool isMultiplier; // if this is false, addition instead.
     private int price;
+    public SkillTreeCurrentStatManager currentStatManager;
 
     void Start()
     {
         playerHealthManager = GameObject.Find("MainCharacter").GetComponent<HealthManager>();
         Reroll(); // set initial values
+        currentStatManager.UpdateCurrentHealthText();
     }
 
     // sets the text on the button
@@ -50,6 +52,7 @@ public class SkillTreeHealthUpgrade : MonoBehaviour
             playerHealthManager.SetMaxHealth(playerHealthManager.GetMaxHealth() + modifier);
         }
         Reroll(); // dont let players spam their good catch
+        currentStatManager.UpdateCurrentHealthText();
     }
 
 

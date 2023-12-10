@@ -59,6 +59,17 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
 
     private void LockDoors()
     {
+        // checks for teleport point, deletes it if one exists
+        if (TeleportGun.teleportPoint != null) {
+            Destroy(TeleportGun.teleportPoint);
+        }
+        // checks if an enemy has been marked for teleport,
+        // deactivates the teleport point over their head if one is active
+        if (Teleporter.enemyToTeleport != null) {
+                Teleporter.enemyTeleportPoint.SetActive(false);
+                Teleporter.enemyTeleportPoint.SetActive(false);
+                Teleporter.enemyToTeleport = null;
+        }
         doorLock1Animator.SetBool("DoorsLocked", true);
         doorLock2Animator.SetBool("DoorsLocked", true);
         doorLock3Animator.SetBool("DoorsLocked", true);

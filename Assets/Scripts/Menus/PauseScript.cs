@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-    static bool isPaused = false;
+    public static bool isPaused = false;
+    private static PauseScript self;
     static float originalTimeScale;
 
     public static GameObject player;
@@ -18,6 +19,7 @@ public class PauseScript : MonoBehaviour
     public static GameObject InfoScreen;
     public static GameObject TutorialUI;
     void Awake() {
+        self = this;
         InfoScreen = GameObject.Find("PauseScreen/Canvas/PausePanel/InfoScreen");
         PausePanel = GameObject.Find("PauseScreen/Canvas/PausePanel");
         PauseCamera = GameObject.Find("PauseScreen/Canvas/PauseCamera");
@@ -29,15 +31,29 @@ public class PauseScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !InventoryManager.isOpen) {
+            print("inv " + InventoryManager.isOpen);
             if (!isPaused)
             {
                 Pause();
             } else {
                 Unpause();
             }
+        }
+    }*/
+
+    // Called from InventoryManager to prevent conflicts involving escape key
+    public static void Toggle()
+    {
+        if (isPaused)
+        {
+            self.Unpause();
+        }
+        else
+        {
+            self.Pause();
         }
     }
 
@@ -47,14 +63,16 @@ public class PauseScript : MonoBehaviour
         PausePanel.SetActive(true);
         PausePanel.SetActive(true); // for some reason, spamming this makes the menu work consistently. :)
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
 
         originalTimeScale = Time.timeScale;
         Time.timeScale = 0; // pause time
 
-        PauseCamera.SetActive(true);
-        player.SetActive(false);
+        //PauseCamera.SetActive(true);
+        //player.SetActive(false);
+        PlayerInputToggle.Disable();
+        HUDToggle.Disable();
     }
 
 
@@ -63,13 +81,15 @@ public class PauseScript : MonoBehaviour
         InfoScreen.SetActive(false);
         PausePanel.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         Time.timeScale = originalTimeScale;
 
-        player.SetActive(true);
-        PauseCamera.SetActive(false);
+        //player.SetActive(true);
+        //PauseCamera.SetActive(false);
+        PlayerInputToggle.Enable();
+        HUDToggle.Enable();
     }
 
     /* 
@@ -85,12 +105,12 @@ public class PauseScript : MonoBehaviour
     * if something else weird happens, tell me, because dear god I refuse to let this thing create any more bugs. 
     */
     public void ShowInfoScreen() {
-        player.SetActive(true);
+        //player.SetActive(true);
         InfoScreen.SetActive(true);
         InfoScreen.SetActive(true);
         PausePanel.SetActive(true);
-        PauseCamera.SetActive(true);
-        player.SetActive(false);
+        /*PauseCamera.SetActive(true);
+        player.SetActive(false);*/
     }
 
     public void InfoScreenBackButton() {
