@@ -48,17 +48,23 @@ public class InventoryManager : MonoBehaviour
 
     private void OpenInventory()
     {
-        SetPanel(inventoryPanel);
-        inventoryCanvas.SetActive(true);
-        isOpen = true;
-        PlayerInputToggle.Disable();
+        if (PauseScript.characterIsAlive)
+        {
+            SetPanel(inventoryPanel);
+            inventoryCanvas.SetActive(true);
+            isOpen = true;
+            PlayerInputToggle.Disable();
+        }
     }
 
     private void CloseInventory()
     {
-        inventoryCanvas.SetActive(false);
-        isOpen = false;
-        PlayerInputToggle.Enable();
+        if (PauseScript.characterIsAlive)
+        {
+            inventoryCanvas.SetActive(false);
+            isOpen = false;
+            PlayerInputToggle.Enable();
+        }
     }
 
     private void SetPanel(GameObject newPanel)
