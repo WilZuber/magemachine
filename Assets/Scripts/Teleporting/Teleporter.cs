@@ -22,13 +22,15 @@ public class Teleporter : ProjectileType
 
             // code for setting up teleport point with enemy
             if (hitCollider.gameObject.tag == "Enemy") {
+                Debug.Log("Is enemy, " + hitCollider.gameObject.name);
                 // nesting this if statement looks unoptimized, but C# will give an error if this is in the previous if statement
-                if (hitCollider.gameObject.name.Substring(0,6) == "enemy1" || hitCollider.gameObject.name.Substring(0,6) == "enemy3") {
+                if (!(hitCollider.gameObject.name.Substring(0,6) == "enemy2")) {
                     isTeleportableEnemy = true;
-                
+
                     enemyToTeleport = hitCollider.gameObject;
                     // activates a teleport point above the enemy
                     enemyTeleportPoint = enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject;
+                    // enemyTeleportPoint = enemyToTeleport.transform.GetChild(0).transform.GetChild(0).transform.Find("TeleportPoint").gameObject;
                     enemyTeleportPoint.SetActive(true);
                     enemyTeleportPoint.SetActive(true);
 
