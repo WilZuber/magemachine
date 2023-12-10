@@ -15,21 +15,25 @@ public class MeleeAIChaseState : IMeleeAIState
         this.meleeAI = meleeAI;
     }
 
+    // Represents the transition that would happen if player enters sight
     public void PlayerEnterSight()
     {
         // What should the Melee AI do if the player is in sight when ai is chasing
     }
 
+    // Represents the transition that would happen if player enters melee range
     public void PlayerEnterMeleeRange()
     {
         // What should the Melee AI do if the player is in melee range when ai is chasing
     }
 
+    // Represents the transition that would happen if player leaves sight
     public void PlayerLeaveSight()
     {
         // What should the Melee AI do if the player leaves sight when ai is chasing
     }
 
+    // Represents the transition that would happen if player leaves melee range
     public void PlayerLeaveMeleeRange()
     {
         // What should the Melee AI do if the player leaves melee range when ai is chasing
