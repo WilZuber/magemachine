@@ -35,5 +35,8 @@ public class LongRangeAIGun : SoulMagicGunType
         SetProjectileType(bullet);
         prefab = prefabs[1];
         reloadDuration = 1.0f;
+        cost = 1;
+        shotsAfterDouble = 10;
+        maxSafeMultiplier = 5;
     }
 }
