@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-    static bool isPaused = false;
+    public static bool isPaused = false;
+    private static PauseScript self;
     static float originalTimeScale;
 
     public static GameObject player;
@@ -18,6 +19,7 @@ public class PauseScript : MonoBehaviour
     public static GameObject InfoScreen;
     public static GameObject TutorialUI;
     void Awake() {
+        self = this;
         InfoScreen = GameObject.Find("PauseScreen/Canvas/PausePanel/InfoScreen");
         PausePanel = GameObject.Find("PauseScreen/Canvas/PausePanel");
         PauseCamera = GameObject.Find("PauseScreen/Canvas/PauseCamera");
@@ -29,15 +31,29 @@ public class PauseScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !InventoryManager.isOpen) {
+            print("inv " + InventoryManager.isOpen);
             if (!isPaused)
             {
                 Pause();
             } else {
                 Unpause();
             }
+        }
+    }*/
+
+    // Called from InventoryManager to prevent conflicts involving escape key
+    public static void Toggle()
+    {
+        if (isPaused)
+        {
+            self.Unpause();
+        }
+        else
+        {
+            self.Pause();
         }
     }
 
