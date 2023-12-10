@@ -63,14 +63,16 @@ public class PauseScript : MonoBehaviour
         PausePanel.SetActive(true);
         PausePanel.SetActive(true); // for some reason, spamming this makes the menu work consistently. :)
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
 
         originalTimeScale = Time.timeScale;
         Time.timeScale = 0; // pause time
 
-        PauseCamera.SetActive(true);
-        player.SetActive(false);
+        //PauseCamera.SetActive(true);
+        //player.SetActive(false);
+        PlayerInputToggle.Disable();
+        HUDToggle.Disable();
     }
 
 
@@ -79,13 +81,15 @@ public class PauseScript : MonoBehaviour
         InfoScreen.SetActive(false);
         PausePanel.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         Time.timeScale = originalTimeScale;
 
-        player.SetActive(true);
-        PauseCamera.SetActive(false);
+        //player.SetActive(true);
+        //PauseCamera.SetActive(false);
+        PlayerInputToggle.Enable();
+        HUDToggle.Enable();
     }
 
     /* 
@@ -101,12 +105,12 @@ public class PauseScript : MonoBehaviour
     * if something else weird happens, tell me, because dear god I refuse to let this thing create any more bugs. 
     */
     public void ShowInfoScreen() {
-        player.SetActive(true);
+        //player.SetActive(true);
         InfoScreen.SetActive(true);
         InfoScreen.SetActive(true);
         PausePanel.SetActive(true);
-        PauseCamera.SetActive(true);
-        player.SetActive(false);
+        /*PauseCamera.SetActive(true);
+        player.SetActive(false);*/
     }
 
     public void InfoScreenBackButton() {
