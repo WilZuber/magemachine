@@ -45,7 +45,7 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         {
             playerEntered = true;
             LockDoors();
-            SpawnEnemies(quantity);
+            SpawnEnemies();
         }
     }
 
@@ -76,17 +76,28 @@ public class SpecialRoomBehavior : MonoBehaviour, IDeathListener
         doorLock4Animator.SetBool("DoorsLocked", true);
     }
 
-    private void SpawnEnemies(int numberOfEnemies)
+    private void SpawnEnemies()
     {
-
-        int enemySpawnX = 2;
-        enemiesRemaining = numberOfEnemies;
-        for (int i = 0; i < numberOfEnemies; i++)
-        {
-
-            GameObject instance = Instantiate(enemy, transform.position + new Vector3(enemySpawnX - i, 0, 0), Quaternion.identity);
-            instance.GetComponent<HealthManager>().deathListener = this;
+        int quantity = 0;
+        int enemyType = 0;
+        int typeOfRoomSpawn = Random.Range(0,2);
+        // 2 cameron
+        // 1 Ophelia
+        // 0 bunson
+        switch (typeOfRoomSpawn) {
+            case 0:
+                quantity = 6;
+                enemyType = 0;
+                break;
+            case 1:
+                quantity = 4;
+                enemyType = 1;
+                break;
         }
+        LevelGenerator.SpawnEnemiesChallenge(this.transform.position, enemyType, quantity, this);
+
+
+        enemiesRemaining = quantity;
     }
 
     private void GivePrize()
