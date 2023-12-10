@@ -46,6 +46,7 @@ public class Inventory : MonoBehaviour
         playerStaminaManager.SetMaxStamina(maxStamina);
 
         playerSoulManager.SetSoul(currentSoul);
+        playerHealthManager.SetHealth(maxHealth); // we want it filled up
 
         playerGuns.SpawnGun(guns[gunSelections[0]], 0);
         playerGuns.SpawnGun(guns[gunSelections[1]], 1);
