@@ -50,7 +50,7 @@ public abstract class AI : MonoBehaviour
             if (hit.collider.CompareTag("Player"))
             {
                 //decouple later
-                agent.SetDestination(player.transform.position);
+                //agent.SetDestination(player.transform.position);
                 return true;
             }
         }
