@@ -37,7 +37,7 @@ public class LevelGenerator : MonoBehaviour
         public WallType[] sides = new WallType[4];
         public RoomType type;
         private readonly int R, C;
-        private static readonly float size = 8;
+        public static readonly float size = 8;
         public Transform room;
         public int firstDirection; // input direction when the room was created
 
@@ -77,8 +77,7 @@ public class LevelGenerator : MonoBehaviour
             //place enemy (tmp)
             if (type == RoomType.standard && Random.value < 0.5f) {
                 int index = Random.Range(0, 3);
-                GameObject enemy = enemies[index];
-                Instantiate(enemy, position, Quaternion.identity);
+                SpawnEnemy(position, index);
             }
         }
     }
@@ -95,7 +94,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Generate()
     {
-        int startDir = Random.Range(0, 4);
+        int startDir = 0; //always put the wall behind the player
         bool retry;
         do
         {
@@ -256,6 +255,7 @@ public class LevelGenerator : MonoBehaviour
 
     private static Transform PlaceRoom(Vector3 position, Cell cell)
     {
+        //whether to use challenge versions of room parts
         int environment = cell.type == RoomType.challenge ? 1 : 0;
 
         //room
@@ -269,14 +269,13 @@ public class LevelGenerator : MonoBehaviour
             //walls
             switch (cell.sides[i])
             {
+                //do nothing if empty
                 case WallType.wall: Instantiate(wall[environment], position, rotations[i], room); break;
                 case WallType.door: Instantiate(door[environment], position, rotations[i], room); break;
             }
 
-            //corners
-            //if (wallTypes[side0] != WallType.empty || wallTypes[side1] != WallType.empty) {
+            //corners (generate even if there are no adjacent walls)
             Instantiate(corner[environment], position, rotations[i], room);
-            //}
         }
 
         if (cell.type == RoomType.exit)
@@ -285,5 +284,15 @@ public class LevelGenerator : MonoBehaviour
         }
 
         return room;
+    }
+
+    public static void SpawnEnemy(Vector3 position, int enemyType)
+    {
+        
+        GameObject enemy = enemies[enemyType];
+        float xOffset = Random.Range(-Cell.size/2, Cell.size/2);
+        float yOffset = Random.Range(-Cell.size/2, Cell.size/2);
+        position += xOffset*Vector3.right + yOffset*Vector3.forward;
+        Instantiate(enemy, position, Quaternion.identity);
     }
 }
