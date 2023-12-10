@@ -14,13 +14,23 @@ public class MeleeAILookState : IMeleeAIState
         this.meleeAI = meleeAI;
     }
 
-    public void PlayerInSight()
+    public void PlayerEnterSight()
     {
         // What should the Melee AI do if the player is in sight when ai is looking around
     }
 
-    public void PlayerInMeleeRange()
+    public void PlayerEnterMeleeRange()
     {
         // What should the Melee AI do if the player is in melee range when ai is looking around
+    }
+
+    public void PlayerLeaveSight()
+    {
+        // What should the Melee AI do if the player leaves sight when ai is looking around
+    }
+
+    public void PlayerLeaveMeleeRange()
+    {
+        // What should the Melee AI do if the player leaves melee range when ai is looking around
     }
 }

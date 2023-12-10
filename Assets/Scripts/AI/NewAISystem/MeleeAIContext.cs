@@ -17,14 +17,23 @@ public class MeleeAIContext : MonoBehaviour
         currentState = state;
     }
 
-    void Start()
+    public void PlayerEnterSight()
     {
-        
+        currentState.PlayerEnterSight();
     }
 
-
-    void Update()
+    public void PlayerEnterMeleeRange()
     {
-        
+        currentState.PlayerEnterMeleeRange();
+    }
+
+    public void PlayerLeaveSight()
+    {
+        currentState.PlayerLeaveSight();
+    }
+
+    public void PlayerLeaveMeleeRange()
+    {
+        currentState.PlayerLeaveMeleeRange();
     }
 }

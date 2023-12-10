@@ -7,6 +7,8 @@ using UnityEngine;
 
 public interface IMeleeAIState
 {
-    public void PlayerInSight();
-    public void PlayerInMeleeRange();
+    public void PlayerEnterSight();
+    public void PlayerEnterMeleeRange();
+    public void PlayerLeaveSight();
+    public void PlayerLeaveMeleeRange();
 }
