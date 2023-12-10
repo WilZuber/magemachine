@@ -61,7 +61,7 @@ public class MeleeAIContext : MonoBehaviour
         patrolState = new MeleeAIPatrolState(this);
 
         spawnPosition = gameObject.transform.position;
-
+        
         melee = GetComponent<MeleeWeaponController>();
         anim = GetComponent<Animator>();
 
@@ -191,6 +191,7 @@ public class MeleeAIContext : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("I should be attacking!");
         melee.Attack();
     }
 
