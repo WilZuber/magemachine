@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 6963783430271198744}
   - component: {fileID: 236743791784992637}
   - component: {fileID: 3375680572636119165}
-  - component: {fileID: 5486090985847769400}
+  - component: {fileID: 8119224951025805736}
   m_Layer: 10
   m_Name: Roof
   m_TagString: Untagged
@@ -259,22 +259,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &5486090985847769400
-NavMeshObstacle:
+--- !u!114 &8119224951025805736
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5493585755905637506}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &6242526230581689002
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +490,6 @@ GameObject:
   - component: {fileID: 5219471001267577508}
   - component: {fileID: 1085199523257090903}
   - component: {fileID: 137460352285552358}
-  - component: {fileID: 1725056159283182962}
   m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
@@ -608,30 +610,10 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
---- !u!114 &1725056159283182962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8738827560881532341}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: -4}
-  m_EndPoint: {x: 0, y: 0, z: 4}
-  m_Width: 0
-  m_CostModifier: -1
-  m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
-  m_Area: 0
 --- !u!1 &8803676838562702139
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +623,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3435157186970142659}
-  - component: {fileID: 6045281528915698359}
   m_Layer: 7
   m_Name: EmptyRoom
   m_TagString: Untagged
@@ -667,17 +648,3 @@ Transform:
   - {fileID: 3273168289923733314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6045281528915698359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8803676838562702139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 197e608b86a63864b93dccc6a7c60824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NavMesh: {fileID: 23800000, guid: c7b97f8446ac1bb448d8a47d36f12a4d, type: 2}
-  m_FollowTransform: 0

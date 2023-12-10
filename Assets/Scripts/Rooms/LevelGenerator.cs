@@ -84,10 +84,14 @@ public class LevelGenerator : MonoBehaviour
         {
             Vector3 position = new((C - radius) * size, 0, -(R - radius) * size);
             room = PlaceRoom(position, this);
+        }
 
-            //place enemies in the room if applicable
+        //place enemies in the room if applicable
+        public void SpawnEnemies()
+        {
             if (type == RoomType.standard)
             {
+                Vector3 position = new((C - radius) * size, 0, -(R - radius) * size);
                 SpawnEnemiesStandard(position);
             }
         }
@@ -245,24 +249,11 @@ public class LevelGenerator : MonoBehaviour
         {
             cell?.Output();
         }
-        /*GameObject floor = cells[radius, radius].room.GetChild(0).gameObject;
-        //floor.GetComponent<NavMeshSurface>().BuildNavMesh();
-        NavMeshBuildSettings settings = NavMesh.CreateSettings();
-        NavMeshSurface nav = floor.GetComponent<NavMeshSurface>();
-        NavMesh.AddNavMeshData(nav.navMeshData);*/
-        /*foreach (Cell cell in cells)
+        GetComponent<NavMeshSurface>().BuildNavMesh();
+        foreach (Cell cell in cells)
         {
-            if (cell != null)
-            {
-                int index = cell.type == RoomType.challenge ? 5 : 0;
-                Transform room = cell.room;
-                GameObject floor = cell.room.GetChild(index).gameObject;
-                //floor.GetComponent<NavMeshSurface>().BuildNavMesh();
-                NavMeshSurface nav = floor.GetComponent<NavMeshSurface>();
-                nav.BuildNavMesh();
-                //NavMesh.AddNavMeshData(nav.navMeshData, room.position, room.rotation);
-            }
-        }*/
+            cell?.SpawnEnemies();
+        }
         level++;
     }
 
