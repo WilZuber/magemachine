@@ -13,7 +13,6 @@ public class MainMenuScript : MonoBehaviour
     void Awake() {
         ExpositionScreen.SetActive(true);
         ExpositionScreen.SetActive(true);
-        Debug.Log("Exposition screen loaded.");
         SkipText.SetActive(false);
         InfoScreen.SetActive(false);
     }
