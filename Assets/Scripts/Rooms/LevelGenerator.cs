@@ -20,6 +20,7 @@ public class LevelGenerator : MonoBehaviour
     private static GameObject levelExit;
     public GameObject[] enemyPrefabs;
     private static GameObject[] enemies;
+    private static float enemySpawnRadius = Cell.size/2 - 0.25f; //half of room width minus wall thickness
     private static readonly float mergeChance = 0.5f; //chance for connected rooms to be merged when applicable
 
     private static Cell[,] cells;
@@ -286,13 +287,24 @@ public class LevelGenerator : MonoBehaviour
         return room;
     }
 
-    public static void SpawnEnemy(Vector3 position, int enemyType)
+    public static GameObject SpawnEnemy(Vector3 roomPosition, int enemyType)
     {
-        
         GameObject enemy = enemies[enemyType];
-        float xOffset = Random.Range(-Cell.size/2, Cell.size/2);
-        float yOffset = Random.Range(-Cell.size/2, Cell.size/2);
-        position += xOffset*Vector3.right + yOffset*Vector3.forward;
-        Instantiate(enemy, position, Quaternion.identity);
+        float xOffset = Random.Range(-enemySpawnRadius, enemySpawnRadius);
+        float yOffset = Random.Range(-enemySpawnRadius, enemySpawnRadius);
+        roomPosition += xOffset*Vector3.right + yOffset*Vector3.forward;
+        return Instantiate(enemy, roomPosition, Quaternion.identity);
+    }
+
+    public static void SpawnEnemies(Vector3 roomPosition, int enemyType, int quantity, IDeathListener deathListener)
+    {
+        for (int i = 0; i < quantity; i++)
+        {
+            GameObject newEnemy = SpawnEnemy(roomPosition, enemyType);
+            if (newEnemy.TryGetComponent(out HealthManager health))
+            {
+                health.deathListener = deathListener;
+            }
+        }
     }
 }
