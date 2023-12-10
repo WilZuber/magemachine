@@ -10,7 +10,7 @@ public class TestGun3 : SoulMagicGunType
         SetModel(3);
         reloadDuration = 0.5f; // actually inverse fire rate, not reload duration
 
-        cost = 5.0f;
+        cost = 10.0f;
         shotsAfterDouble = 5;
         maxSafeMultiplier = 16;
     }
@@ -19,6 +19,7 @@ public class TestGun3 : SoulMagicGunType
     {
         LinearBlink blink = LinearBlink.New();
         MagicExplosion explosion = MagicExplosion.New();
+        explosion.damage = 4;
 
         blink.next.Add(explosion);
 
