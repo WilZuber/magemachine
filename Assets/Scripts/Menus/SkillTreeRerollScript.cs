@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SkillTreeRerollScript : MonoBehaviour
 {
-    private int rerollCost;
+    private int rerollCost = 1;
     public TextMeshProUGUI priceText;
     public SkillTreeStaminaUpgrade staminaUpgrade;
     public SkillTreeHealthUpgrade healthUpgrade;
