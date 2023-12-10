@@ -18,6 +18,8 @@ public class PauseScript : MonoBehaviour
 
     public static GameObject InfoScreen;
     public static GameObject TutorialUI;
+    // this bool is for disabling the pause menu during the player's death animation
+    public static bool characterIsAlive;
     void Awake() {
         self = this;
         InfoScreen = GameObject.Find("PauseScreen/Canvas/PausePanel/InfoScreen");
@@ -28,6 +30,7 @@ public class PauseScript : MonoBehaviour
         PauseCamera.SetActive(false);
         InfoScreen.SetActive(false);
         PausePanel.SetActive(false);
+        characterIsAlive = true;
     }
 
     // Called from InventoryManager to prevent conflicts involving escape key
@@ -44,16 +47,18 @@ public class PauseScript : MonoBehaviour
     }
 
     private void Pause() {
-        isPaused = true;
-        PausePanel.SetActive(true);
-        PausePanel.SetActive(true);
-        PausePanel.SetActive(true); // for some reason, spamming this makes the menu work consistently. :)
+        if (characterIsAlive) {
+            isPaused = true;
+            PausePanel.SetActive(true);
+            PausePanel.SetActive(true);
+            PausePanel.SetActive(true); // for some reason, spamming this makes the menu work consistently. :)
 
-        originalTimeScale = Time.timeScale;
-        Time.timeScale = 0; // pause time
+            originalTimeScale = Time.timeScale;
+            Time.timeScale = 0; // pause time
 
-        PlayerInputToggle.Disable();
-        HUDToggle.Disable();
+            PlayerInputToggle.Disable();
+            HUDToggle.Disable();
+        }
     }
 
 

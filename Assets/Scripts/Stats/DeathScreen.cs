@@ -15,6 +15,7 @@ public class DeathScreen : MonoBehaviour {
 
     void Update() {
         if (playerDead) {
+            PauseScript.characterIsAlive = false;
             StartCoroutine(RevealText());
         }
     }
