@@ -104,7 +104,7 @@ public class ProjectileInstance : MonoBehaviour
             Ray entryRay = new(lastPosition, rb.velocity);
 
             //Spherecast from the last position to find where the projectile's path makes contact
-            Physics.SphereCast(entryRay, radius, out hit);
+            Physics.SphereCast(entryRay, radius, out hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore);
         }
         Vector3 hitPosition = hit.point + hit.normal * radius;
 

@@ -45,7 +45,7 @@ public abstract class AI : MonoBehaviour
     {
         (Vector3 origin, Vector3 direction) = DirectionToPlayer();
         Ray ray = new(origin, direction);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.CompareTag("Player"))
             {
