@@ -18,6 +18,8 @@ public class MeleeAIContext : MonoBehaviour
     private NavMeshAgent agent;
     private GameObject player; // hold a reference to the player to make it easy to tell when spotted, etc
 
+    private Vector3 spawnPosition;
+
     // On start we want to do a few things:
     // Find our Melee AI agent and assign it to agent field
     // Find the player GameObject and assign it to player field
@@ -34,6 +36,8 @@ public class MeleeAIContext : MonoBehaviour
         chaseState = new MeleeAIChaseState(this);
         patrolState = new MeleeAIPatrolState(this);
 
+        spawnPosition = gameObject.transform.position;
+
         SetState(patrolState); // we want to start off patrolling
     }
 
@@ -42,6 +46,25 @@ public class MeleeAIContext : MonoBehaviour
         if (CanSeePlayer())
         {
             currentState.PlayerEnterSight();
+        }
+    }
+
+    // Have a trigger on the AI that represents the melee range
+    // check if player enters the melee range
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            currentState.PlayerEnterMeleeRange();
+        }
+    }
+
+    // check if player leaves the melee range
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            currentState.PlayerLeaveMeleeRange();
         }
     }
 
@@ -91,7 +114,14 @@ public class MeleeAIContext : MonoBehaviour
         agent.SetDestination(initialPosition);
     }
 
-    public void EndPatrol()
+    // make agent go back to where it was born
+    public void GoBackToSpawnLocation()
+    {
+        agent.SetDestination(spawnPosition);
+    }
+
+    // make the player stop moving
+    public void EndMovement()
     {
         agent.SetDestination(gameObject.transform.position); // stop moving
     }
@@ -114,6 +144,11 @@ public class MeleeAIContext : MonoBehaviour
     public void EndChasePlayer()
     {
         // Stop Chasing player
+    }
+
+    public void Attack()
+    {
+        // attack
     }
 
     // AI Boolean Methods
