@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Contexts in the State Pattern represent the system. Think of a State Machine Diagram. The entire diagram would be the context.
 public class MeleeAIContext : MonoBehaviour
 {
     private IMeleeAIState currentState; // the current state of the AI

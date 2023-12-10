@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// In the State Pattern, we use an interface to hold all transitions as abstract methods.
 public interface IMeleeAIState
 {
     public void PlayerEnterSight();

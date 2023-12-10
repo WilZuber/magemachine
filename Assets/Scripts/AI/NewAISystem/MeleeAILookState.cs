@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// In the state pattern, MeleeAILookState is one state the MeleeAI can currently be in.
 public class MeleeAILookState : IMeleeAIState
 {
     private MeleeAIContext meleeAI;

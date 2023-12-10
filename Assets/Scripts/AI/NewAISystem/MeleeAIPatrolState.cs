@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// In the state pattern, MeleeAIPatrolState is one state the MeleeAI can currently be in.
 public class MeleeAIPatrolState : IMeleeAIState
 {
     private MeleeAIContext meleeAI;
