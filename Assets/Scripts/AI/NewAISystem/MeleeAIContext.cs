@@ -16,15 +16,19 @@ public class MeleeAIContext : MonoBehaviour
     private IMeleeAIState patrolState;
 
     private NavMeshAgent agent;
+    private GameObject player; // hold a reference to the player to make it easy to tell when spotted, etc
 
     // On start we want to do a few things:
-    // Find our Melee AI agent and assign it to our field
+    // Find our Melee AI agent and assign it to agent field
+    // Find the player GameObject and assign it to player field
     // Initialize lookState, attackState, patrolState and chaseState to be 
     //          references to the corresponding Concrete States
     // Initialize currentState to patrol.
     void Start()
     {
         agent = gameObject.GetComponent<NavMeshAgent>();
+        player = GameObject.Find("MainCharacter");
+
         lookState = new MeleeAILookState(this);
         attackState = new MeleeAIAttackState(this);
         chaseState = new MeleeAIChaseState(this);
@@ -60,4 +64,37 @@ public class MeleeAIContext : MonoBehaviour
     }
 
     // AI BEHAVIOR METHODS
+    // These should be called by the concrete states, using their reference to context
+    // Doing it like this so that we are not passing the agent into each state
+    //      Also, because many states might want to use the same methods. Just implement them here.
+
+    public void BeginPatrol()
+    {
+        // Initiate patrolling for agent
+    }
+
+    public void EndPatrol()
+    {
+        // Stop Patrolling
+    }
+
+    public void BeginLookAtPlayer()
+    {
+        // initiate looking directly at the player
+    }
+
+    public void EndLookAtPlayer()
+    {
+        // Stop looking at player
+    }
+
+    public void BeginChasePlayer()
+    {
+        // Initiate chasing the player
+    }
+
+    public void EndChasePlayer()
+    {
+        // Stop Chasing player
+    }
 }
