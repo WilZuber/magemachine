@@ -19,6 +19,7 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         activePanel = inventoryPanel;
+        inventoryPanel.GetComponent<Inventory>().Initialize();
         inventoryCanvas.SetActive(false);
         isOpen = false;
     }

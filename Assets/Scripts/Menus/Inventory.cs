@@ -29,13 +29,12 @@ public class Inventory : MonoBehaviour
     private SoulManager playerSoulManager;
     private HealthManager playerHealthManager;
     private StaminaManager playerStaminaManager;
-    private static GameObject player;
+    public GameObject player;
     public SkillTreeSkillPointCounterUpdater skillPointUpdater;
 
-    // Start is called before the first frame update
-    void Start()
+    //called from InventoryManager to prevent load order errors
+    public void Initialize()
     {
-        player = GameObject.Find("MainCharacter");
         playerSoulManager = player.GetComponent<SoulManager>();
         playerHealthManager = player.GetComponent<HealthManager>();
         playerStaminaManager = player.GetComponent<StaminaManager>();
@@ -61,6 +60,7 @@ public class Inventory : MonoBehaviour
         UpdateGunSelectionHighlight(gunSelectionHighlights[1], gunSelections[1]);
         UpdateSoulRefillCounter();
         UpdateSkillPointCounter();
+        AI.player = player;
     }
 
     public static int GetSkillPoints()

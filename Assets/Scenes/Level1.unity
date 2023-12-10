@@ -263,11 +263,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 9119123370897556316, guid: 98753eb2f0712044b9d9702b2a939d49, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1911355289}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98753eb2f0712044b9d9702b2a939d49, type: 3}
+--- !u!114 &776650438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9119123370897556316, guid: 98753eb2f0712044b9d9702b2a939d49, type: 3}
+  m_PrefabInstance: {fileID: 776650437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f81268957b0844aaeb23b57d2a64fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1737171332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -572,6 +587,10 @@ PrefabInstance:
       propertyPath: levelPlayer
       value: 
       objectReference: {fileID: 1911355289}
+    - target: {fileID: 7156439929909532935, guid: 1d4d6e7d31e92814fa9d88784b96062f, type: 3}
+      propertyPath: levelInventory
+      value: 
+      objectReference: {fileID: 776650438}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

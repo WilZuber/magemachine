@@ -21,7 +21,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject[] enemyPrefabs;
     private static GameObject[] enemies;
 
-    private static float enemySpawnRadius = Cell.size / 2 - 0.25f; //half of room width minus wall thickness
+    private static readonly float enemySpawnRadius = Cell.size / 2 - 0.5f; //half of room width minus some space
 
     //for each room, generate a uniform random float between 0 and this, then round to nearest int (average value is half of this)
     private static float maxEnemiesPerRoom;
@@ -277,7 +277,6 @@ public class LevelGenerator : MonoBehaviour
         LevelExit.currentLevel = 3;
 
         player = levelPlayer;
-        AI.player = player;
     }
 
     private static Transform PlaceRoom(Vector3 position, Cell cell)
