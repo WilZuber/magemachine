@@ -43,6 +43,9 @@ public class LevelGenerator : MonoBehaviour
     private static readonly int[] dx = new int[] { 0, 1, 0, -1 };
     private static readonly int[] dy = new int[] { -1, 0, 1, 0 };
 
+    public static GameObject player;
+    public GameObject levelPlayer;
+
     private class Cell
     {
         public WallType[] sides = new WallType[4];
@@ -273,7 +276,8 @@ public class LevelGenerator : MonoBehaviour
         }
         LevelExit.currentLevel = 3;
 
-        CreateSpawnFunctions();
+        player = levelPlayer;
+        AI.player = player;
     }
 
     private static Transform PlaceRoom(Vector3 position, Cell cell)

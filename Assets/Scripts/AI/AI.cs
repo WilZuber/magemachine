@@ -10,7 +10,7 @@ public abstract class AI : MonoBehaviour
 
     public NavMeshAgent agent;
     public Animator anim;
-    public GameObject player;
+    public static GameObject player;
     public Vector3 home;
     public IAIBehavior state;
     public AIWaitBehavior wait;
@@ -19,7 +19,8 @@ public abstract class AI : MonoBehaviour
 
     public void Initialize()
     {
-        player = GameObject.Find("MainCharacter");
+        //player = GameObject.Find("MainCharacter");
+        //player = LevelGenerator.player;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         home = transform.position;
