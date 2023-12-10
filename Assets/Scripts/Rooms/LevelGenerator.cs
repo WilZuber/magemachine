@@ -21,6 +21,8 @@ public class LevelGenerator : MonoBehaviour
     public GameObject[] enemyPrefabs;
     private static GameObject[] enemies;
 
+    public bool ignoreGenerate = false; // quick fix to allow tutorial level special room spawning
+
     private static readonly float enemySpawnRadius = Cell.size / 2 - 0.5f; //half of room width minus some space
 
     //for each room, generate a uniform random float between 0 and this, then round to nearest int (average value is half of this)
@@ -122,6 +124,10 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         Initialize();
+        if (ignoreGenerate)
+        {
+            return;
+        }
         UpdateSpawnFunctions();
         //level -> radius: 1 -> 2, 2-3 -> 3, 4-6 -> 4, 7-10 -> 5, etc
         radius = Mathf.CeilToInt(Mathf.Sqrt(2 * level + 0.25f) + 0.5f);
