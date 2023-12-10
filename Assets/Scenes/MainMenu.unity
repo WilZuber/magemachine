@@ -2837,8 +2837,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1788385680}
-        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: InfoScreenBackButton
+        m_TargetAssemblyTypeName: InfoBackButton, Assembly-CSharp
+        m_MethodName: HideInfoScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2895,12 +2895,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1788385674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9adc89140bc0c2745b10caa7f5b851f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 352854bb9e4920548b1031402e9689e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExpositionScreen: {fileID: 165129783}
-  SkipText: {fileID: 1937261943}
-  HasPressedKeyOnce: 0
   InfoScreen: {fileID: 1213983744}
 --- !u!1001 &1791539702
 PrefabInstance:
