@@ -136,6 +136,7 @@ public class Inventory : MonoBehaviour
         soulRefills = 0;
         skillPoints = 0;
         LevelGenerator.level = 1; //move later
+        LevelGenerator.CreateSpawnFunctions();
         currentSoul = 100;
         maxSoul = 100;
         maxStamina = 100;

@@ -20,9 +20,19 @@ public class LevelGenerator : MonoBehaviour
     private static GameObject levelExit;
     public GameObject[] enemyPrefabs;
     private static GameObject[] enemies;
-    private static float enemySpawnRadius = Cell.size/2 - 0.25f; //half of room width minus wall thickness
-    private static readonly float mergeChance = 0.5f; //chance for connected rooms to be merged when applicable
 
+    private static float enemySpawnRadius = Cell.size / 2 - 0.25f; //half of room width minus wall thickness
+
+    //for each room, generate a uniform random float between 0 and this, then round to nearest int (average value is half of this)
+    private static float maxEnemiesPerRoom;
+    //cumulative probabilities of enemy types
+    private static float spawnBound1; //between types 1 and 2
+    private static float spawnBound2; //between types 2 and 3
+    private static RationalFunction maxEnemiesFunction;
+    private static RationalFunction bound1Function;
+    private static RationalFunction bound2Function;
+
+    private static readonly float mergeChance = 0.5f; //chance for connected rooms to be merged when applicable
     private static Cell[,] cells;
     private static List<Cell> standardCells;
     private static int radius, diameter;
@@ -75,18 +85,37 @@ public class LevelGenerator : MonoBehaviour
             Vector3 position = new((C - radius) * size, 0, -(R - radius) * size);
             room = PlaceRoom(position, this);
 
-            //place enemy (tmp)
-            if (type == RoomType.standard && Random.value < 0.5f) {
-                int index = Random.Range(0, 3);
-                SpawnEnemy(position, index);
+            //place enemies in the room if applicable
+            if (type == RoomType.standard)
+            {
+                SpawnEnemiesStandard(position);
             }
         }
+    }
+
+    // A rational function of the form f(x) = a + k/(x - h)
+    private class RationalFunction
+    {
+        float hAsymptote;
+        float vAsymptote;
+        float scale;
+
+        // Constructs a rational function with the given horizontal asymptote and through the given points
+        public RationalFunction(float hAsymptote, float x1, float y1, float x2, float y2)
+        {
+            this.hAsymptote = hAsymptote;
+            scale = (x1 - x2) * (y1 - hAsymptote) * (y2 - hAsymptote) / (y2 - y1);
+            vAsymptote = x1 - scale / (y1 - hAsymptote);
+        }
+
+        public float Evaluate(float x) => hAsymptote + scale / (x - vAsymptote);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
+        UpdateSpawnFunctions();
         //level -> radius: 1 -> 2, 2-3 -> 3, 4-6 -> 4, 7-10 -> 5, etc
         radius = Mathf.CeilToInt(Mathf.Sqrt(2 * level + 0.25f) + 0.5f);
         diameter = 2 * radius + 1;
@@ -239,10 +268,10 @@ public class LevelGenerator : MonoBehaviour
 
     public void Initialize()
     {
-        emptyRoom = new[] { prefabs[0], prefabs[4]};
-        wall = new[] { prefabs[1], prefabs[5]};
-        door = new[] { prefabs[2], prefabs[6]};
-        corner = new[] { prefabs[3], prefabs[7]};
+        emptyRoom = new[] { prefabs[0], prefabs[4] };
+        wall = new[] { prefabs[1], prefabs[5] };
+        door = new[] { prefabs[2], prefabs[6] };
+        corner = new[] { prefabs[3], prefabs[7] };
         levelExit = prefabs[8];
         enemies = enemyPrefabs;
 
@@ -252,6 +281,8 @@ public class LevelGenerator : MonoBehaviour
             rotations[i] = Quaternion.Euler(0, 90 * i, 0);
         }
         LevelExit.currentLevel = 3;
+
+        CreateSpawnFunctions();
     }
 
     private static Transform PlaceRoom(Vector3 position, Cell cell)
@@ -287,16 +318,61 @@ public class LevelGenerator : MonoBehaviour
         return room;
     }
 
+    public static void CreateSpawnFunctions()
+    {
+        float maxEnemiesCap = 4; //horizontal asymptote of the maxEnemiesPerRoom
+        float maxEnemiesLevel1 = 1; //max enemies for level 1
+        float doubleLevel = 2.5f; //level at which maxEnemiesPerRoom = 2
+        maxEnemiesFunction = new RationalFunction(maxEnemiesCap, 1, maxEnemiesLevel1, doubleLevel, 2);
+
+        bound1Function = new RationalFunction(4f / 8, 1, 7f / 8, 3, 6f / 8);
+        bound2Function = new RationalFunction(7f / 8, 1, 1, 3, 7.5f / 8);
+    }
+
+    //determine maxEnemiesPerRoom for the level, and individual spawn weights
+    private void UpdateSpawnFunctions()
+    {
+        maxEnemiesPerRoom = maxEnemiesFunction.Evaluate(level);
+        spawnBound1 = bound1Function.Evaluate(level);
+        spawnBound2 = bound2Function.Evaluate(level);
+    }
+
+    //spawn a single enemy at a random position in the room centered at the given point
     public static GameObject SpawnEnemy(Vector3 roomPosition, int enemyType)
     {
         GameObject enemy = enemies[enemyType];
         float xOffset = Random.Range(-enemySpawnRadius, enemySpawnRadius);
         float yOffset = Random.Range(-enemySpawnRadius, enemySpawnRadius);
-        roomPosition += xOffset*Vector3.right + yOffset*Vector3.forward;
+        roomPosition += xOffset * Vector3.right + yOffset * Vector3.forward;
         return Instantiate(enemy, roomPosition, Quaternion.identity);
     }
 
-    public static void SpawnEnemies(Vector3 roomPosition, int enemyType, int quantity, IDeathListener deathListener)
+    //spawn enemies in a standard room
+    public static void SpawnEnemiesStandard(Vector3 roomPosition)
+    {
+        int enemiesInRoom = Mathf.RoundToInt(Random.Range(0f, maxEnemiesPerRoom));
+        for (int i = 0; i < enemiesInRoom; i++)
+        {
+            int enemyType;
+            float rand = Random.value;
+            if (rand <= spawnBound1)
+            {
+                enemyType = 0;
+            }
+            else if (rand <= spawnBound2)
+            {
+                enemyType = 1;
+            }
+            else
+            {
+                enemyType = 2;
+            }
+            SpawnEnemy(roomPosition, enemyType);
+        }
+    }
+
+    //used by challenge rooms to spawn enemies when the player enters
+    public static void SpawnEnemiesChallenge(Vector3 roomPosition, int enemyType, int quantity, IDeathListener deathListener)
     {
         for (int i = 0; i < quantity; i++)
         {
