@@ -66,7 +66,7 @@ public class SkillTreeHealthUpgrade : MonoBehaviour
             price = Random.Range(3, 6); // multipliers are more costly
         } else // addition values should be somewhat bigger
         {
-            modifier = ((Random.Range(10, 30)));
+            modifier = ((Random.Range(2, 15)));
             price = Random.Range(1, 4); // could get cheap good rolls, or pricey bad rolls
         }
 
