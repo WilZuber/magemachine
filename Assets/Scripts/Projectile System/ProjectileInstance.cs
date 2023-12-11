@@ -38,7 +38,10 @@ public class ProjectileInstance : MonoBehaviour
         {
             newProjectile.rb.velocity = velocity;
         }
-
+        if (projectileType is Bullet) {
+             Explosion.bulletFired = true;
+        }
+       
         return newProjectile;
     }
 
