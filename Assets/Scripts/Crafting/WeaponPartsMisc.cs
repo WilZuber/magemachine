@@ -26,7 +26,7 @@ public class WPAccelerator : WeaponPart
 
 public class WPGeneratorBasic : WeaponPart
 {
-    float generationTime = 1f;
+    float generationTime = 0.5f;
     float timer;
     public WPGeneratorBasic()
     {
@@ -55,7 +55,7 @@ public class WPBufferBasic : WeaponPart
 {
     int maxQuantity = 16;
     int quantity;
-    float reloadTime = 0.33f;
+    float reloadTime = 0.25f;
     float timer;
     public WPBufferBasic()
     {
