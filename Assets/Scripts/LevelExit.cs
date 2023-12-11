@@ -34,7 +34,7 @@ public class LevelExit: MonoBehaviour
                     levelExitAudio.Play();
                 }
                 Inventory.FinishLevel();
-                if (currentLevel == 1)
+                if (SceneManager.GetActiveScene().buildIndex == 1)
                 {
                     SceneManager.LoadScene("MainMenu");
                 }
