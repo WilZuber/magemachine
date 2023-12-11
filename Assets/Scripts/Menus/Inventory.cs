@@ -10,6 +10,10 @@ public class Inventory : MonoBehaviour
     private static GunType[] guns; //all guns the player has
     private static int[] gunSelections; //left and right selections, -1 if unset
     public static Dictionary<PartType, int> weaponPartCounts; //number of each part type
+    public Dictionary<PartType, GameObject> weaponPartDisplays;
+    public static Dictionary<PartType, Sprite> currentWeaponPartSprites; //quick fix
+    public Transform weaponPartPanel;
+    public GameObject weaponPartPrefab;
 
     private static int soulRefills;
     private static int skillPoints;
@@ -62,6 +66,13 @@ public class Inventory : MonoBehaviour
         UpdateSoulRefillCounter();
         UpdateSkillPointCounter();
         AI.player = player;
+
+        weaponPartDisplays = new();
+        foreach (PartType type in currentWeaponPartSprites.Keys)
+        {
+            AddWeaponPart(type, currentWeaponPartSprites[type]);
+            UpdateWeaponPart(type);
+        }
     }
 
     public static int GetSkillPoints()
@@ -96,17 +107,37 @@ public class Inventory : MonoBehaviour
 
     public static bool CollectWeaponPart(WeaponPartPickup part)
     {
-        PartType type = part.GetPart().type;
+        WeaponPart weaponPart = part.GetPart();
+        PartType type = weaponPart.type;
         if (weaponPartCounts.ContainsKey(type))
         {
             weaponPartCounts[type]++;
+            currentInventory.UpdateWeaponPart(weaponPart.type);
         }
         else
         {
             weaponPartCounts.Add(type, 1);
+            currentInventory.AddWeaponPart(weaponPart.type, weaponPart.inventorySprite);
         }
-        print(type + ": " + weaponPartCounts[type]);
         return true;
+    }
+
+    private void AddWeaponPart(PartType type, Sprite sprite)
+    {
+        GameObject instance = Instantiate(weaponPartPrefab, weaponPartPanel);
+        instance.GetComponent<Image>().sprite = sprite;
+        if (!currentWeaponPartSprites.ContainsKey(type))
+        {
+            currentWeaponPartSprites.Add(type, sprite);
+        }
+        weaponPartDisplays.Add(type, instance);
+    }
+
+    private void UpdateWeaponPart(PartType type)
+    {
+        GameObject instance = weaponPartDisplays[type];
+        TextMeshProUGUI text = instance.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        text.text = weaponPartCounts[type].ToString();
     }
 
     public static bool CollectGun(GunType gun)
@@ -144,6 +175,7 @@ public class Inventory : MonoBehaviour
         };
         gunSelections = new int[] { 0, 1 };
         weaponPartCounts = new();
+        currentWeaponPartSprites = new();
 
         soulRefills = 0;
         skillPoints = 0;

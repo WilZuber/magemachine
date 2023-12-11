@@ -259,6 +259,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8849097040771898413}
     - target: {fileID: 7907675743119861700, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
+      propertyPath: weaponPartPanel
+      value: 
+      objectReference: {fileID: 6183871749243966622}
+    - target: {fileID: 7907675743119861700, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
+      propertyPath: weaponPartPrefab
+      value: 
+      objectReference: {fileID: 8387461535173931137, guid: 9b8d597313c7baf40b656dd2c0539788, type: 3}
+    - target: {fileID: 7907675743119861700, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
       propertyPath: skillPointUpdater
       value: 
       objectReference: {fileID: 5062973580344197301}
@@ -345,13 +353,50 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8585284047854478592, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2003773617683375729}
   m_SourcePrefab: {fileID: 100100000, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
 --- !u!1 &5769651675784921728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4837425600850028056, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
   m_PrefabInstance: {fileID: 1382630739759998104}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &6183871749243966622 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5107523717855752198, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
+  m_PrefabInstance: {fileID: 1382630739759998104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7211697933788348824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8585284047854478592, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}
+  m_PrefabInstance: {fileID: 1382630739759998104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2003773617683375729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211697933788348824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 16, y: 16}
+  m_Constraint: 1
+  m_ConstraintCount: 8
 --- !u!224 &7625376646698212971 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8854869605964823283, guid: 2c65b8d87800f854686a493ec5c20dd2, type: 3}

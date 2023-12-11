@@ -70,3 +70,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5653b0bd2e89f3440994fbe59657cb11, type: 3}
   - {fileID: 21300000, guid: bb56c14c5f3c55c46b01944a6de7cc4b, type: 3}
   - {fileID: 0}
+  weaponPartMiscSprites:
+  - {fileID: 21300000, guid: 5269f68d405234c438b502b182b92152, type: 3}
+  weaponPartGeneratorSprites:
+  - {fileID: 21300000, guid: 2c44d6b6a664e9942b22ee43ec860873, type: 3}
+  weaponPartBufferSprites: []
+  weaponPartModifierSprites: []
