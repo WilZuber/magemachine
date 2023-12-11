@@ -18,6 +18,7 @@ public class TestGun3 : SoulMagicGunType
     private ProjectileType TestProjectile3()
     {
         LinearBlink blink = LinearBlink.New();
+        Explosion.explosionSound = true;
         MagicExplosion explosion = MagicExplosion.New();
         explosion.damage = 4;
 

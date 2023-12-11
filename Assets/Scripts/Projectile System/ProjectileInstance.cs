@@ -47,6 +47,9 @@ public class ProjectileInstance : MonoBehaviour
     {
         ProjectileInstance newProjectile = CreateProjectile(projectileType, position, velocity,
                 ignoreCollision, damageMultiplier);
+        if (projectileType is Explosion) {
+            Explosion.explosionSound = true;
+        }
         newProjectile.precalculatedBounce = true;
         newProjectile.lastHit = lastHit;
     }
