@@ -68,6 +68,8 @@ public class Inventory : MonoBehaviour
         UpdateSkillPointCounter();
         AI.player = player;
 
+        menuSound = false;
+
 
         weaponPartDisplays = new();
         foreach (PartType type in currentWeaponPartSprites.Keys)
