@@ -32,11 +32,11 @@ public class MysteryBoxScript : MonoBehaviour
             isOpened = true; //prevents looping
             
             mysteryBoxAnim.SetBool("isOpen", true); //open animation
-            mysteryRoll = UnityEngine.Random.Range(0, 4); //roll for rewards
+            //mysteryRoll = UnityEngine.Random.Range(0, 4); //roll for rewards
             Vector3 pos = transform.position;
             Quaternion rot = Quaternion.identity;
             Transform parent = GetComponent<Transform>().parent;
-            switch (mysteryRoll)
+            /*switch (mysteryRoll)
             {
                 case 0: //weapon
                     GunLists.CreateGun().SpawnPickup(pos, parent);
@@ -58,8 +58,23 @@ public class MysteryBoxScript : MonoBehaviour
                 case 3: //skill point
                     Instantiate(skillPoint, pos, rot, parent);
                     break;
-            }  
-               
+            }*/
+
+            if (UnityEngine.Random.value < 1.0f/6) //spawn gun
+            {
+                GunLists.CreateGun().SpawnPickup(pos, parent);
+            }
+            else
+            {
+                if (UnityEngine.Random.value < 0.5f) //soul refill potion
+                {
+                    Instantiate(soulPotion, pos, rot, parent);
+                }
+                else //skill point
+                {
+                    Instantiate(skillPoint, pos, rot, parent);
+                }
+            }
         }
 
     
