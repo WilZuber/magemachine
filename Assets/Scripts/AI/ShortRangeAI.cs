@@ -9,9 +9,9 @@ public class ShortRangeAI : AI
     // Start is called before the first frame update
     void Start()
     {
-        float minDistance = 0;
-        float startDistance = 15.0f;
-        float MaxDistance = 20.0f;
+        float minDistance = 0; // stop attacking and run away
+        float startDistance = 15.0f; // start attacking
+        float MaxDistance = 20.0f; // Stop attacking and chase
         WeaponHolder guns = GetComponent<WeaponHolder>();
         //print("try");
         guns.SpawnGun(gunType, 0);

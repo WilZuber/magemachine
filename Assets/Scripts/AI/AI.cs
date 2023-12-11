@@ -17,6 +17,8 @@ public abstract class AI : MonoBehaviour
     public AIChaseBehavior chase;
     public IAIAttackBehavior attack;
 
+    private Vector3 lastSeenPlayerPosition;
+
     public void Initialize()
     {
         //player = GameObject.Find("MainCharacter");
@@ -37,7 +39,7 @@ public abstract class AI : MonoBehaviour
     private (Vector3, Vector3) DirectionToPlayer()
     {
         Vector3 origin = transform.position + transform.up;
-        Vector3 direction = player.transform.position - origin;
+        Vector3 direction = (player.transform.position - origin).normalized;
         return (origin, direction);
     }
 
@@ -45,6 +47,12 @@ public abstract class AI : MonoBehaviour
     public bool CanSeePlayer()
     {
         (Vector3 origin, Vector3 direction) = DirectionToPlayer();
+
+        if (Vector3.Dot(direction, transform.forward) < 0.5f)
+        {
+            return false;
+        }
+        lastSeenPlayerPosition = direction; // save the last seen player position
         Ray ray = new(origin, direction);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore))
         {
