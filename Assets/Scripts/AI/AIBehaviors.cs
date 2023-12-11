@@ -74,6 +74,21 @@ public class AIShootingBehavior : IAIAttackBehavior
         this.escapeSpeed = escapeSpeed;
     }
 
+    private bool CanShootPlayer(AI ai)
+    {
+        Vector3 origin = ai.transform.position + ai.transform.up;
+        Vector3 direction = AI.player.transform.position - origin;
+        Ray ray = new(origin, direction);
+        if (Physics.SphereCast(ray, minAttackDistanceSq, out RaycastHit hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void Act(AI ai)
     {
         if (ai.CanSeePlayer())
@@ -81,13 +96,15 @@ public class AIShootingBehavior : IAIAttackBehavior
             float sqDistance = ai.SquareDistanceToPlayer();
             if (sqDistance > minAttackDistanceSq)
             {
-                if (sqDistance < maxAttackDistanceSq)
+                if ((sqDistance < maxAttackDistanceSq))
                 {
                     ai.agent.speed = 0;
                     ai.anim.SetFloat("VVelocity", 0);
                     ai.anim.SetBool("HasRightGun", true);
                     ai.anim.SetLayerWeight(3, 0.8f);
-                    guns.Fire(0);
+                    if (CanShootPlayer(ai)) {
+                        guns.Fire(0);
+                    }
                     ai.RotateToPlayer();
                 }
                 else
