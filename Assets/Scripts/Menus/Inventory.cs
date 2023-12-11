@@ -36,6 +36,7 @@ public class Inventory : MonoBehaviour
     private StaminaManager playerStaminaManager;
     public GameObject player;
     public SkillTreeSkillPointCounterUpdater skillPointUpdater;
+    public static bool menuSound;
 
     //called from InventoryManager to prevent load order errors
     public void Initialize()
@@ -67,12 +68,14 @@ public class Inventory : MonoBehaviour
         UpdateSkillPointCounter();
         AI.player = player;
 
+
         weaponPartDisplays = new();
         foreach (PartType type in currentWeaponPartSprites.Keys)
         {
             AddWeaponPart(type, currentWeaponPartSprites[type]);
             UpdateWeaponPart(type);
         }
+
     }
 
     public static int GetSkillPoints()
@@ -195,10 +198,12 @@ public class Inventory : MonoBehaviour
     //Buttons
     public void SelectLeftGun(int index)
     {
+        menuSound = true;
         SelectGun(index, 0);
     }
     public void SelectRightGun(int index)
     {
+        menuSound = true;
         SelectGun(index, 1);
     }
 
@@ -214,17 +219,20 @@ public class Inventory : MonoBehaviour
         //deselect the gun
         if (currentSelection == index)
         {
+            menuSound = true;
             UnsetGun(gunSideIndex);
         }
         //take the gun from the other side
         else if (otherSelection == index)
         {
+            menuSound = true;
             UnsetGun(otherSideIndex);
             SetGun(index, gunSideIndex);
         }
         //select the gun normally
         else
         {
+            menuSound = true;
             SetGun(index, gunSideIndex);
         }
         HUDUpdateGunSprites.UpdateGunSprites();
@@ -250,6 +258,7 @@ public class Inventory : MonoBehaviour
         {
             return; // break out of function, as we dont want to refill
         }
+        menuSound = true;
         soulRefills--;
         playerSoulManager.RefillSoulMax();
         UpdateSoulRefillCounter();
@@ -302,6 +311,7 @@ public class Inventory : MonoBehaviour
         {
             return false;
         }
+        menuSound = true;
         skillPoints -= amount;
         currentInventory.UpdateSkillPointCounter();
         return true;

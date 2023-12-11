@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
+    public static bool playDoorSounds;
     private Animator anim;
     private AudioSource buttonSound;
     // Start is called before the first frame update
     void Start()
     {
+        playDoorSounds = false;
         anim = GetComponent<Animator>();
         //this script is attached to the doorface object which is a sibling of button
         //needs to be more specific if other door sounds added
@@ -38,6 +40,7 @@ public class DoorOpen : MonoBehaviour
     }
     public void playButtonNoise()
     {
-        buttonSound.Play();
+        //buttonSound.Play();
+        playDoorSounds = true;
     }
 }
