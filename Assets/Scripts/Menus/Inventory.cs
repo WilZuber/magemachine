@@ -187,6 +187,11 @@ public class Inventory : MonoBehaviour
         maxHealth = 20;
     }
 
+    public static GunType GetLeftGun()
+    {
+        return guns[gunSelections[0]];
+    }
+
     //Buttons
     public void SelectLeftGun(int index)
     {

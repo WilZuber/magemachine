@@ -13,6 +13,49 @@ public class WeaponPart
     public PartType type;
 
     //todo: action in gun
+    public WeaponPart previous, next;
+    public ProjectileType currentProjectile;
+    public bool giveWhenReady; //give the next received projectile to the next part
+
+    //take from this part
+    public virtual ProjectileType TakeProjectile()
+    {
+        ProjectileType projectile = currentProjectile;
+        currentProjectile = null;
+        //currentProjectile = previous.TakeProjectile();
+        return projectile;
+    }
+    
+    //give to the next part
+    public virtual void GiveProjectile()
+    {
+        next.GetProjectile(currentProjectile);
+    }
+
+    //get from the previous part
+    public virtual bool GetProjectile(ProjectileType projectile)
+    {
+        /*if (giveWhenReady)
+        {
+            next.GetProjectile(projectile);
+            giveWhenReady = false;
+        }
+        else
+        {
+            currentProjectile = projectile;
+        }*/
+        if (next != null)
+        {
+            return next.GetProjectile(projectile);
+        }
+        else currentProjectile = projectile;
+        return true;
+    }
+
+    public virtual void Update(float time)
+    {
+
+    }
 
     //roll a random weapon part
     public static WeaponPart CreateWeaponPart()
@@ -25,7 +68,7 @@ public class WeaponPart
         switch (Random.Range(0, 3))
         {
             default: return RollTier2();
-            case 0: return new TestPart1();
+            case 0: return new WPAccelerator();
         }
     }
 
@@ -41,8 +84,20 @@ public class WeaponPart
     {
         switch (Random.Range(0, 3))
         {
-            default: return new TestPart2();
+            default: return new WPGeneratorBasic();
         }
+    }
+
+    public static WeaponPart New(PartType type)
+    {
+        switch (type)
+        {
+            case PartType.accelerator: return new WPAccelerator();
+            case PartType.generatorBasic: return new WPGeneratorBasic();
+            case PartType.bufferBasic: return new WPBufferBasic();
+        }
+        Debug.Log("Error: " + type + " not implemented");
+        return null;
     }
 }
 
