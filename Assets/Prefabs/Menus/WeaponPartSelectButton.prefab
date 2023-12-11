@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 7535709135272981693}
   - component: {fileID: 289339334431348201}
   m_Layer: 5
-  m_Name: WeaponPartSprite
+  m_Name: WeaponPartSelectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

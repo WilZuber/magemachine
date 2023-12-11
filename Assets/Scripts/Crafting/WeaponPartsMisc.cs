@@ -106,3 +106,24 @@ public class WPBufferBasic : WeaponPart
         }
     }
 }
+
+public class WPRight : WeaponPart
+{
+
+}
+
+public class WPUp : WeaponPart
+{
+    public override (int, int) NextRelativeLocation()
+    {
+        return (0, -1);
+    }
+}
+
+public class WPDown : WeaponPart
+{
+    public override (int, int) NextRelativeLocation()
+    {
+        return (0, 1);
+    }
+}

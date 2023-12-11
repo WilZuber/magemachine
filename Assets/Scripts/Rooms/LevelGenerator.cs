@@ -8,7 +8,6 @@ public class LevelGenerator : MonoBehaviour
 {
     private enum WallType { wall, empty, door };
     private enum RoomType { standard, start, exit, challenge };
-    private enum Decoration { };
 
     public static int level;
     public GameObject[] prefabs;
@@ -20,6 +19,7 @@ public class LevelGenerator : MonoBehaviour
     private static GameObject levelExit;
     public GameObject[] enemyPrefabs;
     private static GameObject[] enemies;
+    public static GameObject[] decorations;
 
     public bool ignoreGenerate = false; // quick fix to allow tutorial level special room spawning
 
@@ -56,6 +56,7 @@ public class LevelGenerator : MonoBehaviour
         public static readonly float size = 8;
         public Transform room;
         public int firstDirection; // input direction when the room was created
+        public int decoration; //0 for none
 
         public Cell(int x, int y, int dir, RoomType type)
         {
@@ -66,7 +67,9 @@ public class LevelGenerator : MonoBehaviour
             cells[R, C] = this;
             standardCells.Add(this);
             foreach (int nextDir in nextDirs[dir])
+            {
                 sides[nextDir] = WallType.wall;
+            }
         }
 
         //the adjacent cell in the given direction
@@ -87,6 +90,12 @@ public class LevelGenerator : MonoBehaviour
 
         public void Output()
         {
+            //decoration
+            if (type == RoomType.standard && Random.value < 0.33f)
+            {
+                decoration = (Random.value < 0.33f) ? 1 : 2;
+            }
+
             Vector3 position = new((C - radius) * size, 0, -(R - radius) * size);
             room = PlaceRoom(position, this);
         }
@@ -273,6 +282,7 @@ public class LevelGenerator : MonoBehaviour
         door = new[] { prefabs[2], prefabs[6] };
         corner = new[] { prefabs[3], prefabs[7] };
         levelExit = prefabs[8];
+        decorations = new[] { prefabs[9], prefabs[10], prefabs[11] };
         enemies = enemyPrefabs;
 
         rotations = new Quaternion[4];
@@ -292,6 +302,12 @@ public class LevelGenerator : MonoBehaviour
 
         //room
         Transform room = Instantiate(emptyRoom[environment], position, Quaternion.identity).transform;
+
+        //decoration
+        if (cell.decoration != 0)
+        {
+            Instantiate(decorations[cell.decoration - 1], position, Quaternion.identity, room);
+        }
 
         for (int i = 0; i < 4; i++)
         {

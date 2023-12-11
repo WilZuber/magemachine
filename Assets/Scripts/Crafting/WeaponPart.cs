@@ -48,13 +48,26 @@ public class WeaponPart
         {
             return next.GetProjectile(projectile);
         }
-        else currentProjectile = projectile;
-        return true;
+        return false;
     }
 
     public virtual void Update(float time)
     {
 
+    }
+
+    public virtual void SetNext(int x, int y, WeaponPart[,] arr)
+    {
+        (int dx, int dy) = NextRelativeLocation();
+        if (x+dx < arr.GetLength(0) && y+dy < arr.GetLength(1))
+        {
+            next = arr[x,y];
+        }
+    }
+
+    public virtual (int, int) NextRelativeLocation()
+    {
+        return (1, 0); //dx, dy
     }
 
     //roll a random weapon part

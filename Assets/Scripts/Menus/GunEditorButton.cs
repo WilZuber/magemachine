@@ -27,4 +27,9 @@ public class GunEditorButton : MonoBehaviour
         button.y = y;
         instance.GetComponent<Image>().sprite = WeaponPart.New(type).inventorySprite;
     }
+
+    public void click()
+    {
+        
+    }
 }
