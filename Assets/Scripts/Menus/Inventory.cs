@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
 {
     private static GunType[] guns; //all guns the player has
     private static int[] gunSelections; //left and right selections, -1 if unset
+    public static Dictionary<PartType, int> weaponPartCounts; //number of each part type
 
     private static int soulRefills;
     private static int skillPoints;
@@ -95,6 +96,16 @@ public class Inventory : MonoBehaviour
 
     public static bool CollectWeaponPart(WeaponPartPickup part)
     {
+        PartType type = part.GetPart().type;
+        if (weaponPartCounts.ContainsKey(type))
+        {
+            weaponPartCounts[type]++;
+        }
+        else
+        {
+            weaponPartCounts.Add(type, 1);
+        }
+        print(type + ": " + weaponPartCounts[type]);
         return true;
     }
 
@@ -132,6 +143,7 @@ public class Inventory : MonoBehaviour
             null
         };
         gunSelections = new int[] { 0, 1 };
+        weaponPartCounts = new();
 
         soulRefills = 0;
         skillPoints = 0;
