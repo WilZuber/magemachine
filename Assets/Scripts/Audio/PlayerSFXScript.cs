@@ -32,35 +32,14 @@ public class PlayerSFXScript : MonoBehaviour
             Explosion.explosionSound = false;
             source.PlayOneShot(sounds[3]);
         }
+        else if (HealthManager.takeDamage) {
+            HealthManager.takeDamage = false;
+            source.PlayOneShot(sounds[4]);
+        }
     }
 
-    public void TechWeaponSound() {
-
-    }
-
-    public void SoulMagicSound() {
-
-    }
-
-    // public static void TeleportSound() {
-    //     AudioClip teleportSound = sounds[1];
-    //     source.PlayOneShot(teleportSound);
-    //     PlayerAttack.teleportSound = false;
-    // }
-
-    public void AOESound() {
-
-    }
 
     public void PlayerHit() {
-
-    }
-
-    public void PlayerDeath() {
-
-    }
-
-    public void PlayerMelee() {
 
     }
 

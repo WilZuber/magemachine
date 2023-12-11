@@ -9,11 +9,14 @@ public class HealthManager : MonoBehaviour
     public float maxHealth; // initialize in prefabs
     public IDeathListener deathListener = null;
     private bool isDead = false;
+    public static bool enemyIsDead;
+    public static bool takeDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        takeDamage = false;
     }
     
     public float GetHealth()
@@ -38,6 +41,7 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        takeDamage = true;
         health -= damage;
         if ((health <= 0) && !isDead)
         {
@@ -78,6 +82,8 @@ public class HealthManager : MonoBehaviour
         gameObject.transform.Find("Minimap").gameObject.SetActive(false);
         if (TryGetComponent(out AI ai))
         {
+            // add enemy death
+            enemyIsDead = true;
             ai.agent.isStopped = true;
             Destroy(ai);
             if (TryGetComponent(out MeleeWeaponController melee))
