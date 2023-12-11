@@ -32,7 +32,6 @@ public class PlayerSFXScript : MonoBehaviour
             Explosion.explosionSound = false;
             source.PlayOneShot(sounds[3]);
         }
-        
     }
 
     public void TechWeaponSound() {

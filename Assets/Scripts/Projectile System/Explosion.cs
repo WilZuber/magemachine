@@ -10,15 +10,20 @@ public class Explosion : ProjectileType
 
     public override bool AdditiveBounceVelocity() => false;
     public static bool explosionSound;
+    public static bool onlyExplodeOnce;
+    public static bool bulletFired;
 
     void Awake()
     {
         damage = 10.0f;
         lifetime = 0.375f;
+        explosionSound = false;
+        bulletFired = false;
     }
 
     public override void Hit(ProjectileInstance self, GameObject other, Vector3 bouncePosition, Vector3 bounceDirection)
     {
+        
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
             hp.TakeDamage(damage);
