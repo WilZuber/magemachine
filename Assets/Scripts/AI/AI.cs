@@ -34,7 +34,7 @@ public abstract class AI : MonoBehaviour
     {
         state.Act(this);
         distancetmp = MathF.Sqrt(SquareDistanceToPlayer());
-        anim.SetFloat("VVelocity", agent.velocity.x);
+        anim.SetFloat("VVelocity", agent.velocity.z);
     }
 
     private (Vector3, Vector3) DirectionToPlayer()
