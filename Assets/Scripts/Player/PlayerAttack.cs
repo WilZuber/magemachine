@@ -7,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
     WeaponHolder guns;
     MeleeWeaponController melee;
     TeleportGun teleporter;
+    public static bool meleeSound;
+    public static bool teleportSound;
     //public static bool isTeleportableEnemy;
 
     // Start is called before the first frame update
@@ -18,6 +20,9 @@ public class PlayerAttack : MonoBehaviour
         TeleportType type = ScriptableObject.CreateInstance<TeleportType>();
         guns.SpawnGun(type, 2);
         teleporter = (TeleportGun)guns.guns[2];
+
+        meleeSound = false;
+        teleportSound = false;
     }
 
     // Update is called once per frame
@@ -33,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.F))
         {
+            meleeSound = true;
             melee.Attack();
         }
         else if (Input.GetKeyDown(KeyCode.Q))
@@ -43,6 +49,7 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //teleport use
+            teleportSound = true;
             teleporter.SwitchWithTeleportPoint();
         }
     }

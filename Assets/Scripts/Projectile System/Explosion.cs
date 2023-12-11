@@ -9,6 +9,7 @@ public class Explosion : ProjectileType
     public override GameObject GetPrefab() => sharedPrefab;
 
     public override bool AdditiveBounceVelocity() => false;
+    public static bool explosionSound;
 
     void Awake()
     {

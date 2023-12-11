@@ -207,7 +207,10 @@ PrefabInstance:
       addedObject: {fileID: 4978488832346494377}
     - targetCorrespondingSourceObject: {fileID: 793425900755533827, guid: f663b96fe36b445468fe7e94933618d9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3494693596754387394}
+      addedObject: {fileID: 3537671996275865329}
+    - targetCorrespondingSourceObject: {fileID: 793425900755533827, guid: f663b96fe36b445468fe7e94933618d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1316751490816859206}
   m_SourcePrefab: {fileID: 100100000, guid: f663b96fe36b445468fe7e94933618d9, type: 3}
 --- !u!4 &30622562614306647 stripped
 Transform:
@@ -255,7 +258,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 793425900755533827, guid: f663b96fe36b445468fe7e94933618d9, type: 3}
   m_PrefabInstance: {fileID: 7825097765026472419}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &3494693596754387394
+--- !u!114 &3537671996275865329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465424821707071968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb887f287169e6c4abeafb53b5a67ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  sounds:
+  - {fileID: 8300000, guid: 57e7775bbc9026b4fbcdabad5f23728d, type: 3}
+  - {fileID: 8300000, guid: ad166929918eb1b4e99bd085405da005, type: 3}
+--- !u!82 &1316751490816859206
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,8 +283,8 @@ AudioSource:
   m_GameObject: {fileID: 7465424821707071968}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 8182017338693037442, guid: 592d19bd9eb4b2a418e47363c53a1655, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ad166929918eb1b4e99bd085405da005, type: 3}
+  OutputAudioMixerGroup: {fileID: 4203747030222625654, guid: 592d19bd9eb4b2a418e47363c53a1655, type: 2}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
