@@ -126,10 +126,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517764874730079093}
-  - component: {fileID: 7131342847362418559}
+  - component: {fileID: -5049845651158396268}
   - component: {fileID: 8910533601895827528}
   m_Layer: 0
-  m_Name: gun1
+  m_Name: gun1Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ Transform:
   - {fileID: 2776111225859966248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7131342847362418559
+--- !u!114 &-5049845651158396268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6417374485855813208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5468f5a1fdce6f74898fd7dc6e93e6bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9040b7551b75e4147bc706f40e3dc9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 5910199021583102750}

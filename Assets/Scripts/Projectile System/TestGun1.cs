@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestGun1 : GunType
+public class TestGun1 : TechGunType
 {
     
     void Awake()
     {
-        SetProjectileType(TestProjectile1());
+        //SetProjectileType(TestProjectile1());
         SetModel(0);
-        reloadDuration = 0.25f;
+        parts = new[,]{{PartType.generatorBasic, PartType.bufferBasic, PartType.accelerator}};
+        //LoadFromArray(testParts);
+        //reloadDuration = 0.25f;
+
     }
 
     private ProjectileType TestProjectile1()

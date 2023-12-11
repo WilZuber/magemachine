@@ -32,7 +32,7 @@ public class ShortRangeAIGun : GunType
     void Awake()
     {
         SetProjectileType(Bullet.New());
-        prefab = prefabs[0];
+        prefab = prefabs[5];
         reloadDuration = 0.5f;
     }
 }

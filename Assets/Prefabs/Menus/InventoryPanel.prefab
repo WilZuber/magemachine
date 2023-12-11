@@ -1589,6 +1589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f81268957b0844aaeb23b57d2a64fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPartPanel: {fileID: 5107523717855752198}
+  weaponPartPrefab: {fileID: 8387461535173931137, guid: 9b8d597313c7baf40b656dd2c0539788, type: 3}
   soulRefillCounter: {fileID: 9040222763631024273}
   skillPointCounter: {fileID: 771089791906084765}
   gunSprites:
@@ -1599,6 +1601,7 @@ MonoBehaviour:
   gunSelectionHighlights:
   - {fileID: 321903418074248375}
   - {fileID: 76613915375680160}
+  player: {fileID: 0}
   skillPointUpdater: {fileID: 0}
 --- !u!1 &5141187038608065317
 GameObject:
@@ -2870,6 +2873,7 @@ GameObject:
   - component: {fileID: 5107523717855752198}
   - component: {fileID: 8782911448789587747}
   - component: {fileID: 2211942243059156295}
+  - component: {fileID: 5074824302287837309}
   m_Layer: 5
   m_Name: WeaponPartsPanel
   m_TagString: Untagged
@@ -2934,6 +2938,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5074824302287837309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585284047854478592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 16, y: 16}
+  m_Constraint: 1
+  m_ConstraintCount: 8
 --- !u!1 &9059071591354968346
 GameObject:
   m_ObjectHideFlags: 0

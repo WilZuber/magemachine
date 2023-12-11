@@ -83,7 +83,12 @@ public class InventoryManager : MonoBehaviour
     public void OpenGunEditor()
     {
         //GunLists.CreateGun().SpawnPickup(playerGuns.transform.position, null);
-        SetPanel(gunEditorPanel);
+        GunType leftGun = Inventory.GetLeftGun();
+        if (leftGun is TechGunType)
+        {
+            gunEditorPanel.GetComponent<GunEditor>().PopulatePanel((TechGunType) leftGun);
+            SetPanel(gunEditorPanel);
+        }
     }
 
     public void OpenSkillTree()

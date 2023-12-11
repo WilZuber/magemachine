@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class WeaponPartPickup : Pickup
 {
-    
+    public WeaponPart GetPart()
+    {
+        return WeaponPart.CreateWeaponPart();
+    }
 }
