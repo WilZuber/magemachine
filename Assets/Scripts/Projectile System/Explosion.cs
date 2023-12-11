@@ -24,7 +24,6 @@ public class Explosion : ProjectileType
         
         if (other.TryGetComponent(out HealthManager hp)) // if the object has a HealthManager
         {
-            // explosion sound effect only happens when something is hit by it
             hp.TakeDamage(damage);
         }
     }
